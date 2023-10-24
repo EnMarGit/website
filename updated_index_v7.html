@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cyrcl</title>
+<link href="updated_revised_styles_v14.css" rel="stylesheet" type="text/css"/> 
+</head>
+<body>
+<header>
+<img alt="Cyrcl logo" id="cyrcl-logo" src="Logo_Cyrcl_White_Horizontal.svg"/>
+<div id="hamburger-menu">☰</div><nav>
+<div class="nav-links"><a href="#">How it works</a><a href="#">Prices</a><a href="#">Locations</a><a href="#">Sustainability</a><a href="#">Rules</a><a href="#">Partners</a></nav><div class="cta-and-dropdown"><a class="cta-button" href="#"><img alt="Download Icon" class="download-icon" src="Download-Icon-Cyrcl.svg"/>Get the app</a><div class="dropdown-wrapper">
+<select id="country-select" name="country">
+<option value="en">EN</option>
+<option value="bg">BG</option>
+<!-- Add other countries as needed -->
+</select>
+<span class="dropdown-arrow">▼</span>
+</div></div>
+</header>
+<main>
+<section class="hero">
+<video autoplay="" loop="" muted="" playsinline="">
+<source src="Cyrcl-white-bars-1080.mp4" type="video/mp4"/>
+                Your browser does not support the video tag.
+            </video>
+<h1>Cyrcl Your Way<h3 class="subheadline">Fast. Green. Convenient.</h3><div class="spacer-770-1200"></div>!</h1>
+<a class="cta-button-mid" href="#">Get the Cyrcl app</a>
+</section>
+
+<!-- How it Works Section Starts -->
+<section id="how-it-works">
+    <h2>How it works</h2>
+    <div class="content-wrapper">
+        <div class="arrow left-arrow"><img src="arrow-left.svg" alt="Left Arrow"></div>
+        <div class="content-slide">
+            <div class="text-content">
+                <h3>1. Find and book</h3>
+                <p>Open the map in the app, find a nearby bike, then book it.</p>
+                <p>No rush! You have some time available to get to your new favorite ride.</p>
+            </div>
+            <div class="image-content">
+                <img src="image4.svg" alt="Find and book image">
+            </div>
+        </div>
+        <!-- Additional content slides will go here... -->
+        <div class="arrow right-arrow"><img src="arrow-right.svg" alt="Right Arrow"></div>
+    </div>
+</section>
+<!-- How it Works Section Ends -->
+
+<section class="download-banner-section">
+    <div class="download-banner-container">
+        <div class="download-banner-column-text">
+            <h3>Find one of hundreds of bikes in Sofia</h3>
+            <p>Download the app and start riding</p>
+        </div>
+        <div class="download-banner-column-image">
+            <img src="Google-Play-EN.svg" alt="Download Cyrcl on Google Play">
+            <img src="App-Store-EN.svg" alt="Download Cyrcl on the App Store">
+        </div>
+    </div>
+</section>
+
+<section class="feature-section">
+    <h2>Get over the hurdle<br>by riding a Cyrcl</h2>
+    <div class="spacer-770-1200"></div><div class="feature-container">
+        <div class="feature-column">
+            <img src="image1.svg" alt="Better Urban Environment" class="feature-image">
+            <h3>YOUR DAILY DOSE OF<br>FUN AND EASY TRAVEL</h3><div class="spacer-770-1200"></div>
+            <p>Whether you are an entrepreneur<br>or a student, be on time for your<br>meetings by riding a bike all year round</p>
+        </div>
+        <div class="feature-column">
+            <img src="image2.svg" alt="Your Daily Dose of Fun and Easy Travel" class="feature-image">
+            <h3>BETTER URBAN<br>ENVIRONMENT</h3><div class="spacer-770-1200"></div>
+            <p>Cleaner air, less traffic,<br>more space for entertainment</p>
+        </div>
+        <div class="feature-column">
+            <img src="image3.svg" alt="More Body Movement With Less Effort" class="feature-image">
+            <h3>MORE BODY MOVEMENT<br>WITH LESS EFFORT</h3><div class="spacer-770-1200"></div>
+            <p>No more excuses why you couldn’t<br>make it to the gym</p>
+        </div>
+    </div>
+</section>
+
+<section class="banner-section">
+    <div class="banner-container">
+        <div class="banner-column">
+            <h3>Where else would you like to see Cyrcl?</h3>
+            <p>We are already in Sofia, Bulgaria. Tell us your favorite location(s) and we'll try our best to open the new area(s).</p>
+        </div>
+        <div class="banner-column">
+            <input type="email" placeholder="Email">
+            <input type="text" placeholder="City">
+            <label class="checkbox-container">
+                <input type="checkbox">
+                <span class="checkmark"></span>
+                I agree that my personal data will be processed in accordance with the General Terms and Conditions and the Privacy Policy of the site.
+            </label>
+            <button class="cta-button">Send</button>
+        </div>
+    </div>
+</section>
+
+</main>
+<script>
+    // Get the hamburger menu and the navigation links
+    var hamburgerMenu = document.getElementById('hamburger-menu');
+    var navLinks = document.querySelector('.nav-links');
+
+    // Add a click event listener to the hamburger menu
+    hamburgerMenu.addEventListener('click', function() {
+        // Toggle the 'active' class on the navigation links
+        navLinks.classList.toggle('active');
+    });
+</script>
+
+<div class="sticky-ellipse">
+    <img src="DSK_Bank_logo_horizontal_CM.svg" alt="DSK Bank Logo" class="ellipse-svg ellipse-svg-1">
+    <img src="mc_symbol.svg" alt="Mastercard Logo" class="ellipse-svg ellipse-svg-2">
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
