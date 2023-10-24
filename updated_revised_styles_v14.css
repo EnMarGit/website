@@ -1351,7 +1351,7 @@ nav a:hover {
 
 @media (max-width: 430px) {
     .sticky-ellipse {
-        width: 40vw;  /* 30% of the viewport width */
+        width: 35vw;  /* 35% of the viewport width */
         height: 12vw;  /* 9% of the viewport width */
     }
 
