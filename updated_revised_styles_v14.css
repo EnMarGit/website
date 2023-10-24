@@ -1217,8 +1217,8 @@ nav a:hover {
     position: fixed;
     bottom: 2%;
     left: 2%;
-    width: 8vw;  /* 10% of the viewport width */
-    height: 4vw;  /* 5% of the viewport width */
+    width: 8vw;  /* 8% of the viewport width */
+    height: 4vw;  /* 4% of the viewport width */
     background-color: #f7f7f7; 
     border-radius: 25px;  /* 25px border radius */
     display: flex;
@@ -1271,5 +1271,80 @@ nav a:hover {
         /* Additional styles specific to the second SVG, if needed */
         padding: 0 5% 0 5%;
         margin: 0;
+    }
+}
+
+@media (max-width: 950px) {
+    .sticky-ellipse {
+        width: 12vw;  /* 12% of the viewport width */
+        height: 6vw;  /* 6% of the viewport width */
+    }
+
+    .ellipse-svg {
+        width: 60%;
+        height: auto;
+    }
+
+    .ellipse-svg-1 {
+        /* Additional styles specific to the first SVG, if needed */
+        width: 100%;
+        margin: 0;
+        padding: 0 5% 0 12%;
+    }
+    
+    .ellipse-svg-2 {
+        /* Additional styles specific to the second SVG, if needed */
+        padding: 0 5% 0 5%;
+        margin: 0;
+    }
+}
+
+@media (max-width: 770px) {
+    .sticky-ellipse {
+        width: 13vw;  /* 13% of the viewport width */
+        height: 6.5vw;  /* 6.5% of the viewport width */
+    }
+
+    .ellipse-svg {
+        width: 60%;
+        height: auto;
+    }
+
+    .ellipse-svg-1 {
+        /* Additional styles specific to the first SVG, if needed */
+        width: 100%;
+        margin: 0;
+        padding: 0 5% 0 12%;
+    }
+    
+    .ellipse-svg-2 {
+        /* Additional styles specific to the second SVG, if needed */
+        padding: 0 5% 0 5%;
+        margin: 0;
+    }
+}
+
+@media (max-width: 570px) {
+    .sticky-ellipse {
+        width: 20vw;  /* 18% of the viewport width */
+        height: 9vw;  /* 9% of the viewport width */
+    }
+
+    .ellipse-svg {
+        width: 50%;
+        height: auto;
+    }
+
+    .ellipse-svg-1 {
+        /* Additional styles specific to the first SVG, if needed */
+        width: 100%;
+        margin: 0 5%;
+        padding: 0 5% 0 12%%;
+    }
+    
+    .ellipse-svg-2 {
+        /* Additional styles specific to the second SVG, if needed */
+        padding: 0 5% 0 0;
+        margin: 0 5% 0 0;
     }
 }
