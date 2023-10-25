@@ -977,6 +977,7 @@ nav a:hover {
     }
     .banner-column {
         text-align: center; /* Centrally aligns the text of direct children of .banner-column */
+        padding: 0 1rem;
     }
     /* Additional styles to centrally align the content */
     .banner-container {
