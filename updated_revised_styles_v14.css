@@ -1390,3 +1390,77 @@ nav a:hover {
         margin: 0 5% 0 2%;
     }
 }
+
+.sticky-circle {
+    position: fixed;
+    bottom: 2%;
+    right: 2%;
+    width: 4vw;
+    height: 4vw;
+    background-color: #f7f7f7cc;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.more-icon {
+    width: 55%;  /* Adjust based on desired size within the circle */
+    height: auto;
+}
+
+.sticky-circle:hover {
+    background-color: #dad9d9;
+}
+
+@media (max-width: 1200px) {
+    .sticky-circle {
+        width: 5vw;
+        height: 5vw;
+    }
+    .more-icon {
+        width: 65%;
+    }
+}
+
+@media (max-width: 950px) {
+    .sticky-circle {
+        width: 6vw;
+        height: 6vw;
+    }
+    .more-icon {
+        width: 60%;
+    }
+}
+
+@media (max-width: 770px) {
+    .sticky-circle {
+        width: 6.5vw;
+        height: 6.5vw;
+    }
+    .more-icon {
+        width: 55%;
+    }
+}
+
+@media (max-width: 570px) {
+    .sticky-circle {
+        width: 9vw;
+        height: 9vw;
+    }
+    .more-icon {
+        width: 50%;
+    }
+}
+
+@media (max-width: 430px) {
+    .sticky-circle {
+        width: 12vw;
+        height: 12vw;
+    }
+    .more-icon {
+        width: 45%;
+    }
+}
