@@ -1669,7 +1669,7 @@ footer {
 }
 
 .fullscreen-menu {
-    display: flex;
+    display: none;
     position: fixed;
     top: -100vh;
     left: 0;
@@ -1680,15 +1680,15 @@ footer {
     align-items: center; /* Center content vertically */
     justify-content: center; /* Center content horizontally */
     transition: top 0.5s ease; /* Smooth transition for the top property */
+    overflow-y: auto; /* Enable vertical scrolling */
 }
 
-.fullscreen-menu.active {
-    top: 0
-}
+
 
 .menu-content {
     padding: 50px 20px;
     text-align: center;
+    max-height: 800px;
 }
 
 .language-selector {
@@ -1732,21 +1732,21 @@ footer {
 
 @media (min-width: 480px) {
     .language-selector span {
-        font-size: 24px;
+        font-size: 20px;
     }
     
     .fullscreen-nav h3 {
-        font-size: 36px;
+        font-size: 30px;
     }
 }
 
 @media (min-width: 770px) {
     .language-selector span {
-        font-size: 36px;
+        font-size: 24px;
     }
     
     .fullscreen-nav h3 {
-        font-size: 54px;
+        font-size: 36px;
     }
 }
 
@@ -1798,4 +1798,59 @@ footer {
     animation-name: slideUp;
     animation-duration: 0.5s; /* Adjust duration as needed */
     animation-fill-mode: forwards;
+}
+
+.body-no-scroll {
+    overflow: hidden;
+}
+
+/* For screens with width less than 1200px and width greater than height */
+@media screen and (max-width: 1200px) and (orientation: landscape) {
+    .fullscreen-nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .fullscreen-nav h3 {
+        font-size: 24px;
+        width: 50%; /* Each link takes up half the width */
+        box-sizing: border-box; /* Include padding and border in the element's width */
+        padding: 10px; /* Adjust as needed */
+        text-align: center;
+    }
+
+    .menu-content {
+        padding-top: 100px;
+    }
+
+    .language-selector span {
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 950px) and (orientation: landscape) {
+    .fullscreen-nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .fullscreen-nav h3 {
+        font-size: 20px;
+        width: 50%; /* Each link takes up half the width */
+        box-sizing: border-box; /* Include padding and border in the element's width */
+        padding: 10px; /* Adjust as needed */
+        text-align: center;
+    }
+
+    .menu-content {
+        padding-top: 300px;
+    }
+
+    .language-selector span {
+        font-size: 18px;
+    }
 }

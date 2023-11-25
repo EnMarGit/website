@@ -180,6 +180,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var fullscreenMenu = document.getElementById('fullscreen-menu');
     var stickyCircle = document.querySelector('.sticky-circle');
     var navTexts = document.querySelectorAll('.fullscreen-nav h3');
+    var body = document.body; // Get the body element
 
     hamburgerMenu.addEventListener('click', function() {
         if (fullscreenMenu.classList.contains('active')) {
@@ -193,12 +194,14 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(() => {
                 fullscreenMenu.style.display = 'none';
                 fullscreenMenu.classList.remove('active', 'closing');
+                body.classList.remove('body-no-scroll'); // Enable scrolling on body
             }, 500); // Duration of the slide-up animation
         } else {
             // Open the menu
             fullscreenMenu.style.display = 'flex';
             fullscreenMenu.classList.add('active');
             stickyCircle.classList.toggle('sticky-circle-menu-open');
+            body.classList.add('body-no-scroll'); // Disable scrolling on body
 
             // Animate navigation texts
             navTexts.forEach((text, index) => {
@@ -209,4 +212,17 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+function adjustFullscreenMenuPosition() {
+    var header = document.querySelector('header'); // Replace with your header's selector
+    var fullscreenMenu = document.getElementById('fullscreen-menu');
 
+    if (header && fullscreenMenu) {
+        var headerHeight = header.offsetHeight; // Get the current height of the header
+        fullscreenMenu.style.top = headerHeight + 'px'; // Set the top position of the menu
+        fullscreenMenu.style.height = `calc(100% - ${headerHeight}px)`; // Adjust the height of the menu
+    }
+}
+
+// Call the function initially and on window resize
+adjustFullscreenMenuPosition();
+window.addEventListener('resize', adjustFullscreenMenuPosition);
