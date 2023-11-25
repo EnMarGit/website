@@ -149,3 +149,64 @@ howItWorksContent.forEach((_, index) => {
     navigationContainer.appendChild(dot);
 });
 contentSlide.appendChild(navigationContainer);
+
+// Listen for the DOMContentLoaded event to ensure the DOM is fully loaded
+document.addEventListener("DOMContentLoaded", function() {
+    // Select the sticky ellipse and footer elements
+    const stickyEllipse = document.querySelector('.sticky-ellipse');
+    const footer = document.querySelector('footer');
+
+    // Add a scroll event listener to the window object
+    window.addEventListener('scroll', function() {
+        // Get the position and size of the footer and the sticky ellipse
+        const footerRect = footer.getBoundingClientRect();
+        const ellipseRect = stickyEllipse.getBoundingClientRect();
+
+        // Check if the bottom of the ellipse is lower than the top of the footer
+        if (ellipseRect.bottom > footerRect.top) {
+            // If the ellipse overlaps with the footer, add a class to hide it
+            // This class should be defined in CSS with appropriate styles for hiding
+            stickyEllipse.classList.add('sticky-ellipse-hidden');
+        } else {
+            // If the ellipse is not overlapping with the footer, remove the hiding class
+            // This makes the ellipse visible again when the user scrolls away from the footer
+            stickyEllipse.classList.remove('sticky-ellipse-hidden');
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    var hamburgerMenu = document.getElementById('hamburger-menu');
+    var fullscreenMenu = document.getElementById('fullscreen-menu');
+    var stickyCircle = document.querySelector('.sticky-circle');
+    var navTexts = document.querySelectorAll('.fullscreen-nav h3');
+
+    hamburgerMenu.addEventListener('click', function() {
+        if (fullscreenMenu.classList.contains('active')) {
+            // Start closing animations
+            fullscreenMenu.classList.add('closing');
+            navTexts.forEach(text => {
+                text.style.animationName = 'slideOutToRight';
+            });
+
+            // Wait for animations to complete before hiding menu
+            setTimeout(() => {
+                fullscreenMenu.style.display = 'none';
+                fullscreenMenu.classList.remove('active', 'closing');
+            }, 500); // Duration of the slide-up animation
+        } else {
+            // Open the menu
+            fullscreenMenu.style.display = 'flex';
+            fullscreenMenu.classList.add('active');
+            stickyCircle.classList.toggle('sticky-circle-menu-open');
+
+            // Animate navigation texts
+            navTexts.forEach((text, index) => {
+                text.style.animationName = 'slideInFromRight';
+                text.style.animationDelay = `${index * 0.1}s`;
+            });
+        }
+    });
+});
+
+
