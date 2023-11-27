@@ -1,61 +1,47 @@
 
 @font-face {
-    font-family: 'Raleway';
-    src: url('fonts/Raleway-VariableFont_wght.ttf');
+    font-family: 'Noah Head Black';
+    src: url('fonts/NoahHead-Black.woff2');
 }
 
 @font-face {
-    font-family: 'Nunito Sans';
-    src: url('fonts/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf');
+    font-family: 'Noah Regular';
+    src: url('fonts/Noah-Regular.woff2');
 }
 
 @font-face {
-    font-family: 'Roboto';
-    src: url('fonts/Roboto-Regular.ttf');
-    font-weight: 600;
+    font-family: 'Noah Text Medium';
+    src: url('fonts/NoahText-Medium.woff2');
 }
 
 @font-face {
-    font-family: 'Roboto Bold';
-    src: url('fonts/Roboto-Bold.ttf');
-    font-weight: 600;
-}
-
-@font-face {
-    font-family: 'Roboto Italic';
-    src: url('fonts/Roboto-Italic.ttf');
-    font-weight: 600;
-}
-
-@font-face {
-    font-family: 'Raleway SemiBold';
-    src: url('fonts/static/Raleway-SemiBold.ttf');
-    font-weight: 600;
+    font-family: 'Noah Bold';
+    src: url('fonts/Noah-Bold.woff2');
 }
 
 body {
-    font-family: "Roboto", sans-serif;
+    font-family: "Noah Text Medium", sans-serif;
     margin: 0;
     padding: 0;
 }
 
 h1 {
-    font-family: "Raleway", sans-serif;
+    font-family: "Noah Head Black", sans-serif;
     font-size: 68px;
 }
 
 h2 {
-    font-family: "Raleway", sans-serif;
+    font-family: "Noah Head Black", sans-serif;
     font-size: 48px;
 }
 
 h3, .subheadline {
-    font-family: "Nunito Sans", sans-serif;
+    font-family: "Noah Regular", sans-serif;
     font-size: 1.4rem;  /* Base size as identified for .subheadline */
 }
 
 body, p {
-    font-family: "Roboto", sans-serif;
+    font-family: "Noah Text Medium", sans-serif;
     font-size: 16px;
 }
 
@@ -83,8 +69,8 @@ body, p {
     h1 { font-size: 42px; }
     h2 { font-size: 20px; }  /* 50% of the base size */
     h3, .subheadline { font-size: 1.2rem; }
-    p { font-size: 14px; }  /* ~88% of the base size */
-    .cta-button-mid { font-size: 14px; }  /* ~78% of the base size */
+    p { font-size: 15px; }  /* ~88% of the base size */
+    .cta-button-mid { font-size: 15px; }  /* ~78% of the base size */
 }
 
 header {
@@ -113,7 +99,7 @@ nav a {
     color: #000000;
     padding: 8px 12px;
     transition: background 0.3s;
-    font-family: "Nunito Sans";
+    font-family: "Noah Text Medium";
     font-weight: bold;
 }
 
@@ -141,7 +127,7 @@ nav a:hover {
     text-decoration: none;
     transition: background-color 0.3s;
     border: 2px solid transparent;
-    font-family: "Raleway";
+    font-family: "Noah Text Medium";
     font-weight: bold;
 }
 
@@ -160,7 +146,7 @@ nav a:hover {
     transition: background-color 0.3s;
     font-size: 20px;
     font-weight: bold;
-    font-family: "Raleway";
+    font-family: "Noah Text Medium";
     font-weight: bold;
 }
 
@@ -189,7 +175,8 @@ nav a:hover {
     font-size: 3em;
     margin-bottom: 0.5rem;
     font-size: 68px;
-    font-family: "Raleway", sans-serif;
+    font-family: "Noah Head Black", sans-serif;
+    font-feature-settings: "ss03";
 }
 
 .hero h1, .hero .cta-button-mid {
@@ -229,7 +216,7 @@ nav a:hover {
     border-radius: 15px;  /* Add a rounded border */
     font-weight: normal;   /* Make the text bold */
     font-size: 16px;
-    font-family: "Nunito Sans";
+    font-family: "Noah Regular";
 }
 
 #country-select option {
@@ -336,8 +323,8 @@ nav a:hover {
     }
 
     .cta-button-mid {
-        width: 276px;
-        height: 30px;
+        width: 306px;
+        height: 36px;
         text-align: center;
         padding: 8px 12px;
         font-size: 16px;
@@ -542,7 +529,7 @@ nav a:hover {
 
 
 
-/* Center alignment and resizing for the "Let's reimagine our cities!" text */
+/* Center alignment and resizing for the "Cyrcl Your Way" text */
 
 .hero h1 {
     text-align: center;  /* Center align the text */
@@ -776,7 +763,7 @@ nav a:hover {
     color: #ffffff;   /* Assuming white color for the subheadline, adjust as needed */
     margin-top: 0.2rem; /* Space between main headline and subheadline */
     z-index: 1;
-    font-family: 'Nunito Sans';
+    font-family: 'Noah Regular';
     font-weight: normal;
 }
 
@@ -918,7 +905,7 @@ nav a:hover {
 
 
 .banner-section {
-    background: linear-gradient(135deg, #f4602c, #81bb27);
+    background: linear-gradient(135deg, #F4602C, #81BB27);
     padding: 2rem 0; /* Adjust this value if you need more height */
     margin: 0 auto;
     width: 100%;
@@ -1206,7 +1193,7 @@ nav a:hover {
 
 
 .download-banner-section {
-    background: linear-gradient(135deg, #f4602c, #81bb27);
+    background: linear-gradient(135deg, #F4602C, #81BB27);
     padding: 2rem 0; /* Adjust this value if you need more height */
     margin: 0 auto;
     width: 100%;
@@ -1730,6 +1717,10 @@ footer {
     text-decoration: underline;
 }
 
+.fullscreen-nav h3:hover {
+    color: #000000c4;
+}
+
 @media (min-width: 480px) {
     .language-selector span {
         font-size: 20px;
@@ -1847,10 +1838,45 @@ footer {
     }
 
     .menu-content {
-        padding-top: 300px;
+        padding-top: 350px;
     }
 
     .language-selector span {
         font-size: 18px;
     }
+}
+
+.loader {
+    border: 5px solid #f3f3f3; /* Light grey */
+    border-top: 5px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+    position: fixed; /* or absolute */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Hide the loader initially */
+#loader {
+    display: none;
+}
+
+/* Optional: Fullscreen overlay */
+.loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 999; /* Below the loader, but above other content */
 }
