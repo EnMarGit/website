@@ -73,6 +73,8 @@ body, p {
     .cta-button-mid { font-size: 15px; }  /* ~78% of the base size */
 }
 
+/* ------------------------------------------------------------------------------ Header and Hero Section ------------------------------------------------------------------------------ */
+
 header {
     display: flex;
     justify-content: space-between;
@@ -214,13 +216,10 @@ nav a:hover {
     z-index: 1001;
     position: relative;
     border-radius: 15px;  /* Add a rounded border */
-    font-weight: normal;   /* Make the text bold */
+    font-weight: normal;
     font-size: 16px;
     font-family: "Noah Regular";
-}
-
-#country-select option {
-    border-radius: 15px;  /* Adjust this value to your preference */
+    display: none;
 }
 
 /* Style for the custom arrow */
@@ -230,21 +229,71 @@ nav a:hover {
     right: 10px;
     transform: translateY(-50%);
     color: #ffffff;
-    pointer-events: none; /* Makes it non-clickable and non-interactable */
     z-index: 1002;
 }
 
-/* When you focus on the dropdown, it often gets a border. This will remove it. */
-#country-select:focus {
-    outline: none;
+.current-selection {
+    display: inline-block;
+    color: #ffffff;
+    cursor: pointer;
+    border: 2px solid white;
+    border-radius: 15px;  /* Add a rounded border */
+    padding: 12.5px 30px 12.5px 10px;
+    font-weight: normal;
+    font-size: 16px;
+    font-family: "Noah Regular";
+    user-select: none; /* Prevent text selection */
+}
+
+.current-selection.active {
     background-color: rgb(255, 255, 255);
     color: #000000;
     border-radius: 15px;
     transition: all 1s;
 }
 
-#country-select:focus + .dropdown-arrow {
-    color: #000000;  /* Set arrow color to black */
+.dropdown-arrow.active {
+    color: #000000; /* Set arrow color to black when active */
+    transition: all 1s;
+}
+
+
+/* Style for custom dropdown content */
+.custom-dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 15px;
+    border: 2px solid #f7f7f7;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.3s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+    z-index: 10;
+    overflow: hidden;
+}
+
+/* Style for custom dropdown items */
+.custom-dropdown-item {
+    padding: 10px;
+    border-bottom: 1px solid #f7f7f7;
+    cursor: pointer;
+}
+
+.custom-dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.custom-dropdown-item:hover {
+    background-color: #f7f7f7;
+}
+
+/* Style for the dropdown arrow */
+.dropdown-arrow {
+    cursor: pointer;
+    /* Other existing styles */
 }
 
 .hero::after {
@@ -796,6 +845,9 @@ nav a:hover {
     }
 }
 
+/* ------------------------------------------------------------------------------ Feature section ------------------------------------------------------------------------------ */
+
+
 .feature-section {
     background-color: white;
     text-align: center;
@@ -902,6 +954,8 @@ nav a:hover {
         background-color: white;
     }
 }
+
+/* ------------------------------------------------------------------------------ Banner: Where else would you like Cyrcl ------------------------------------------------------------------------------ */
 
 
 .banner-section {
@@ -1044,6 +1098,8 @@ nav a:hover {
         max-width: 75px;
     }
 }
+
+/* ------------------------------------------------------------------------------ How it works ------------------------------------------------------------------------------ */
 
 /* How it Works Section Styles */
 #how-it-works {
@@ -1190,6 +1246,7 @@ nav a:hover {
 }
 
 
+/* ------------------------------------------------------------------------------ Download the app banner ------------------------------------------------------------------------------ */
 
 
 .download-banner-section {
@@ -1280,6 +1337,8 @@ nav a:hover {
         height: auto;
     }
 }
+
+/* ------------------------------------------------------------------------------ Sticky Ellipse ------------------------------------------------------------------------------ */
 
 .sticky-ellipse {
     position: fixed;
@@ -1450,6 +1509,8 @@ nav a:hover {
     }
 }
 
+/* ------------------------------------------------------------------------------ Sticky circle ------------------------------------------------------------------------------ */
+
 .sticky-circle {
     position: fixed;
     bottom: 2%;
@@ -1530,6 +1591,8 @@ nav a:hover {
         width: 65%;
     }
 }
+
+/* ------------------------------------------------------------------------------ Footer ------------------------------------------------------------------------------ */
 
 footer {
     background-color: #2b2c2d;
@@ -1654,6 +1717,8 @@ footer {
         margin: 2.5px 8px; /* Adjust as needed */
     }
 }
+
+/* ------------------------------------------------------------------------------ Tablet and Mobile Menu ------------------------------------------------------------------------------ */
 
 .fullscreen-menu {
     display: none;
@@ -1846,9 +1911,11 @@ footer {
     }
 }
 
+/* ------------------------------------------------------------------------------ Loader ------------------------------------------------------------------------------ */
+
 .loader {
     border: 5px solid #f3f3f3; /* Light grey */
-    border-top: 5px solid #3498db; /* Blue */
+    border-top: 5px solid #F4602C; /* Orange */
     border-radius: 50%;
     width: 50px;
     height: 50px;
@@ -1857,12 +1924,12 @@ footer {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    z-index: 1000; /* Ensure it's above other content */
+    z-index: 1006; /* Ensure it's above other content */
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
 /* Hide the loader initially */
@@ -1872,11 +1939,13 @@ footer {
 
 /* Optional: Fullscreen overlay */
 .loader-overlay {
-    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     background-color: rgba(255, 255, 255, 0.9);
-    z-index: 999; /* Below the loader, but above other content */
+    z-index: 1006; /* Below the loader, but above other content */
 }

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cyrcl</title>
+<link href="pricing-styles.css" rel="stylesheet" type="text/css"/> 
+</head>
+<body>
+    <div id="loader" class="loader"></div>
+<header>
+<img alt="Cyrcl logo" id="cyrcl-logo" src="Logo_Cyrcl_White_Horizontal.svg"/>
+<div id="hamburger-menu">
+    <svg class="ham hamRotate ham7" viewBox="0 0 100 100" width="50" onclick="this.classList.toggle('active')">
+      <path class="line top" d="m 70,33 h -40 c 0,0 -6,1.368796 -6,8.5 0,7.131204 6,8.5013 6,8.5013 l 20,-0.0013" />
+      <path class="line middle" d="m 70,50 h -40" />
+      <path class="line bottom" d="m 69.575405,67.073826 h -40 c -5.592752,0 -6.873604,-9.348582 1.371031,-9.348582 8.244634,0 19.053564,21.797129 19.053564,12.274756 l 0,-40" />
+    </svg>
+</div>
+<nav>
+<div class="nav-links"><a href="#">How it works</a><a href="#">Prices</a><a href="#">Locations</a><a href="#">Sustainability</a><a href="#">Rules</a><a href="#">Partners</a></nav><div class="cta-and-dropdown"><a class="cta-button" href="#"><img alt="Download Icon" class="download-icon" src="Download-Icon-Cyrcl.svg"/>Get the app</a>
+    <div class="dropdown-wrapper">
+        <select id="country-select" name="country">
+            <option value="en">EN</option>
+            <option value="bg">BG</option>
+            <!-- Add other countries as needed -->
+        </select>
+        <span id="currentSelection" class="current-selection">EN</span> <!-- Current selection display -->
+        <span class="dropdown-arrow">▼</span>
+        <div id="customDropdown" class="custom-dropdown-content">
+            <div class="custom-dropdown-item" data-value="en">EN</div>
+            <div class="custom-dropdown-item" data-value="bg">BG</div>
+            <!-- Add other items as needed -->
+        </div>
+    </div>      
+</div>
+</header>
+<main>
+
+<section class="hero">
+    <h1>How it works
+        <p class="subheadline">Cyrcl is your cheerful partner for any city trip. A smart, sustainable, and healthy way to commute in the city. Learn how to get one of hundreds of Cyrcl bikes in a few simple steps.</p>
+    </h1>
+    <a class="cta-button-mid" href="#">Get the Cyrcl app</a>
+</section>    
+
+<!-- How it Works Section Starts -->
+<section id="how-it-works">
+    <h2>Hop on the nearest bike</h2>
+    <div class="content-wrapper">
+        <div class="arrow left-arrow"><img src="arrow-left.svg" alt="Left Arrow"></div>
+        <div class="content-slide">
+            <div class="text-content">
+                <h3>1. Find and book</h3>
+                <p>Open the map in the app, find a nearby bike, then book it.</p>
+                <p>No rush! You have some time available to get to your new favorite ride.</p>
+            </div>
+            <div class="image-content">
+                <img src="image4.svg" alt="Find and book image">
+            </div>
+        </div>
+        <!-- Additional content slides will go here... -->
+        <div class="arrow right-arrow"><img src="arrow-right.svg" alt="Right Arrow"></div>
+    </div>
+</section>
+<!-- How it Works Section Ends -->
+
+<!-- Learn More Section Starts -->
+<section class="learn-more-section">
+    <div class="learn-more-wrapper">
+        <div class="box">
+            <img src="pricing.png" alt="Image 1" class="box-image">
+            <div class="box-content">
+                <h3>Pricing and Passes</h3>
+                <span class="learn-more-arrow">&#10140;</span> <!-- Right arrow symbol -->
+            </div>
+        </div>
+        <div class="box">
+            <img src="safety-parking.png" alt="Image 2" class="box-image">
+            <div class="box-content">
+                <h3>Safety and Parking</h3>
+                <span class="learn-more-arrow">&#10140;</span>
+            </div>
+        </div>
+        <div class="box">
+            <img src="help-center.png" alt="Image 3" class="box-image">
+            <div class="box-content">
+                <h3>Help center</h3>
+                <span class="learn-more-arrow">&#10140;</span>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Learn More Section Ends -->
+
+</main>
+<script>
+    // Get the hamburger menu and the navigation links
+    var hamburgerMenu = document.getElementById('hamburger-menu');
+    var navLinks = document.querySelector('.nav-links');
+
+    // Add a click event listener to the hamburger menu
+    hamburgerMenu.addEventListener('click', function() {
+        // Toggle the 'active' class on the navigation links
+        navLinks.classList.toggle('active');
+    });
+</script>
+
+<footer>
+    <div class="footer-container">
+        <img src="Logo_Cyrcl_Gradient_Horizontal.svg" alt="Logo" class="footer-logo">
+
+        <div class="footer-division">
+            <div class="footer-column">
+                <h3>Company</h3>
+                <p>How it works</p>
+                <p>Prices</p>
+                <p>Locations</p>
+                <p>Sustainability</p>
+                <p>Safety & Parking</p>
+                <p>Partners</p>
+            </div>
+            <div class="footer-column">
+                <h3>Resources</h3>
+                <p>About us</p>
+                <p>Press</p>
+                <p>Careers</p>
+            </div>
+            <div class="footer-column">
+                <h3>Support</h3>
+                <p>Contact us</p>
+                <p>FAQ</p>
+                <p>Report issue</p>
+                <p>Terms & Conditions</p>
+                <p>Privacy policy</p>
+                <p>Cookies</p>
+            </div>
+            <div class="footer-column">
+                <h3>Get the app</h3>
+                <img src="Google-Play-EN-White.svg" alt="Google Play">
+                <img src="App-Store-EN-White.svg" alt="App Store">
+            </div>
+        </div>
+
+        <hr class="footer-divider">
+
+        <div class="footer-division">
+            <p>© Cyrcl 2023</p>
+            <div class="social-icons">
+                <img src="Instagram.svg" alt="Instagram">
+                <img src="Facebook.svg" alt="Facebook">
+                <img src="TikTok.svg" alt="TikTok">
+                <img src="YouTube.svg" alt="YouTube">
+                <img src="LinkedIn.svg" alt="LinkedIn">
+            </div>
+            <p>Designed by Cyrcl in Bulgaria <img src="Bulgaria-Flag.svg" alt="Bulgarian Flag" class="footer-flag"></p>
+        </div>
+    </div>
+</footer>
+
+<div id="fullscreen-menu" class="fullscreen-menu">
+    <div class="menu-content">
+        <div class="language-selector">
+            <span class="language active">EN</span>
+            <span class="divider">|</span>
+            <span class="language">BG</span>
+        </div>
+        <!-- Navigation Links -->
+        <div class="fullscreen-nav">
+            <h3 href="#">How it works</h3><h3 href="#">Prices</h3><h3 href="#">Locations</h3><h3 href="#">Sustainability</h3><h3 href="#">Rules</h3><h3 href="#">Partners</h3><h3 href="#">Get the app</h3>
+        </div>
+        <!-- Social Icons -->
+        <div class="social-icons">
+            <img src="Instagram.svg" alt="Instagram">
+            <img src="Facebook.svg" alt="Facebook">
+            <img src="TikTok.svg" alt="TikTok">
+            <img src="YouTube.svg" alt="YouTube">
+            <img src="LinkedIn.svg" alt="LinkedIn">
+        </div>
+    </div>
+</div>
+
+<div class="sticky-ellipse">
+    <img src="DSK_Bank_logo_horizontal_CM.svg" alt="DSK Bank Logo" class="ellipse-svg ellipse-svg-1">
+    <img src="mc_symbol.svg" alt="Mastercard Logo" class="ellipse-svg ellipse-svg-2">
+</div>
+
+<div class="sticky-circle">
+    <img src="more-icon.svg" alt="More Icon" class="more-icon">
+</div>
+
+<script src="pricing-script.js"></script>
+
+</body>
+</html>

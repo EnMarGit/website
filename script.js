@@ -1,4 +1,7 @@
 console.log("Script is running");
+
+// ----------------------------------------------------------------How it works section with navigation, carrousel swipe, arrows----------------------------------------------------------------
+
 document.addEventListener('DOMContentLoaded', function() {
     const leftArrow = document.querySelector('.left-arrow');
     const rightArrow = document.querySelector('.right-arrow');
@@ -29,8 +32,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-
-// How it Works Section Logic
 
 // Define the content for the "How it works" section
 
@@ -150,6 +151,8 @@ howItWorksContent.forEach((_, index) => {
 });
 contentSlide.appendChild(navigationContainer);
 
+// ----------------------------------------------------------------Hide sticky ellipse when it reaches the footer----------------------------------------------------------------
+
 // Listen for the DOMContentLoaded event to ensure the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", function() {
     // Select the sticky ellipse and footer elements
@@ -174,6 +177,8 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
+// ----------------------------------------------------------------Hamburger menu----------------------------------------------------------------
 
 document.addEventListener('DOMContentLoaded', function() {
     var hamburgerMenu = document.getElementById('hamburger-menu');
@@ -212,6 +217,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// ----------------------------------------------------------------Set top position of menu based on header height----------------------------------------------------------------
+
 function adjustFullscreenMenuPosition() {
     var header = document.querySelector('header'); // Replace with your header's selector
     var fullscreenMenu = document.getElementById('fullscreen-menu');
@@ -227,6 +234,7 @@ function adjustFullscreenMenuPosition() {
 adjustFullscreenMenuPosition();
 window.addEventListener('resize', adjustFullscreenMenuPosition);
 
+// ----------------------------------------------------------------Loader----------------------------------------------------------------
 
 document.addEventListener("DOMContentLoaded", function() {
     var loader = document.getElementById("loader");
@@ -237,5 +245,48 @@ document.addEventListener("DOMContentLoaded", function() {
     // Hide the loader once the page has fully loaded
     window.addEventListener("load", function() {
         loader.style.display = "none";
+    });
+});
+
+// ----------------------------------------------------------------Language select for wider screens----------------------------------------------------------------
+
+// URLs for each language
+const languageUrls = {
+    'en': 'index.html', // Replace with your actual URL for English
+    'bg': 'index.html'  // Replace with your actual URL for Bulgarian
+};
+
+// Function to toggle the custom dropdown
+function toggleDropdown() {
+    var dropdownOptions = document.querySelector('.custom-dropdown-content');
+    var currentSelection = document.getElementById('currentSelection');
+    var dropdownArrow = document.querySelector('.dropdown-arrow');
+
+    // Toggle the dropdown
+    dropdownOptions.style.transform = dropdownOptions.style.transform === 'scaleY(1)' ? 'scaleY(0)' : 'scaleY(1)';
+
+    // Toggle active class for current selection and arrow
+    currentSelection.classList.toggle('active');
+    dropdownArrow.classList.toggle('active');
+}
+
+// Event listener for the dropdown wrapper
+document.querySelector('.dropdown-wrapper').addEventListener('click', function() {
+    toggleDropdown();
+});
+
+// Event listeners for each dropdown item
+document.querySelectorAll('.custom-dropdown-item').forEach(item => {
+    item.addEventListener('click', function() {
+        // Update the select value and the displayed text
+        var selectedValue = this.getAttribute('data-value');
+        document.getElementById('country-select').value = selectedValue;
+        document.getElementById('currentSelection').textContent = this.textContent;
+        toggleDropdown(); // This will also remove the active class
+
+        // Redirect to the corresponding language URL
+        if (languageUrls[selectedValue]) {
+            window.location.href = languageUrls[selectedValue];
+        }
     });
 });

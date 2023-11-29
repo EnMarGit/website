@@ -19,14 +19,22 @@
     </svg>
 </div>
 <nav>
-<div class="nav-links"><a href="#">How it works</a><a href="#">Prices</a><a href="#">Locations</a><a href="#">Sustainability</a><a href="#">Rules</a><a href="#">Partners</a></nav><div class="cta-and-dropdown"><a class="cta-button" href="#"><img alt="Download Icon" class="download-icon" src="Download-Icon-Cyrcl.svg"/>Get the app</a><div class="dropdown-wrapper">
-<select id="country-select" name="country">
-<option value="en">EN</option>
-<option value="bg">BG</option>
-<!-- Add other countries as needed -->
-</select>
-<span class="dropdown-arrow">▼</span>
-</div></div>
+<div class="nav-links"><a href="#">How it works</a><a href="#">Prices</a><a href="#">Locations</a><a href="#">Sustainability</a><a href="#">Rules</a><a href="#">Partners</a></nav><div class="cta-and-dropdown"><a class="cta-button" href="#"><img alt="Download Icon" class="download-icon" src="Download-Icon-Cyrcl.svg"/>Get the app</a>
+    <div class="dropdown-wrapper">
+        <select id="country-select" name="country">
+            <option value="en">EN</option>
+            <option value="bg">BG</option>
+            <!-- Add other countries as needed -->
+        </select>
+        <span id="currentSelection" class="current-selection">EN</span> <!-- Current selection display -->
+        <span class="dropdown-arrow">▼</span>
+        <div id="customDropdown" class="custom-dropdown-content">
+            <div class="custom-dropdown-item" data-value="en">EN</div>
+            <div class="custom-dropdown-item" data-value="bg">BG</div>
+            <!-- Add other items as needed -->
+        </div>
+    </div>   
+</div>
 </header>
 <main>
 <section class="hero">
@@ -97,7 +105,7 @@
     <div class="banner-container">
         <div class="banner-column">
             <h3>Where else would you like to see Cyrcl?</h3>
-            <p>We are already in Sofia, Bulgaria. Tell us your favorite location(s) and we'll try our best to open the new area(s).</p>
+            <p>We are already in Sofia, Bulgaria. Tell us your favorite location(s) and we'll try our best to open these new area(s).</p>
         </div>
         <div class="banner-column">
             <input type="email" placeholder="Email">
@@ -141,6 +149,7 @@
             </div>
             <div class="footer-column">
                 <h3>Resources</h3>
+                <p>About us</p>
                 <p>Press</p>
                 <p>Careers</p>
             </div>
