@@ -49,6 +49,13 @@ body, p {
     font-size: 18px;  /* Base size as identified for .cta-button-mid */
 }
 
+a {
+    color: inherit;        /* Inherits text color from the parent */
+    font-size: inherit;    /* Inherits font size from the parent */
+    font-weight: inherit;  /* Inherits font weight from the parent */
+    text-decoration: none; /* Optional: removes underline from links */
+}
+
 @media screen and (max-width: 1200px) {
     h1 { font-size: 48px; }
     h2 { font-size: 36px; }  /* 75% of the base size */
@@ -113,6 +120,11 @@ nav a:hover {
     transition: all 0.3s;
 }
 
+.logo-link {
+    display: inline-block; /* Makes the anchor the size of its content */
+    line-height: 0;       /* Removes extra line-height space */
+}
+
 #cyrcl-logo {
     height: 50px;
     margin-right: 20px;
@@ -166,7 +178,6 @@ nav a:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh; /* Takes up the full viewport height */
     background-image: url('path-to-fallback-image.jpg'); /* Replace with your fallback image */
     position: relative;  /* Ensures z-index and other positioning works inside this element */
     overflow: hidden;  /* To prevent video from spilling out if it's larger than the container */
@@ -573,6 +584,7 @@ nav a:hover {
 
 .hero h1 {
     text-align: center;  /* Center align the text */
+    padding: 0 15px;
 }
 
 /* Adjust font size for different screen widths */
@@ -743,13 +755,12 @@ nav a:hover {
 
 .hero {
     width: 100%;
-    height: 100vh;  /* Ensure the hero section takes the full viewport height */
     overflow: hidden;  /* Hide any overflow */
 }
 
 .hero {
-    height: 100vh; /* Takes up the full viewport height */
-    background-image: url('how-it-works-photo.png'); /* Your image */
+    height: 95vh; /* Takes up the full viewport height */
+    background-image: url('pricing-photo.png'); /* Your image */
     background-size: cover; /* Ensure the background image covers the entire area */
     background-position: center; /* Center the background image */
     display: flex;
@@ -839,7 +850,7 @@ nav a:hover {
 @media screen and (max-width: 480px) {
     .subheadline {
         font-size: 1.2rem; /* Adjust the size for smaller screens */
-        padding: 15px;
+        padding: 5px 15px;
     }
 }
 
