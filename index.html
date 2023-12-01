@@ -4,7 +4,10 @@
 <head>
 <meta charset="UTF-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Cyrcl</title>
+<title>Cyrcl | Your Bike-sharing</title>
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 <link href="styles.css" rel="stylesheet" type="text/css"/> 
 </head>
 <body>
@@ -110,8 +113,8 @@
             <p>We are already in Sofia, Bulgaria. Tell us your favorite location(s) and we'll try our best to open these new area(s).</p>
         </div>
         <div class="banner-column">
-            <input type="email" placeholder="Email">
-            <input type="text" placeholder="City">
+            <input type="email" id="email" name="email" placeholder="Email" required autocomplete="email">
+            <input type="text" id="city" name="city" placeholder="City" required autocomplete="address_level1">
             <label class="checkbox-container">
                 <input type="checkbox">
                 <span class="checkmark"></span>

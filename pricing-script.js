@@ -1,155 +1,5 @@
 console.log("Script is running");
 
-// ----------------------------------------------------------------How it works section with navigation, carrousel swipe, arrows----------------------------------------------------------------
-
-document.addEventListener('DOMContentLoaded', function() {
-    const leftArrow = document.querySelector('.left-arrow');
-    const rightArrow = document.querySelector('.right-arrow');
-    const leftColumn = document.querySelector('.left-column');
-    const rightColumn = document.querySelector('.right-column');
-
-    let startX = 0;  // Starting X position when touch starts
-    let distanceX = 0;  // Distance moved in X direction
-    const swipeThreshold = 50;  // Minimum distance in X direction to detect a swipe
-
-    // Adding event listeners for swipe detection on content slides
-    document.querySelector('#how-it-works .content-wrapper').addEventListener('touchstart', function(e) {
-        startX = e.touches[0].clientX;
-    });
-
-    document.querySelector('#how-it-works .content-wrapper').addEventListener('touchmove', function(e) {
-        distanceX = e.touches[0].clientX - startX;
-    });
-
-    document.querySelector('#how-it-works .content-wrapper').addEventListener('touchend', function() {
-        if (distanceX > swipeThreshold) {
-            // Detected a swipe to the right
-            leftArrow.click();
-        } else if (distanceX < -swipeThreshold) {
-            // Detected a swipe to the left
-            rightArrow.click();
-        }
-    });
-});
-
-
-// Define the content for the "How it works" section
-
-const contentSlide = document.querySelector("#how-it-works .content-slide");
-
-const howItWorksContent = [
-    {
-        text: {
-            heading: "1. Find and book",
-            body: [
-                "Open the map in the app, find a nearby bike, then book it.",
-                "No rush! You have some time available to get to your new favorite ride."
-            ]
-        },
-        image: "image4.svg"
-    },
-    {
-        text: {
-            heading: "2. Unlock",
-            body: [
-                "Scan the QR code.",
-                "Press the unlock button in the app."
-            ]
-        },
-        image: "image5.svg"
-    },
-    {
-        text: {
-            heading: "3. Enjoy the ride",
-            body: [
-                "Ride your bike anywhere in Sofia",
-                "Don’t forget that you can pause your rental session for example, to enter a store. Meanwhile, no one else would be allowed to rent your bike."
-            ]
-        },
-        image: "image6.svg"
-    },
-    {
-        text: {
-            heading: "4. Park and lock",
-            body: [
-                "Park in the zone outlined on the map. You can find it on the app.",
-                "Lock manually using the smart lock above the rear tire.",
-                "Now end your rental session by pressing the button in the app."
-            ]
-        },
-        image: "image7.svg"
-    }
-];
-
-// Add bullet points
-howItWorksContent.forEach(section => {
-    section.text.body = section.text.body.map(bodyText => `• ${bodyText}`);
-});
-
-console.log(howItWorksContent);
-
-let currentIndex = 0;
-
-
-// Function to update the navigation dots' active state based on the current index
-function updateNavigationDots() {
-    const navigationDots = document.querySelectorAll(".navigation-indicators .dot");
-    navigationDots.forEach((dot, index) => {
-        if (index === currentIndex) {
-            dot.classList.add("active");
-        } else {
-            dot.classList.remove("active");
-        }
-    });
-}
-
-// Modified updateContent function to also update the navigation dots
-function updateContent() {
-    const contentSlide = document.querySelector("#how-it-works .content-slide");
-    const textContent = contentSlide.querySelector(".text-content");
-    const imageContent = contentSlide.querySelector(".image-content img");
-
-    textContent.innerHTML = `
-        <h3>${howItWorksContent[currentIndex].text.heading}</h3>
-        ${howItWorksContent[currentIndex].text.body.map(text => `<p>${text}</p>`).join('')}
-    `;
-    imageContent.src = howItWorksContent[currentIndex].image;
-
-    contentSlide.style.display = 'flex';
-    contentSlide.style.opacity = 0;
-    setTimeout(() => contentSlide.style.opacity = 1, 50);
-    
-    // Update the navigation dots' active state
-    updateNavigationDots();
-}
-
-// Attach event listeners to the arrows
-document.querySelector("#how-it-works .left-arrow").addEventListener("click", function() {
-    if (currentIndex > 0) {
-        currentIndex--;
-        updateContent();
-    }
-});
-
-document.querySelector("#how-it-works .right-arrow").addEventListener("click", function() {
-    if (currentIndex < howItWorksContent.length - 1) {
-        currentIndex++;
-        updateContent();
-    }
-});
-
-// Show the first content by default
-updateContent();
-
-// Create navigation dots based on the number of steps
-const navigationContainer = document.createElement('div');
-navigationContainer.className = 'navigation-indicators';
-howItWorksContent.forEach((_, index) => {
-    const dot = document.createElement('div');
-    dot.className = index === currentIndex ? 'dot active' : 'dot';
-    navigationContainer.appendChild(dot);
-});
-contentSlide.appendChild(navigationContainer);
 
 // ----------------------------------------------------------------Hide sticky ellipse when it reaches the footer----------------------------------------------------------------
 
@@ -289,4 +139,59 @@ document.querySelectorAll('.custom-dropdown-item').forEach(item => {
             window.location.href = languageUrls[selectedValue];
         }
     });
+});
+
+// ----------------------------------------------------------------Pricing section: buttons and content switch----------------------------------------------------------------
+
+// Function to handle sticky buttons behavior
+function handleStickyButtons() {
+    const stickyButtons = document.getElementById('stickyButtons');
+    const contentSection = document.querySelector('.content-section');
+    const header = document.querySelector('header'); // Targeting the header element
+
+    function calculateStickyPosition() {
+        const headerHeight = header.offsetHeight;
+        const stickyStart = contentSection.offsetTop - headerHeight;
+        const stickyEnd = contentSection.offsetTop + contentSection.offsetHeight - stickyButtons.offsetHeight - headerHeight;
+        const scrollPosition = window.pageYOffset;
+
+        if (scrollPosition > stickyStart && scrollPosition < stickyEnd) {
+            stickyButtons.classList.add('sticky');
+            stickyButtons.style.top = headerHeight + 'px'; // Setting top to the height of the header
+        } else {
+            stickyButtons.classList.remove('sticky');
+            stickyButtons.style.top = '';
+        }
+    }
+
+    window.addEventListener('scroll', calculateStickyPosition);
+    calculateStickyPosition(); // Initialize on load
+}
+
+
+
+// Function to handle selection of standard or electric option
+function selectOption(option) {
+    var standardBtn = document.querySelector('.btn.standard');
+    var electricBtn = document.querySelector('.btn.electric');
+    var standardContent = document.querySelector('.standard-content');
+    var electricContent = document.querySelector('.electric-content');
+
+    if (option === 'standard') {
+        standardBtn.classList.add('active');
+        electricBtn.classList.remove('active');
+        standardContent.classList.add('active');
+        electricContent.classList.remove('active');
+    } else {
+        electricBtn.classList.add('active');
+        standardBtn.classList.remove('active');
+        electricContent.classList.add('active');
+        standardContent.classList.remove('active');
+    }
+}
+
+// Initialize the script when the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', function () {
+    handleStickyButtons();
+    selectOption('standard'); // Trigger default option
 });

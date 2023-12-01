@@ -862,157 +862,179 @@ nav a:hover {
     }
 }
 
-/* ------------------------------------------------------------------------------ How it works ------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------ Pricing Section ------------------------------------------------------------------------------ */
 
-/* How it Works Section Styles */
-#how-it-works {
-    background-color: white;
-    padding: 50px 0;
+.content-section {
+    background-color: #fff;
+    padding: 80px 0 0;
 }
 
-@media screen and (min-width: 771px) {
-    #how-it-works {
-        padding-bottom: 100px;
-    }
-}
-
-@media screen and (max-width: 770px) {
-    #how-it-works {
+@media (max-width: 770px) {
+    .content-section {
         background-color: #f7f7f7;
     }
 }
 
-#how-it-works h2 {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.content-wrapper {
+.sticky-buttons {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
-
-.arrow {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    padding: 10px;
-    background: linear-gradient(45deg, #FFC107, #FF9800);
-    border-radius: 50%;
-    margin: 0 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-}
-
-.arrow img {
-    width: 24px;  /* Control the size of the SVG icon */
-    height: 24px; /* Control the size of the SVG icon */
-}
-
-.arrow:hover {
-    transform: scale(1.1);
-}
-
-@media screen and (max-width: 1200px) {
-    .arrow img {
-        width: 20px;  /* Control the size of the SVG icon */
-        height: 20px; /* Control the size of the SVG icon */
-    }
-}
-
-@media screen and (max-width: 770px) {
-    .arrow img {
-        width: 15px;  /* Control the size of the SVG icon */
-        height: 15px; /* Control the size of the SVG icon */
-    }
-}
-
-
-.content-slide {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 80%;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-    background-color: #f7f7f7;
-    border-radius: 20px;
-}
-
-.text-content, .image-content {
-    flex: 1;
-    text-align: left;
-    margin-left: 5%;
-    margin-right: 5%;
-}
-
-.image-content img {
+    gap: 0;
     width: 100%;
-    max-width: 400px;
+    height: 120px;
+    position: relative;
+    margin-bottom: 20px;
+    justify-content: center;
+    background-image: linear-gradient(180deg, white, white, rgba(255, 255, 255, 0));
+}
+
+/* Additional CSS for sticky behavior */
+.sticky-buttons.sticky {
+    position: fixed;
+    width: 100%;
+    left: 50%; /* Center the element */
+    transform: translateX(-50%); /* Adjust for the actual center */
+    z-index: 10; /* Ensures it stays on top */
+}
+
+
+.btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #f7f7f7;
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    transition: background-color 1s;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn:first-child {
+    border-radius: 15px 0 0 15px;
+}
+
+.btn:last-child {
+    border-radius: 0 15px 15px 0;
+}
+
+.btn h3 {
+    margin: 0;
+}
+
+.btn.active.standard {
+    background-color: #fddfd5;
+    border-radius: 15px 0 0 15px;
+}
+
+.btn.active.electric {
+    background-color: #E6F1D4;
+    border-radius: 0 15px 15px 0;
+}
+
+.pricing-content-wrapper {
+    transition: background-color 1s;
+}
+
+.standard-content.active {
+    background-color: rgba(244, 96, 44, 0.2);
+    padding: 80px;
+}
+
+.electric-content.active {
+    background-color: rgba(129, 187, 39, 0.2);
+    padding: 80px;
+}
+
+.content {
+    display: none;
+}
+
+.content.active {
+    display: block;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+.section h2 {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.columns {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
 }
 
 @media (max-width: 770px) {
-    .navigation-indicators {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 20px;
-    }
-
-    .navigation-indicators .dot {
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background-color: lightgray;
-        margin: 0 5px;
-        transition: background-color 0.3s;
-    }
-
-    .navigation-indicators .dot.active {
-        background-color: darkgray;
-    }
-}
-
-@media (max-width: 770px) {
-    #how-it-works .content-slide {
+    .columns {
         flex-direction: column;
-        align-items: center;
+        gap: 20px;
+    }
+
+    .sticky-buttons{
+        background-image: linear-gradient(180deg, #f7f7f7, #f7f7f7, rgba(255, 255, 255, 0));
+    }
+
+    .standard-content.active {
+        padding: 40px;
     }
     
-    #how-it-works .navigation-indicators {
-        order: 3;  /* Position it below the image and text content */
-        width: 100%;
-        justify-content: center;
-        margin-top: 10px;
-        margin-bottom: 10px;
+    .electric-content.active {
+        padding: 40px;
     }
-}
 
-@media (max-width: 770px) {
-    #how-it-works .text-content, 
-    #how-it-works .text-content h3, 
-    #how-it-works .text-content ul, 
-    #how-it-works .image-content, 
-    #how-it-works .image-content img {
-        text-align: center;
-        margin: 5% 0;
+    .btn {
+        background-color: #ffffff;
+        height: 80%;
     }
-}
 
-@media (max-width: 770px) {
-    #how-it-works .content-wrapper {
+    .column {
         background-color: #f7f7f7;
+        padding: 0 10px;
     }
 }
 
-@media (max-width: 770px) {
-    #how-it-works .arrow {
-        display: none !important;
-    }
+.column {
+    flex: 1;
+    text-align: center;
+    border-radius: 15px;
+    background-color: #fff;
 }
+
+.column h3 {
+    margin: 15px 0 20px;
+}
+
+.column .large {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.column p {
+    margin-top: 5px;
+}
+
+/* Additional styling */
+.btn img {
+    width: 50px;
+    height: 50px;
+}
+
+.section p {
+    color: #333;
+    line-height: 1.4;
+}
+
+.pricing-content-wrapper p {
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+}
+
+
+
 
 /* ------------------------------------------------------------------------------ Learn More ------------------------------------------------------------------------------ */
 
