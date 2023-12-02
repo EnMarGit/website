@@ -147,17 +147,20 @@ document.querySelectorAll('.custom-dropdown-item').forEach(item => {
 function handleStickyButtons() {
     const stickyButtons = document.getElementById('stickyButtons');
     const contentSection = document.querySelector('.content-section');
-    const header = document.querySelector('header'); // Targeting the header element
+    const header = document.querySelector('header'); // Ensure this targets your header
 
     function calculateStickyPosition() {
         const headerHeight = header.offsetHeight;
-        const stickyStart = contentSection.offsetTop - headerHeight;
+        const activeContent = document.querySelector('.content.active'); // Get the currently active content
+        const activeContentTopPadding = parseInt(window.getComputedStyle(activeContent).paddingTop, 10);
+
+        const stickyStart = contentSection.offsetTop + activeContentTopPadding - headerHeight;
         const stickyEnd = contentSection.offsetTop + contentSection.offsetHeight - stickyButtons.offsetHeight - headerHeight;
         const scrollPosition = window.pageYOffset;
 
         if (scrollPosition > stickyStart && scrollPosition < stickyEnd) {
             stickyButtons.classList.add('sticky');
-            stickyButtons.style.top = headerHeight + 'px'; // Setting top to the height of the header
+            stickyButtons.style.top = headerHeight + 'px'; // Adjust top position
         } else {
             stickyButtons.classList.remove('sticky');
             stickyButtons.style.top = '';
@@ -167,6 +170,7 @@ function handleStickyButtons() {
     window.addEventListener('scroll', calculateStickyPosition);
     calculateStickyPosition(); // Initialize on load
 }
+
 
 
 
@@ -195,3 +199,14 @@ document.addEventListener('DOMContentLoaded', function () {
     handleStickyButtons();
     selectOption('standard'); // Trigger default option
 });
+
+
+
+//------------------------------------------------------
+$(document).ready(function() {
+    $('.togglefaq').click(function() {
+        $(this).toggleClass('active').next('.faqanswer').slideToggle(300);
+        $(this).find('.questions-icon').toggleClass('icon-rotated');
+    });
+});
+
