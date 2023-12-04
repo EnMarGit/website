@@ -178,7 +178,6 @@ nav a:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 95vh; /* Takes up the full viewport height */
     background-image: url('path-to-fallback-image.jpg'); /* Replace with your fallback image */
     position: relative;  /* Ensures z-index and other positioning works inside this element */
     overflow: hidden;  /* To prevent video from spilling out if it's larger than the container */
@@ -585,6 +584,7 @@ nav a:hover {
 
 .hero h1 {
     text-align: center;  /* Center align the text */
+    padding: 0 15px;
 }
 
 /* Adjust font size for different screen widths */
@@ -755,13 +755,12 @@ nav a:hover {
 
 .hero {
     width: 100%;
-    height: 95vh;  /* Ensure the hero section takes the full viewport height */
     overflow: hidden;  /* Hide any overflow */
 }
 
 .hero {
     height: 95vh; /* Takes up the full viewport height */
-    background-image: url('how-it-works-photo.png'); /* Your image */
+    background-image: url('locations-photo.png'); /* Your image */
     background-size: cover; /* Ensure the background image covers the entire area */
     background-position: center; /* Center the background image */
     display: flex;
@@ -851,7 +850,7 @@ nav a:hover {
 @media screen and (max-width: 480px) {
     .subheadline {
         font-size: 1.2rem; /* Adjust the size for smaller screens */
-        padding: 15px;
+        padding: 5px 15px;
     }
 }
 
@@ -863,181 +862,238 @@ nav a:hover {
     }
 }
 
-/* ------------------------------------------------------------------------------ How it works ------------------------------------------------------------------------------ */
-
-/* How it Works Section Styles */
-#how-it-works {
-    background-color: white;
+/* ------------------------------------------------------------------------------ Locations Section ------------------------------------------------------------------------------ */
+.map-section {
+    text-align: center;
+    background-color: #fff; /* Light grey background */
     padding: 50px 0;
 }
 
-@media screen and (min-width: 771px) {
-    #how-it-works {
-        padding-bottom: 100px;
-    }
+.map-section h2 {
+    margin: 0;
+    padding: 40px 80px;
+}
+
+.map-container {
+    max-width: 100%; /* Maximum width of the map */
+    margin: 0 auto; /* Center the map horizontally */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    border-radius: 10px; /* Rounded corners for a modern look */
+    overflow: hidden; /* Ensures the corners stay rounded */
 }
 
 @media screen and (max-width: 770px) {
-    #how-it-works {
-        background-color: #f7f7f7;
-    }
-}
-
-#how-it-works h2 {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.content-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
-
-.arrow {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    padding: 10px;
-    background: linear-gradient(45deg, #FFC107, #FF9800);
-    border-radius: 50%;
-    margin: 0 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-}
-
-.arrow img {
-    width: 24px;  /* Control the size of the SVG icon */
-    height: 24px; /* Control the size of the SVG icon */
-}
-
-.arrow:hover {
-    transform: scale(1.1);
-}
-
-@media screen and (max-width: 1200px) {
-    .arrow img {
-        width: 20px;  /* Control the size of the SVG icon */
-        height: 20px; /* Control the size of the SVG icon */
-    }
-}
-
-@media screen and (max-width: 770px) {
-    .arrow img {
-        width: 15px;  /* Control the size of the SVG icon */
-        height: 15px; /* Control the size of the SVG icon */
-    }
-}
-
-
-.content-slide {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 80%;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-    background-color: #f7f7f7;
-    border-radius: 20px;
-}
-
-.text-content, .image-content {
-    flex: 1;
-    text-align: left;
-    margin-left: 5%;
-    margin-right: 5%;
-}
-
-.image-content img {
-    width: 100%;
-    max-width: 400px;
-}
-
-@media (max-width: 770px) {
-    .navigation-indicators {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 20px;
+    .map-container {
+        width: 100%; /* Slightly smaller on smaller screens */
     }
 
-    .navigation-indicators .dot {
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background-color: lightgray;
-        margin: 0 5px;
-        transition: background-color 0.3s;
+    .map-section h2 {
+        padding: 20px 38px;
     }
 
-    .navigation-indicators .dot.active {
-        background-color: darkgray;
-    }
-}
-
-@media (max-width: 770px) {
-    #how-it-works .content-slide {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    #how-it-works .navigation-indicators {
-        order: 4;  /* Position it below the image and text content */
-        width: 100%;
-        justify-content: center;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-
-    #how-it-works .image-content {
-        order: 2;
-    }
-
-    #how-it-works .text-content {
-        order: 3;
-    }
-}
-
-@media (max-width: 770px) {
-    #how-it-works .text-content, 
-    #how-it-works .text-content h3, 
-    #how-it-works .text-content ul, 
-    #how-it-works .image-content, 
-    #how-it-works .image-content img {
+    .map-section {
         text-align: center;
-        margin: 5% 0;
-    }
-
-    #how-it-works .text-content {
-        margin-top: 0;
-    }
-
-    #how-it-works h2 {
-        margin-bottom: 10px;
-    }
-
-    #how-it-works .image-content img {
-        margin: 0;
+        background-color: #f7f7f7; /* Light grey background */
+        padding: 35px 0;
     }
 }
 
-@media (max-width: 480px) {
-    #how-it-works .text-content {
-        min-height: 220px;
+.orange-text {
+    color: #f4602c; /* The desired color for "orange area" */
+}
+
+
+.underline-text {
+    text-decoration: underline; /* Adds underline */
+    color: inherit; /* Keeps the text color consistent with the surrounding text */
+}
+
+/* ------------------------------------------------------------------------------ Download the app banner ------------------------------------------------------------------------------ */
+
+
+.download-banner-section {
+    background: #f7f7f7;
+    padding: 112px 80px 32px; /* Adjust this value if you need more height */
+    margin: 0;
+    max-width: 100%;
+}
+
+@media  (min-width: 1660px) {
+    .download-banner-section {
+        padding-left: calc((100vw - 1500px) / 2);
+        padding-right: calc((100vw - 1500px) / 2);
     }
+}
+
+.download-banner-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.download-banner-column-text, .download-banner-column-image {
+    flex: 1;
+}
+
+.download-banner-column-text h3, .download-banner-column-text p {
+    text-align: left;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.download-banner-column-image {
+    display: flex;
+    justify-content: right; /* aligns the images to the right */
+    gap: 10px; /* space between the images */
+}
+
+.download-banner-column-image img:hover {
+    background-color: #0000000e;
+    transition: background-color 0.3s ease; /* Smooth transition for the background change */
+    cursor: pointer;
 }
 
 @media (max-width: 770px) {
-    #how-it-works .content-wrapper {
+    .download-banner-container {
+        flex-direction: column; /* stack child elements vertically */
+        align-items: center;    /* center the child elements horizontally */
+    }
+
+    .download-banner-column-text,
+    .download-banner-column-image {
+        width: 100%; /* take full width */
+        text-align: center; /* center the text */
+    }
+
+    .download-banner-column-text h3, 
+    .download-banner-column-text p {
+        margin-bottom: 1rem; /* provide some spacing between the elements */
+        text-align: center;
+    }
+
+    .download-banner-column-image {
+        flex-direction: row; /* make images sit next to each other horizontally */
+        justify-content: center;
+    }
+
+    .download-banner-column-image img{
+        width: 135px;
+        height: auto;
+    }
+
+    .download-banner-section {
+        background: #ffffff;
+        padding: 72px 40px 32px; /* Adjust this value if you need more height */
+    }
+}
+
+@media (min-width: 771px) {
+    .download-banner-column-image {
+        flex-direction: column; /* stack the images vertically */
+        align-items: center;
+    }
+
+    .download-banner-column-image img{
+        width: 150px;
+        height: auto;
+    }
+}
+
+@media (min-width: 1201px) {
+    .download-banner-column-image {
+        flex-direction: row; /* stack the images vertically */
+        align-items: center;
+    }
+
+    .download-banner-column-image img {
+        width: 205px;
+        height: auto;
+    }
+}
+
+
+/* ------------------------------------------------------------------------------ Questions Section ------------------------------------------------------------------------------ */
+.faq-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.faqanswer {
+    display: none;
+    background: #f0f0f0;
+    padding: 12px 100px;
+    border-left: 4px solid #f1c2b4;
+}
+
+.faqanswer p {
+    color: #333;
+}
+
+.togglefaq {
+    padding: 10px 80px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #000000;
+    display: block;
+    background: #fff;
+    margin-bottom: -1px;
+    transition: background-color 0.3s ease;
+    border-top: solid #f7f7f7 2px;
+}
+
+.togglefaq h3 {
+    display: flex;
+    align-items: center;
+}
+
+.togglefaq:first-child {
+    border-top: none;
+}
+
+.togglefaq:hover, .togglefaq.active {
+    background: #e5e5e5;
+}
+
+.questions-icon {
+    color: #f1c2b4;
+    margin-right: 15px;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.togglefaq.active .questions-icon {
+    transform: rotate(90deg);
+    color: #eb8f73;
+}
+
+@media (max-width: 770px) {
+    .faq-section {
+        padding: 0;
         background-color: #f7f7f7;
     }
+
+    .togglefaq {
+        background-color: #f7f7f7;
+        padding: 0 40px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .togglefaq h3 {
+        display: flex;
+        align-items: center;
+    }
+
+    .faqanswer {
+        padding: 12px 40px;
+    }
 }
 
-@media (max-width: 770px) {
-    #how-it-works .arrow {
-        display: none !important;
+@media screen and (min-width: 1660px) {
+    .togglefaq, .faqanswer {
+        /* Set the padding to be (screen width - 1500px) / 2 on each side */
+        padding-left: calc((100vw - 1500px) / 2);
+        padding-right: calc((100vw - 1500px) / 2);
     }
 }
 

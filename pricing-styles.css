@@ -1090,6 +1090,16 @@ nav a:hover {
     }
 }
 
+/* Media query for screens wider than 1660px */
+@media screen and (min-width: 1660px) {
+    .standard-content.active, .electric-content.active {
+        /* Set the padding to be (screen width - 1500px) / 2 on each side */
+        padding-left: calc((100vw - 1500px) / 2);
+        padding-right: calc((100vw - 1500px) / 2);
+    }
+}
+
+
 /* ------------------------------------------------------------------------------ Questions Section ------------------------------------------------------------------------------ */
 .faq-section {
     display: flex;
@@ -1141,6 +1151,7 @@ nav a:hover {
 
 .togglefaq.active .questions-icon {
     transform: rotate(90deg);
+    color: #eb8f73;
 }
 
 @media (max-width: 770px) {
@@ -1166,6 +1177,13 @@ nav a:hover {
     }
 }
 
+@media screen and (min-width: 1660px) {
+    .togglefaq, .faqanswer {
+        /* Set the padding to be (screen width - 1500px) / 2 on each side */
+        padding-left: calc((100vw - 1500px) / 2);
+        padding-right: calc((100vw - 1500px) / 2);
+    }
+}
 
 /* ------------------------------------------------------------------------------ Learn More ------------------------------------------------------------------------------ */
 

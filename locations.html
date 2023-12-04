@@ -4,11 +4,11 @@
 <head>
 <meta charset="UTF-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Cyrcl | Your Bike-sharing</title>
+<title>Locations | Cyrcl</title>
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-<link href="styles.css" rel="stylesheet" type="text/css"/> 
+<link href="locations.css" rel="stylesheet" type="text/css"/> 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
@@ -17,7 +17,7 @@
 <header>
 <a href="index.html" class="logo-link">
     <img alt="Cyrcl logo" id="cyrcl-logo" src="Logo_Cyrcl_White_Horizontal.svg"/>
-</a> 
+</a>     
 <div id="hamburger-menu">
     <svg class="ham hamRotate ham7" viewBox="0 0 100 100" width="50" onclick="this.classList.toggle('active')">
       <path class="line top" d="m 70,33 h -40 c 0,0 -6,1.368796 -6,8.5 0,7.131204 6,8.5013 6,8.5013 l 20,-0.0013" />
@@ -26,7 +26,7 @@
     </svg>
 </div>
 <nav>
-<div class="nav-links"><a href="how-it-works.html">How it works</a><a href="pricing.html">Prices</a><a href="locations.html">Locations</a><a href="sustainability.html">Sustainability</a><a href="rules.html">Rules</a><a href="partners.html">Partners</a></nav><div class="cta-and-dropdown"><a class="cta-button" href="https://onelink.to/y9q7mf"><img alt="Download Icon" class="download-icon" src="Download-Icon-Cyrcl.svg"/>Get the app</a>
+<div class="nav-links"><a href="how-it-works.html">How it works</a><a href="pricing.html">Prices</a><a href="locations.html">Locations</a><a href="sustainability.html">Sustainability</a><a href="rules.html">Rules</a><a href="partners.html">Partners</a></nav><div class="cta-and-dropdown"><a class="cta-button" href="https://onelink.to/y9q7mf"><img alt="Download Cyrcl app" class="download-icon" src="Download-Icon-Cyrcl.svg"/>Get the app</a>
     <div class="dropdown-wrapper">
         <select id="country-select" name="country">
             <option value="en">EN</option>
@@ -40,40 +40,49 @@
             <div class="custom-dropdown-item" data-value="bg">BG</div>
             <!-- Add other items as needed -->
         </div>
-    </div>   
+    </div>      
 </div>
 </header>
 <main>
-<section class="hero">
-<video autoplay="" loop="" muted="" playsinline="">
-<source src="Cyrcl-white-bars-1080.mp4" type="video/mp4"/>
-                Your browser does not support the video tag.
-            </video>
-<h1>Cyrcl Your World<h3 class="subheadline">Fast. Green. Convenient.</h3><div class="spacer-770-1200"></div>!</h1>
-<a class="cta-button-mid" href="https://onelink.to/y9q7mf">Get the Cyrcl app</a>
-</section>
 
-<!-- How it Works Section Starts -->
-<section id="how-it-works">
-    <h2>How it works</h2>
-    <div class="content-wrapper">
-        <div class="arrow left-arrow"><img src="arrow-left.svg" alt="Left Arrow"></div>
-        <div class="content-slide">
-            <div class="text-content">
-                <h3>1. Find and book</h3>
-                <p>Open the map in the app, find a nearby bike, then book it.</p>
-                <p>No rush! You have some time available to get to your new favorite ride.</p>
-            </div>
-            <div class="image-content">
-                <img src="image4.svg" alt="Find and book image">
-            </div>
-        </div>
-        <!-- Additional content slides will go here... -->
-        <div class="arrow right-arrow"><img src="arrow-right.svg" alt="Right Arrow"></div>
+<section class="hero">
+    <h1>Locations
+        <p class="subheadline">Find us across the entire city of Sofia.</p>
+    </h1>
+    <a class="cta-button-mid" href="https://onelink.to/y9q7mf">Get the Cyrcl app</a>
+</section>    
+
+<!-- Locations Section Starts -->
+<section class="map-section">
+    <h2>Get a standard or electric bike<br>from the <span class="orange-text">orange area</span> and<br>ride ANYWHERE!</h2>
+    <div class="map-container">
+        <iframe src="https://www.google.com/maps/d/embed?mid=1aMUBxY_AhPs1gXiKmylx3jcS6PqM0KyK&ehbc=2E312F" width="100%" height="480" frameborder="0" style="border:0" allowfullscreen=""></iframe>
     </div>
 </section>
-<!-- How it Works Section Ends -->
+<!-- Locations Section Ends -->
 
+
+
+<!-- Question Section Starts -->
+<div class="faq-section">
+    <div class="togglefaq"><h3><span class="questions-icon">></span> Can I ride outside of the orange area?</h3></div>
+    <div class="faqanswer">
+        <p>Absolutely! You are allowed to ride anywhere in Sofia. The orange area indicates our parking zone and this is where you are allowed to end your session.</p>
+    </div>
+
+    <div class="togglefaq"><h3><span class="questions-icon">></span> Where can I see the exact locations of the Cyrcl bikes?</h3></div>
+    <div class="faqanswer">
+        <p>You can check them in our mobile app. Download it from <a href="https://play.google.com/store/apps/details?id=eu.cyrcl.app&hl=en" class="underline-text" target="_blank">Google Play</a> or <a href="https://apps.apple.com/bg/app/cyrcl-your-city-bike-sharing/id1593379210" class="underline-text" target="_blank">App Store</a> and enjoy your ride!</p>
+    </div>
+
+    <div class="togglefaq"><h3><span class="questions-icon">></span> Where can I park my bike and end my session?</h3></div>
+    <div class="faqanswer">
+        <p>You can park and end your rental session anywhere within the orange area indicated on the map in the app.</p>
+    </div>
+</div>
+<!-- Question Section Ends -->
+
+<!-- Download Banner Section Starts-->
 <section class="download-banner-section">
     <div class="download-banner-container">
         <div class="download-banner-column-text">
@@ -90,46 +99,35 @@
         </div>
     </div>
 </section>
+<!-- Download Banner Section Ends-->
 
-<section class="feature-section">
-    <h2>Get over the hurdle<br>by riding a Cyrcl</h2>
-    <div class="spacer-770-1200"></div><div class="feature-container">
-        <div class="feature-column">
-            <img src="image1.svg" alt="Better Urban Environment" class="feature-image">
-            <h3>YOUR DAILY DOSE OF<br>FUN AND EASY TRAVEL</h3><div class="spacer-770-1200"></div>
-            <p>Whether you are an entrepreneur<br>or a student, be on time for your<br>meetings by riding a bike all year round</p>
+<!-- Learn More Section Starts -->
+<section class="learn-more-section">
+    <div class="learn-more-wrapper">
+        <div class="box">
+            <img src="pricing.png" alt="Prices and Plans" class="box-image">
+            <div class="box-content">
+                <h3>Prices and Plans</h3>
+                <span class="learn-more-arrow">&#10140;</span> <!-- Right arrow symbol -->
+            </div>
         </div>
-        <div class="feature-column">
-            <img src="image2.svg" alt="Your Daily Dose of Fun and Easy Travel" class="feature-image">
-            <h3>BETTER URBAN<br>ENVIRONMENT</h3><div class="spacer-770-1200"></div>
-            <p>Cleaner air, less traffic,<br>more space for entertainment</p>
+        <div class="box">
+            <img src="safety-parking.png" alt="Parking and Safety" class="box-image">
+            <div class="box-content">
+                <h3>Safety and Parking</h3>
+                <span class="learn-more-arrow">&#10140;</span>
+            </div>
         </div>
-        <div class="feature-column">
-            <img src="image3.svg" alt="More Body Movement With Less Effort" class="feature-image">
-            <h3>MORE BODY MOVEMENT<br>WITH LESS EFFORT</h3><div class="spacer-770-1200"></div>
-            <p>No more excuses why you couldn’t<br>make it to the gym</p>
+        <div class="box">
+            <img src="help-center.png" alt="Help Center" class="box-image">
+            <div class="box-content">
+                <h3>Help center</h3>
+                <span class="learn-more-arrow">&#10140;</span>
+            </div>
         </div>
     </div>
 </section>
-
-<section class="banner-section">
-    <div class="banner-container">
-        <div class="banner-column">
-            <h3>Where else would you like to see Cyrcl?</h3>
-            <p>We are already in Sofia, Bulgaria. Tell us your favorite location(s) and we'll try our best to open these new area(s).</p>
-        </div>
-        <div class="banner-column">
-            <input type="email" id="email" name="email" placeholder="Email" required autocomplete="email">
-            <input type="text" id="city" name="city" placeholder="City" required autocomplete="address_level1">
-            <label class="checkbox-container">
-                <input type="checkbox">
-                <span class="checkmark"></span>
-                I agree that my personal data will be processed in accordance with the General Terms and Conditions and the Privacy Policy of the site.
-            </label>
-            <button class="cta-button">Send</button>
-        </div>
-    </div>
-</section>
+<!-- Learn More Section Ends -->
 
 </main>
 <script>
@@ -146,7 +144,7 @@
 
 <footer>
     <div class="footer-container">
-        <img src="Logo_Cyrcl_Gradient_Horizontal.svg" alt="Logo" class="footer-logo">
+        <img src="Logo_Cyrcl_Gradient_Horizontal.svg" alt="Cyrcl Logo" class="footer-logo">
 
         <div class="footer-division">
             <div class="footer-column">
@@ -176,10 +174,10 @@
             <div class="footer-column">
                 <h3>Get the app</h3>
                 <a href="https://play.google.com/store/apps/details?id=eu.cyrcl.app&hl=en" class="logo-link" target="_blank">
-                    <img src="Google-Play-EN-White.svg" alt="Google Play">
+                    <img src="Google-Play-EN-White.svg" alt="Download Cyrcl from Google Play">
                 </a>
                 <a href="https://apps.apple.com/bg/app/cyrcl-your-city-bike-sharing/id1593379210" class="logo-link" target="_blank">
-                    <img src="App-Store-EN-White.svg" alt="App Store">
+                    <img src="App-Store-EN-White.svg" alt="Download Cyrcl from App Store">
                 </a>                
             </div>
         </div>
@@ -189,11 +187,11 @@
         <div class="footer-division">
             <p>© Cyrcl 2023</p>
             <div class="social-icons">
-                <img src="Instagram.svg" alt="Instagram">
-                <img src="Facebook.svg" alt="Facebook">
-                <img src="TikTok.svg" alt="TikTok">
-                <img src="YouTube.svg" alt="YouTube">
-                <img src="LinkedIn.svg" alt="LinkedIn">
+                <img src="Instagram.svg" alt="Cyrcl Instagram">
+                <img src="Facebook.svg" alt="Cyrcl Facebook">
+                <img src="TikTok.svg" alt="Cyrcl TikTok">
+                <img src="YouTube.svg" alt="Cyrcl YouTube">
+                <img src="LinkedIn.svg" alt="Cyrcl LinkedIn">
             </div>
             <p>Designed by Cyrcl in Bulgaria <img src="Bulgaria-Flag.svg" alt="Bulgarian Flag" class="footer-flag"></p>
         </div>
@@ -219,25 +217,25 @@
         </div>
         <!-- Social Icons -->
         <div class="social-icons">
-            <img src="Instagram.svg" alt="Instagram">
-            <img src="Facebook.svg" alt="Facebook">
-            <img src="TikTok.svg" alt="TikTok">
-            <img src="YouTube.svg" alt="YouTube">
-            <img src="LinkedIn.svg" alt="LinkedIn">
+            <img src="Instagram.svg" alt="Cyrcl Instagram">
+            <img src="Facebook.svg" alt="Cyrcl Facebook">
+            <img src="TikTok.svg" alt="Cyrcl TikTok">
+            <img src="YouTube.svg" alt="Cyrcl YouTube">
+            <img src="LinkedIn.svg" alt="Cyrcl LinkedIn">
         </div>
     </div>
 </div>
 
 <div class="sticky-ellipse">
-    <img src="DSK_Bank_logo_horizontal_CM.svg" alt="DSK Bank Logo" class="ellipse-svg ellipse-svg-1">
-    <img src="mc_symbol.svg" alt="Mastercard Logo" class="ellipse-svg ellipse-svg-2">
+    <img src="DSK_Bank_logo_horizontal_CM.svg" alt="Sponsored by DSK Bank" class="ellipse-svg ellipse-svg-1">
+    <img src="mc_symbol.svg" alt="Sponsored by Mastercard" class="ellipse-svg ellipse-svg-2">
 </div>
 
 <div class="sticky-circle">
-    <img src="more-icon.svg" alt="More Icon" class="more-icon">
+    <img src="more-icon.svg" alt="Help" class="more-icon">
 </div>
 
-<script src="script.js"></script>
+<script src="locations.js"></script>
 
 </body>
 </html>
