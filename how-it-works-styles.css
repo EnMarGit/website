@@ -192,6 +192,7 @@ nav a:hover {
     font-size: 68px;
     font-family: "Noah Head Black", sans-serif;
     font-feature-settings: "ss03";
+    max-width: 1200px;
 }
 
 .hero h1, .hero .cta-button-mid {
@@ -895,6 +896,14 @@ nav a:hover {
     position: relative;
 }
 
+@media screen and (min-width: 1360px) {
+    .content-wrapper {
+        /* Set the padding to be (screen width - 1200px) / 2 on each side */
+        padding-left: calc((100vw - 1500px) / 2);
+        padding-right: calc((100vw - 1500px) / 2);
+    }
+}
+
 .arrow {
     display: inline-flex;
     align-items: center;
@@ -1041,6 +1050,133 @@ nav a:hover {
     }
 }
 
+/* ------------------------------------------------------------------------------ Safety Section ------------------------------------------------------------------------------ */
+.safe-riding-section {
+    padding: 50px 0;
+    display: flex;
+    align-items: center;
+}
+
+.safe-riding-wrapper {
+    padding: 10px 80px 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.rules-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+@media screen and (min-width: 1360px) {
+    .safe-riding-wrapper {
+        /* Set the padding to be (screen width - 1200px) / 2 on each side */
+        padding-left: calc((100vw - 1200px) / 2);
+        padding-right: calc((100vw - 1200px) / 2);
+    }
+}
+
+@media (min-width: 770px) {
+    .safe-riding-rules-container:first-child {
+        flex: 0 0 30%;
+    }
+
+    .safe-riding-rules-container:last-child {
+        padding-top: 30px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr; /* This creates three columns of equal width */
+        gap: 20px 50px;
+    }
+
+    .rules-image {
+        max-width: 140px;
+    }
+}
+
+@media (max-width: 770px) {
+    .safe-riding-wrapper {
+        padding: 0 40px;
+        flex-direction: column;
+    }
+
+    .safe-riding-rules-container:last-child {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* This creates three columns of equal width */
+        gap: 10px 20px;
+    }
+
+    .rules-image {
+        max-width: 120px;
+    }
+
+    .safe-riding-section {
+        border-bottom: solid #f7f7f7 2px;
+    }
+
+    .break {
+        display: none;
+    }
+}
+
+@media (min-width: 770px) and (max-width: 990px) {
+    .safe-riding-rules-container:first-child {
+        flex: 0 0 30%;
+    }
+    
+    .rules-content {
+        height: 1em;
+    }
+
+    .safe-riding-rules-container:last-child {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* This creates three columns of equal width */
+        gap: 10px 20px;
+    }
+
+    .rules-image {
+        max-width: 120px;
+    }
+}
+
+@media (max-width: 370px) {
+    .safe-riding-wrapper {
+        padding-left: 36px;
+        padding-right: 36px;
+    }
+    
+    .rules-content {
+        height: 2em;
+    }
+
+    .safe-riding-rules-container:last-child {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* This creates three columns of equal width */
+        gap: 20px;
+    }
+}
+
+@media (max-width: 340px) {
+    .safe-riding-rules-container:last-child {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .rules-image {
+        max-width: 80%;
+    }
+}
+
+.bold-text {
+    font-weight: bold;
+}
+
 /* ------------------------------------------------------------------------------ Learn More ------------------------------------------------------------------------------ */
 
 .learn-more-section {
@@ -1048,7 +1184,7 @@ nav a:hover {
 }
 
 .learn-more-wrapper {
-    max-width: 1500px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 80px 80px;
     display: flex;
@@ -1389,7 +1525,7 @@ footer {
 }
 
 .footer-container {
-    max-width: 1500px; /* Adjust based on your layout */
+    max-width: 1200px; /* Adjust based on your layout */
     margin: 0 auto;
 }
 
@@ -1426,6 +1562,14 @@ footer {
 .footer-flag {
     height: 1em;  /* This sets the image height to match the current font size */
 }
+
+.footer-division:last-child p:last-child {
+    display: flex;
+    align-items: center; /* This will vertically align the text and image */
+    justify-content: center; /* This centers the content horizontally */
+    gap: 5px; /* Optional: adds some space between the text and the image */
+}
+
 
 /* Adding space between social icons */
 .social-icons img {
@@ -1478,6 +1622,7 @@ footer {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
+        align-items: center;
         gap: 1rem;
     }
 

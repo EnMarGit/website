@@ -202,7 +202,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-//------------------------------------------------------
+// ----------------------------------------------------------------Question section----------------------------------------------------------------
 $(document).ready(function() {
     $('.togglefaq').click(function() {
         $(this).toggleClass('active').next('.faqanswer').slideToggle(300);

@@ -191,6 +191,7 @@ nav a:hover {
     font-size: 68px;
     font-family: "Noah Head Black", sans-serif;
     font-feature-settings: "ss03";
+    max-width: 1200px;
 }
 
 .hero h1, .hero .cta-button-mid {
@@ -866,6 +867,20 @@ nav a:hover {
     padding: 2rem 0;
 }
 
+@media (min-width: 771px) {
+    .feature-section {
+        padding: 6rem 80px;
+    }
+}
+
+@media screen and (min-width: 1360px) {
+    .feature-section {
+        /* Set the padding to be (screen width - 1200px) / 2 on each side */
+        padding-left: calc((100vw - 1200px) / 2);
+        padding-right: calc((100vw - 1200px) / 2);
+    }
+}
+
 .feature-container {
     display: flex;
     justify-content: space-between;
@@ -877,7 +892,11 @@ nav a:hover {
     flex: 1;
     max-width: calc(33.33% - 1rem);
     box-sizing: border-box;
-    padding: 1rem;
+    padding: 1rem 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .feature-image {
@@ -888,6 +907,7 @@ nav a:hover {
 @media (max-width: 768px) {
     .feature-column {
         max-width: 100%;
+        display: block;
     }
 }
 
@@ -899,7 +919,7 @@ nav a:hover {
 
 @media (min-width: 1200px) {
     .feature-container {
-        margin: 0 10%;
+        margin: 0;
     }
 }
 
@@ -907,12 +927,6 @@ nav a:hover {
     .feature-column {
         max-width: 100%;
         flex: 100%;
-    }
-}
-
-@media (min-width: 771px) {
-    .feature-section {
-        padding: 6rem 0;
     }
 }
 
@@ -939,7 +953,7 @@ nav a:hover {
 
 @media (min-width: 771px) and (max-width: 1200px) {
     .feature-container {
-        margin: 0 10%;
+        margin: 0;
     }
     .feature-image {
         max-width: 95%;
@@ -972,22 +986,44 @@ nav a:hover {
 
 .banner-section {
     background: linear-gradient(135deg, #F4602C, #81BB27);
-    padding: 2rem 0; /* Adjust this value if you need more height */
+    padding: 2rem 80px; /* Adjust this value if you need more height */
     margin: 0 auto;
-    width: 100%;
     max-width: 100%;
+}
+
+@media screen and (min-width: 1360px) {
+    .banner-section {
+        /* Set the padding to be (screen width - 1200px) / 2 on each side */
+        padding-left: calc((100vw - 1200px) / 2);
+        padding-right: calc((100vw - 1200px) / 2);
+    }
+}
+
+@media screen and (min-width: 780px) {
+    .banner-section {
+        display: flex;
+        justify-content: space-between;
+    }
 }
 
 .banner-container {
     display: flex;
     justify-content: space-between;
     align-items: left;
-    margin: 0 10%;
+    margin: 0;
 }
 
 .banner-column {
     flex: 1;
     padding: 0 2rem;
+}
+
+.banner-column:first-child {
+    padding-left: 0;
+}
+
+.banner-column:last-child {
+    padding-right: 0;
 }
 
 .banner-column input {
@@ -1074,6 +1110,10 @@ nav a:hover {
 @media screen and (max-width: 770px) {
     .banner-container {
         flex-direction: column; /* Change the flex direction to column */
+        margin: 0;
+    }
+    .banner-section {
+        padding: 2rem 40px;
     }
     .banner-column h3 {
         order: 1;
@@ -1095,7 +1135,8 @@ nav a:hover {
     }
     .banner-column {
         text-align: center; /* Centrally aligns the text of direct children of .banner-column */
-        padding: 0 1rem;
+        padding: 0;
+        width: 100%;
     }
     /* Additional styles to centrally align the content */
     .banner-container {
@@ -1141,6 +1182,14 @@ nav a:hover {
     align-items: center;
     justify-content: center;
     position: relative;
+}
+
+@media screen and (min-width: 1360px) {
+    .content-wrapper {
+        /* Set the padding to be (screen width - 1200px) / 2 on each side */
+        padding-left: calc((100vw - 1500px) / 2);
+        padding-right: calc((100vw - 1500px) / 2);
+    }
 }
 
 .arrow {
@@ -1295,21 +1344,41 @@ nav a:hover {
 
 .download-banner-section {
     background: linear-gradient(135deg, #F4602C, #81BB27);
-    padding: 2rem 0; /* Adjust this value if you need more height */
+    padding: 2rem 80px; /* Adjust this value if you need more height */
     margin: 0 auto;
-    width: 100%;
     max-width: 100%;
+}
+
+@media screen and (min-width: 1360px) {
+    .download-banner-section {
+        /* Set the padding to be (screen width - 1500px) / 2 on each side */
+        padding-left: calc((100vw - 1200px) / 2);
+        padding-right: calc((100vw - 1200px) / 2);
+    }
 }
 
 .download-banner-container {
     display: flex;
     justify-content: space-between;
-    margin: 0 10%;
+    margin: 0;
 }
 
 .download-banner-column-text, .download-banner-column-image {
     flex: 1;
     padding: 0 2rem;
+}
+
+@media screen and (min-width: 770px) {
+    .download-banner-column-text {
+        padding-left: 0;
+    }
+}
+
+@media screen and (min-width: 770px) {
+    .download-banner-column-image {
+        padding-right: 0;
+        align-items: end;
+    }
 }
 
 .download-banner-column-text h3, .download-banner-column-text p {
@@ -1356,12 +1425,15 @@ nav a:hover {
         width: 135px;
         height: auto;
     }
+
+    .download-banner-section {
+        padding: 2rem 40px; /* Adjust this value if you need more height */
+    }
 }
 
 @media (min-width: 771px) {
     .download-banner-column-image {
         flex-direction: column; /* stack the images vertically */
-        align-items: center;
     }
 
     .download-banner-column-image img{
@@ -1373,7 +1445,6 @@ nav a:hover {
 @media (min-width: 1201px) {
     .download-banner-column-image {
         flex-direction: row; /* stack the images vertically */
-        align-items: center;
     }
 
     .download-banner-column-image img {
@@ -1645,7 +1716,7 @@ footer {
 }
 
 .footer-container {
-    max-width: 1500px; /* Adjust based on your layout */
+    max-width: 1200px; /* Adjust based on your layout */
     margin: 0 auto;
 }
 
@@ -1682,6 +1753,14 @@ footer {
 .footer-flag {
     height: 1em;  /* This sets the image height to match the current font size */
 }
+
+.footer-division:last-child p:last-child {
+    display: flex;
+    align-items: center; /* This will vertically align the text and image */
+    justify-content: center; /* This centers the content horizontally */
+    gap: 5px; /* Optional: adds some space between the text and the image */
+}
+
 
 /* Adding space between social icons */
 .social-icons img {
@@ -1734,6 +1813,7 @@ footer {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
+        align-items: center;
         gap: 1rem;
     }
 

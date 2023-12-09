@@ -191,6 +191,7 @@ nav a:hover {
     font-size: 68px;
     font-family: "Noah Head Black", sans-serif;
     font-feature-settings: "ss03";
+    max-width: 1200px;
 }
 
 .hero h1, .hero .cta-button-mid {
@@ -1021,6 +1022,12 @@ nav a:hover {
     }
 }
 
+@media (min-width: 771px) and (max-width: 1200px) {
+    .columns.two {
+        gap: 80px;
+    }
+}
+
 .column {
     flex: 1;
     text-align: center;
@@ -1091,11 +1098,11 @@ nav a:hover {
 }
 
 /* Media query for screens wider than 1660px */
-@media screen and (min-width: 1660px) {
+@media screen and (min-width: 1360px) {
     .standard-content.active, .electric-content.active {
         /* Set the padding to be (screen width - 1500px) / 2 on each side */
-        padding-left: calc((100vw - 1500px) / 2);
-        padding-right: calc((100vw - 1500px) / 2);
+        padding-left: calc((100vw - 1200px) / 2);
+        padding-right: calc((100vw - 1200px) / 2);
     }
 }
 
@@ -1177,11 +1184,11 @@ nav a:hover {
     }
 }
 
-@media screen and (min-width: 1660px) {
+@media screen and (min-width: 1360px) {
     .togglefaq, .faqanswer {
         /* Set the padding to be (screen width - 1500px) / 2 on each side */
-        padding-left: calc((100vw - 1500px) / 2);
-        padding-right: calc((100vw - 1500px) / 2);
+        padding-left: calc((100vw - 1200px) / 2);
+        padding-right: calc((100vw - 1200px) / 2);
     }
 }
 
@@ -1192,7 +1199,7 @@ nav a:hover {
 }
 
 .learn-more-wrapper {
-    max-width: 1500px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 80px 80px;
     display: flex;
@@ -1533,7 +1540,7 @@ footer {
 }
 
 .footer-container {
-    max-width: 1500px; /* Adjust based on your layout */
+    max-width: 1200px; /* Adjust based on your layout */
     margin: 0 auto;
 }
 
@@ -1570,6 +1577,14 @@ footer {
 .footer-flag {
     height: 1em;  /* This sets the image height to match the current font size */
 }
+
+.footer-division:last-child p:last-child {
+    display: flex;
+    align-items: center; /* This will vertically align the text and image */
+    justify-content: center; /* This centers the content horizontally */
+    gap: 5px; /* Optional: adds some space between the text and the image */
+}
+
 
 /* Adding space between social icons */
 .social-icons img {
@@ -1622,6 +1637,7 @@ footer {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
+        align-items: center;
         gap: 1rem;
     }
 
