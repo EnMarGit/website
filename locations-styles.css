@@ -761,7 +761,7 @@ nav a:hover {
 
 .hero {
     height: 95vh; /* Takes up the full viewport height */
-    background-image: url('locations-photo.png'); /* Your image */
+    background-image: url('Images/locations-photo.png'); /* Your image */
     background-size: cover; /* Ensure the background image covers the entire area */
     background-position: center; /* Center the background image */
     display: flex;
