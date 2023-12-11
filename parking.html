@@ -271,9 +271,26 @@
     AOS.init({
             duration: 800,  // values from 0 to 3000, with step 50ms
             easing: 'ease', // default easing for AOS animations
-            once: false,     // whether animation should happen only once - while scrolling down
+            once: true,     // whether animation should happen only once - while scrolling down
             mirror: false,  // whether elements should animate out while scrolling past them
         });
+</script>
+
+<script>
+    function updateAOS() {
+        if (window.innerWidth <= 770) {
+            document.querySelectorAll('.container.left').forEach(function(el) {
+                el.setAttribute('data-aos', 'fade-left');
+            });
+        } else {
+            document.querySelectorAll('.container.left').forEach(function(el) {
+                el.setAttribute('data-aos', 'fade-right');
+            });
+        }
+    }
+
+    window.addEventListener('resize', updateAOS);
+    document.addEventListener('DOMContentLoaded', updateAOS);
 </script>
 
 <script src="parking-script.js"></script>
