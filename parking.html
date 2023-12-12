@@ -46,8 +46,8 @@
 <main>
 
 <section class="hero">
-    <h1>Locations
-        <p class="subheadline">Find us across the entire city of Sofia.</p>
+    <h1>Parking
+        <p class="subheadline">Learn the rules once and enjoy the riding everytime.</p>
     </h1>
     <a class="cta-button-mid" href="https://onelink.to/y9q7mf">Get the Cyrcl app</a>
 </section>    
@@ -274,23 +274,6 @@
             once: true,     // whether animation should happen only once - while scrolling down
             mirror: false,  // whether elements should animate out while scrolling past them
         });
-</script>
-
-<script>
-    function updateAOS() {
-        if (window.innerWidth <= 770) {
-            document.querySelectorAll('.container.left').forEach(function(el) {
-                el.setAttribute('data-aos', 'fade-left');
-            });
-        } else {
-            document.querySelectorAll('.container.left').forEach(function(el) {
-                el.setAttribute('data-aos', 'fade-right');
-            });
-        }
-    }
-
-    window.addEventListener('resize', updateAOS);
-    document.addEventListener('DOMContentLoaded', updateAOS);
 </script>
 
 <script src="parking-script.js"></script>
