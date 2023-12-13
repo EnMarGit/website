@@ -858,8 +858,42 @@ nav a:hover {
     }
 }
 
-/* ------------------------------------------------------------------------------ Feature section ------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------ Media section ------------------------------------------------------------------------------ */
+.media-features {
+    background-color: #f7f7f7;
+    text-align: center;
+    padding: 40px 0;
+}
 
+.media-logos {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px; /* Adjust the space between logos as needed */
+}
+
+.media-logo {
+    max-width: 15%; /* Adjust the size as needed */
+    height: auto;
+}
+
+.media-logo:first-child {
+    margin: 0 -2.775%;
+}
+
+@media screen and (max-width: 770px) {
+    .media-features {
+        background-color: #ffffff;
+    }
+
+    .media-logo {
+        max-width: 20%; /* Smaller logos for smaller screens */
+    }
+}
+
+
+
+/* ------------------------------------------------------------------------------ Feature section ------------------------------------------------------------------------------ */
 
 .feature-section {
     background-color: white;
@@ -1157,7 +1191,7 @@ nav a:hover {
 /* How it Works Section Styles */
 #how-it-works {
     background-color: white;
-    padding: 50px 0;
+    padding: 100px 0;
 }
 
 @media screen and (min-width: 771px) {
