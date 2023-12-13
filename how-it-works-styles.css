@@ -391,6 +391,12 @@ nav a:hover {
     }
 }
 
+/* Smartphones (Portrait) */
+@media screen and (max-width: 359px) {
+    .cta-button-mid {
+        width: 80%;
+    }
+}
 
 
 /* Hamburger Menu and Responsive Navigation Styles */
@@ -427,7 +433,7 @@ nav a:hover {
   .line {
     fill: none;
     transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
-    stroke: #000;
+    stroke: #ffffff;
     stroke-width: 5.5;
     stroke-linecap: round;
   }
@@ -557,6 +563,8 @@ nav a:hover {
     #hamburger-menu {
         margin: 0;  /* Ensure no additional margins */
         order: 3;  /* Ensure the hamburger menu is the last item */
+        display: flex;
+        align-items: center;
     }
 
     nav {
