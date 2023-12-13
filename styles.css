@@ -887,7 +887,15 @@ nav a:hover {
     }
 
     .media-logo {
-        max-width: 20%; /* Smaller logos for smaller screens */
+        max-width: 22.5%; /* Smaller logos for smaller screens */
+    }
+
+    .media-logos {
+        gap: 8px;
+    }
+
+    .media-logo:first-child {
+        margin: 0 -4.1625%;
     }
 }
 
