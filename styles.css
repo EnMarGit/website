@@ -917,6 +917,30 @@ nav a:hover {
     }
 }
 
+@media screen and (max-width: 480px) {
+    .media-logos {
+        overflow: hidden;
+        white-space: nowrap;
+        display: flex;
+        animation: scroll-logos 20s linear infinite;
+
+        /* Adjust the width to fit only the first three logos */
+        width: calc(3*50%); /* 22.5% per logo, 8px gap */
+    }
+
+    .media-logo-link {
+        white-space: normal;
+        max-width: auto; /* Width of each logo */
+    }
+
+    @keyframes scroll-logos {
+        from { transform: translateX(0); }
+        to { transform: translateX(-100%); }
+    }
+}
+
+
+
 
 
 /* ------------------------------------------------------------------------------ Feature section ------------------------------------------------------------------------------ */

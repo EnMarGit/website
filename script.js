@@ -290,3 +290,28 @@ document.querySelectorAll('.custom-dropdown-item').forEach(item => {
         }
     });
 });
+
+// ----------------------------------------------------------------Media Carrousel----------------------------------------------------------------
+document.addEventListener('DOMContentLoaded', function () {
+    function cloneLogosForAnimation() {
+        const mediaLogosContainer = document.querySelector('.media-logos');
+        if (!mediaLogosContainer) return;
+
+        // Clear existing clones (to avoid duplicating on resize)
+        mediaLogosContainer.querySelectorAll('.cloned').forEach(cloned => cloned.remove());
+
+        // Clone and append only if screen width is 480px or less
+        if (window.innerWidth <= 480) {
+            const children = Array.from(mediaLogosContainer.children);
+            children.forEach(child => {
+                const clone = child.cloneNode(true);
+                clone.classList.add('cloned'); // Mark it as cloned
+                mediaLogosContainer.appendChild(clone);
+            });
+        }
+    }
+
+    // Run initially and on resize
+    cloneLogosForAnimation();
+    window.addEventListener('resize', cloneLogosForAnimation);
+});
