@@ -297,17 +297,19 @@ document.addEventListener('DOMContentLoaded', function () {
         const mediaLogosContainer = document.querySelector('.media-logos');
         if (!mediaLogosContainer) return;
 
-        // Clear existing clones (to avoid duplicating on resize)
+        // Clear existing clones
         mediaLogosContainer.querySelectorAll('.cloned').forEach(cloned => cloned.remove());
 
-        // Clone and append only if screen width is 480px or less
         if (window.innerWidth <= 480) {
             const children = Array.from(mediaLogosContainer.children);
-            children.forEach(child => {
-                const clone = child.cloneNode(true);
-                clone.classList.add('cloned'); // Mark it as cloned
-                mediaLogosContainer.appendChild(clone);
-            });
+            // Clone each child multiple times
+            for (let i = 0; i < 5; i++) { // Clone twice for example
+                children.forEach(child => {
+                    const clone = child.cloneNode(true);
+                    clone.classList.add('cloned');
+                    mediaLogosContainer.appendChild(clone);
+                });
+            }
         }
     }
 
@@ -315,3 +317,4 @@ document.addEventListener('DOMContentLoaded', function () {
     cloneLogosForAnimation();
     window.addEventListener('resize', cloneLogosForAnimation);
 });
+

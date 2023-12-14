@@ -865,7 +865,8 @@ nav a:hover {
     }
 }
 
-/* ------------------------------------------------------------------------------ Media section ------------------------------------------------------------------------------ */
+
+/* ------------------------------------------------------------------------------- Media section ------------------------------------------------------------------------------ */
 .media-features {
     background-color: #f7f7f7;
     text-align: center;
@@ -876,23 +877,19 @@ nav a:hover {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    gap: 20px; /* Adjust the space between logos as needed */
+    gap: 40px; /* Adjust the space between logos as needed */
+    margin: 0 20px;
 }
 
 .media-logo-link {
-    max-width: 15%;
     display: flex; /* Use flexbox for vertical centering */
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
 }
 
 .media-logo {
-    max-width: 100%; /* Adjust the size as needed */
-    height: auto;
-}
-
-.media-logo-link:first-child {
-    margin: 0 -2.775%;
+    max-width: 80%; /* Adjust the size as needed */
+    height: 50px;
 }
 
 @media screen and (max-width: 770px) {
@@ -900,37 +897,42 @@ nav a:hover {
         background-color: #ffffff;
     }
 
-    .media-logo-link {
-        max-width: 22.5%;
-    }
-
     .media-logo {
-        max-width: 100%; /* Smaller logos for smaller screens */
+        max-width: 80%; /* Adjust the size as needed */
+        height: 30px;
     }
 
     .media-logos {
         gap: 8px;
     }
-
-    .media-logo-link:first-child {
-        margin: 0 -4.1625%;
-    }
 }
 
 @media screen and (max-width: 480px) {
+    .media-features {
+        overflow-x: hidden;
+    }
+
     .media-logos {
         overflow: hidden;
         white-space: nowrap;
         display: flex;
-        animation: scroll-logos 20s linear infinite;
-
-        /* Adjust the width to fit only the first three logos */
-        width: calc(3*50%); /* 22.5% per logo, 8px gap */
+        animation: scroll-logos 60s linear infinite;
+        width: calc(13*100%); /* Adjusted for clones */
+        gap: 5px;
     }
 
     .media-logo-link {
         white-space: normal;
-        max-width: auto; /* Width of each logo */
+        max-width: auto; /* Apply width as needed */
+        flex: 0 0 auto; /* Flex item styling for consistent sizing */
+        margin: 0 8px; /* Consistent margin for all items */
+        display: flex; /* Use flex for vertical centering */
+        justify-content: center; /* Center content horizontally */
+        align-items: center; /* Center content vertically */
+    }
+
+    .media-logo {
+        height: 40px;
     }
 
     @keyframes scroll-logos {
@@ -938,8 +940,6 @@ nav a:hover {
         to { transform: translateX(-100%); }
     }
 }
-
-
 
 
 
