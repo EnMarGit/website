@@ -917,7 +917,7 @@ nav a:hover {
         white-space: nowrap;
         display: flex;
         animation: scroll-logos 60s linear infinite;
-        width: calc(13*100%); /* Adjusted for clones */
+        width: calc(11*100%); /* Adjusted for clones */
         gap: 5px;
     }
 
@@ -932,7 +932,7 @@ nav a:hover {
     }
 
     .media-logo {
-        height: 40px;
+        height: 30px;
     }
 
     @keyframes scroll-logos {
