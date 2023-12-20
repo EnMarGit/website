@@ -141,3 +141,65 @@ document.querySelectorAll('.custom-dropdown-item').forEach(item => {
         }
     });
 });
+
+// ----------------------------------------------------------------Partners Form Section----------------------------------------------------------------
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    // TODO: Add AJAX request to send form data to your server
+
+    // Example success/error handling
+    fetch(this.action, {
+        method: this.method,
+        body: new FormData(this),
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            document.querySelector('.success-message').style.display = 'block';
+        } else {
+            document.querySelector('.error-message').style.display = 'block';
+        }
+    })
+    .catch(() => {
+        document.querySelector('.error-message').style.display = 'block';
+    });
+});
+
+
+// ----------------------------------------------------------------Dropdowns: Partners Form Section----------------------------------------------------------------
+// Function to toggle the contact form custom dropdown
+function toggleContactDropdown(dropdownId) {
+    var dropdownOptions = document.getElementById(dropdownId);
+    // Toggle the dropdown display
+    dropdownOptions.style.transform = dropdownOptions.style.transform === 'scaleY(1)' ? 'scaleY(0)' : 'scaleY(1)';
+}
+
+// Event listeners for the contact form dropdown wrappers
+document.querySelectorAll('.contact-dropdown-wrapper').forEach(wrapper => {
+    wrapper.addEventListener('click', function(event) {
+        // Only toggle the dropdown if the click is not on an item
+        if (!event.target.classList.contains('contact-custom-dropdown-item')) {
+            var dropdownId = this.querySelector('.contact-custom-dropdown-content').id;
+            toggleContactDropdown(dropdownId);
+        }
+    });
+});
+
+// Event listeners for each contact form dropdown item
+document.querySelectorAll('.contact-custom-dropdown-item').forEach(item => {
+    item.addEventListener('click', function() {
+        var selectedValue = this.getAttribute('data-value');
+        var selectElementId = this.parentElement.id.replace('CustomDropdown', '-select');
+        var currentSelectionId = this.parentElement.id.replace('CustomDropdown', 'CurrentSelection');
+        
+        // Set the value in the original select element and update the display
+        document.getElementById(selectElementId).value = selectedValue;
+        document.getElementById(currentSelectionId).textContent = this.textContent;
+
+        // Close the dropdown
+        toggleContactDropdown(this.parentElement.id);
+    });
+});

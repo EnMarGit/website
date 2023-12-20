@@ -52,10 +52,10 @@
     <a class="cta-button-mid" href="https://onelink.to/y9q7mf">Get the Cyrcl app</a>
 </section>    
 
-<!-- Safety Section Starts -->
-<section class="safe-riding-section">
-    <div class="safe-riding-wrapper">
-        <div class="safe-riding-rules-container"> 
+<!-- MC-DSK Section Starts -->
+<section class="mc-dsk-section">
+    <div class="mc-dsk-wrapper">
+        <div class="mc-dsk-container"> 
             <h2>Joint forces
                 <div class="partners-logo-imgs-mobile">
                     <img src="Images/DSK_Bank_logo_horizontal_CM.svg" alt="Sponsored by DSK Bank" class="logo-img-mobile">
@@ -68,14 +68,131 @@
                 <img src="Images/mc_symbol.svg" alt="Sponsored by Mastercard" class="logo-img">
             </div>
         </div>
-        <div class="safe-riding-rules-container">    
-            <a class="rules-box">
-                <img src="Images/mc-dsk-partnership.png" alt="Rent the bikes only if you are aged 16 or older" class="rules-image">
+        <div class="mc-dsk-container">    
+            <a class="mc-dsk-box">
+                <img src="Images/mc-dsk-partnership.png" alt="Rent the bikes only if you are aged 16 or older" class="mc-dsk-image">
             </a>
         </div>
     </div>
 </section>
-<!-- Safety Section Ends -->
+<!-- MC-DSK Section Ends -->
+
+<!-- Partners Incentives Section Starts -->
+<section class="partner-incentives-section">
+    <div class="partner-incentives-subsection">
+        <h2 class="partner-incentives-title">Become an exclusive partner</h2>
+        <div class="partner-incentives-wrapper">
+            <div class="partner-incentives-box">
+                <h3><img src="Images/brand.png" alt="Brand Image" class="partner-incentives-image"><span>Brand image</span></h3>
+                <p>Show everyone you care about sustainable and healthy lifestyle. After all, building a strong brand image is a continuous process, not a one-time accomplishment.</p>
+            </div>
+            <div class="partner-incentives-box">
+                <h3><img src="Images/top-locations.png" alt="Top Locations" class="partner-incentives-image"><span>Top locations</span></h3>
+                <p>Let your brand be seen daily on the hottest locations across the city. Check our bike locations by downloading the app here.</p>
+            </div>
+            <div class="partner-incentives-box">
+                <h3><img src="Images/rates.png" alt="Preferential Rates" class="partner-incentives-image"><span>Preferential rates</span></h3>
+                <p>Make your clients and employees proud of you. Gift them the chance to enjoy a convenient transport, a healthy activity, and a quality time with their loved once.</p>
+            </div>
+            <div class="partner-incentives-box">
+                <h3><img src="Images/target-audience.png" alt="Target Audience" class="partner-incentives-image"><span>Target audience</span></h3>
+                <p>If you would like to reach a group of young and tech-savvy individuals, think no more. We are also proud to appeal equally to both men and women.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Partners Incentives Section Ends -->
+
+<!-- Partners Form Section Starts -->
+<section class="contact-section">
+    <div class="contact-subsection">
+        <div class="contact-text">
+            <h3>You want the best for your team and clients?</h3>
+            <p>Tell us more about it in the form below or contact us on <a href="mailto:info@cyrcl.eu">info@cyrcl.eu</a> or <a href="tel:+359896755556">+359 896 755 556</a>.</p>
+            <img src="Images/form-arrow.png" alt="" class="form-image">
+        </div>
+        <div class="contact-form-container">
+            <form id="contactForm" action="path_to_your_server_side_script" method="POST">
+                <p>Hello, I am <input type="text" name="firstName" id="firstName" placeholder="name*" autocomplete="given-name" required> from <input type="text" name="companyName" placeholder="company name*" required></p>
+                
+
+                <!-- Dropdowns -->
+                <div class="contact-dropdown-container">
+                    <span class="contact-text-before-dropdown">I learnt about Cyrcl from</span>
+                    <div class="contact-dropdown-wrapper">
+                        <select id="source-select" name="source" class="original-dropdown" style="display: none;">
+                            <option value="bikes">the bikes on the street</option>
+                            <option value="facebook">Facebook post</option>
+                            <option value="instagram">Instagram post</option>
+                            <option value="linkedin">LinkedIn</option>
+                            <option value="ads">paid ads</option>
+                            <option value="google">Google</option>
+                            <option value="referral">a friend / colleague / family</option>
+                            <option value="other">other</option>
+                        </select>
+                        <span id="sourceCurrentSelection" class="contact-current-selection">Select an option</span>
+                        <span class="contact-dropdown-arrow">▼</span>
+                        <div id="sourceCustomDropdown" class="contact-custom-dropdown-content">
+                            <div class="contact-custom-dropdown-item" data-value="bikes">the bikes on the street</div>
+                            <div class="contact-custom-dropdown-item" data-value="facebook">Facebook post</div>
+                            <div class="contact-custom-dropdown-item" data-value="instagram">Instagram post</div>
+                            <div class="contact-custom-dropdown-item" data-value="linkedin">LinedIn</div>
+                            <div class="contact-custom-dropdown-item" data-value="ads">paid ads</div>
+                            <div class="contact-custom-dropdown-item" data-value="google">Google</div>
+                            <div class="contact-custom-dropdown-item" data-value="referral">a friend / colleague / family</div>
+                            <div class="contact-custom-dropdown-item" data-value="other">other</div>
+                            <!-- Add other items as needed -->
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-dropdown-container">
+                    <span class="contact-text-before-dropdown">And I want to learn more about</span>
+                    <div class="contact-dropdown-wrapper">
+                        <select id="interest-select" name="interest" class="original-dropdown" style="display: none;" required>
+                            <option value="partnership">exclusive partnership with brand positioning</option>
+                            <option value="bike-sharing">corporate bike-sharing</option>
+                            <option value="other">other*</option>
+                        </select>
+                        <span id="interestCurrentSelection" class="contact-current-selection">Select an option</span>
+                        <span class="contact-dropdown-arrow">▼</span>
+                        <div id="interestCustomDropdown" class="contact-custom-dropdown-content">
+                            <div class="contact-custom-dropdown-item" data-value="partnership">exclusive partnership with brand positioning</div>
+                            <div class="contact-custom-dropdown-item" data-value="bike-sharing">corporate bike-sharing</div>
+                            <div class="contact-custom-dropdown-item" data-value="other">other</div>
+                            <!-- Add other items as needed -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact -->
+                <p>Please get in touch with us at 
+                    <input type="email" name="email" id="email" placeholder="email*" autocomplete="email" required>
+                </p>
+                <p>or 
+                    <input type="tel" name="telephone" id="telephone" placeholder="telephone number" autocomplete="telephone">
+                </p>
+
+                <!-- Additional Info -->
+                <textarea name="additionalInfo" placeholder="Anything you would like to add?"></textarea>
+
+                <!-- Checkbox -->
+                <label class="checkbox-container">
+                    <input type="checkbox" name="agreement" required="\2713">
+                    <span class="checkmark"></span>
+                    <span class="label-text">I agree that my personal data will be processed in accordance with the General Terms and Conditions and the Privacy Policy of the site.</span>
+                </label>                
+
+                <!-- Submit Button -->
+                <button type="submit" class="cta-button">Send</button>
+
+                <!-- Messages -->
+                <p class="success-message" style="display:none;">Your message has been sent successfully!</p>
+                <p class="error-message" style="display:none;">Oops! Something went wrong.</p>
+            </form>
+        </div>
+    </div>
+</section>
+<!-- Partners Form Section Ends -->
 
 <!-- Learn More Section Starts -->
 <section class="learn-more-section">

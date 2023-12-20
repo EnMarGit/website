@@ -872,14 +872,14 @@ nav a:hover {
     }
 }
 
-/* ------------------------------------------------------------------------------ Safety Section ------------------------------------------------------------------------------ */
-.safe-riding-section {
+/* ------------------------------------------------------------------------------ MC-DSK Section ------------------------------------------------------------------------------ */
+.mc-dsk-section {
     padding: 50px 0;
     display: flex;
     align-items: center;
 }
 
-.safe-riding-wrapper {
+.mc-dsk-wrapper {
     padding: 10px 80px 50px;
     display: flex;
     flex-direction: row;
@@ -887,7 +887,7 @@ nav a:hover {
     gap: 50px;
 }
 
-.rules-box {
+.mc-dsk-box {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -909,53 +909,57 @@ nav a:hover {
 }
 
 @media screen and (min-width: 1360px) {
-    .safe-riding-wrapper {
+    .mc-dsk-wrapper {
         /* Set the padding to be (screen width - 1200px) / 2 on each side */
         padding-left: calc((100vw - 1200px) / 2);
         padding-right: calc((100vw - 1200px) / 2);
     }
 }
 
-@media (min-width: 770px) {
-    .safe-riding-rules-container:first-child {
+@media (min-width: 771px) {
+    .mc-dsk-container:first-child {
         flex: 0 0 40%;
     }
 
-    .safe-riding-rules-container:last-child {
+    .mc-dsk-container:last-child {
         padding-top: 30px;
         display: grid;
         grid-template-columns: 1fr; /* This creates three columns of equal width */
         gap: 20px 50px;
     }
 
-    .rules-image {
+    .mc-dsk-image {
         max-width: 80%;
     }
 
     .partners-logo-imgs-mobile {
         display: none;
     }
+
+    .partners-logo-imgs {
+        gap: 35px;
+    }
 }
 
 @media (max-width: 770px) {
-    .safe-riding-wrapper {
+    .mc-dsk-wrapper {
         padding: 0 40px;
         flex-direction: column;
         gap: 30px;
     }
 
-    .safe-riding-rules-container:last-child {
+    .mc-dsk-container:last-child {
         display: flex;
         flex-direction: column;
         align-items: center;
         max-width: 100%;
     }
 
-    .rules-image {
+    .mc-dsk-image {
         max-width: 100%;
     }
 
-    .safe-riding-section {
+    .mc-dsk-section {
         border-bottom: solid #f7f7f7 2px;
     }
 
@@ -967,7 +971,7 @@ nav a:hover {
         display: none;
     }
 
-    .safe-riding-rules-container:first-child h2 {
+    .mc-dsk-container:first-child h2 {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -1000,8 +1004,8 @@ nav a:hover {
     }
 }
 
-@media (min-width: 770px) and (max-width: 990px) {
-    .safe-riding-rules-container:first-child {
+@media (min-width: 771px) and (max-width: 990px) {
+    .mc-dsk-container:first-child {
         flex: 0 0 40%;
     }
     
@@ -1009,7 +1013,7 @@ nav a:hover {
         height: 1em;
     }
 
-    .safe-riding-rules-container:last-child {
+    .mc-dsk-container:last-child {
         padding-top: 20px;
         padding-bottom: 20px;
         display: grid;
@@ -1017,13 +1021,19 @@ nav a:hover {
         gap: 10px 20px;
     }
 
-    .rules-image {
+    .mc-dsk-image {
         max-width: 80%;
     }
 }
 
+@media (min-width: 1200px) {
+    .mc-dsk-image {
+        max-width: 70%;
+    }
+}
+
 @media (max-width: 370px) {
-    .safe-riding-wrapper {
+    .mc-dsk-wrapper {
         padding-left: 36px;
         padding-right: 36px;
     }
@@ -1032,7 +1042,7 @@ nav a:hover {
         height: 2em;
     }
 
-    .safe-riding-rules-container:last-child {
+    .mc-dsk-container:last-child {
         display: grid;
         grid-template-columns: 1fr; /* This creates three columns of equal width */
         gap: 20px;
@@ -1040,18 +1050,393 @@ nav a:hover {
 }
 
 @media (max-width: 340px) {
-    .safe-riding-rules-container:last-child {
+    .mc-dsk-container:last-child {
         display: flex;
         flex-direction: column;
     }
 
-    .rules-image {
-        max-width: 80%;
+    .mc-dsk-image {
+        max-width: 100%;
     }
 }
 
 .bold-text {
     font-weight: bold;
+}
+
+/* ------------------------------------------------------------------------------ Partners Incentives Section ------------------------------------------------------------------------------ */
+.partner-incentives-section {
+    background-color: rgb(255, 255, 255);
+    padding: 80px 80px;
+}
+
+@media screen and (min-width: 1360px) {
+    .partner-incentives-section {
+        /* Set the padding to be (screen width - 1200px) / 2 on each side */
+        padding-left: calc((100vw - 1200px) / 2);
+        padding-right: calc((100vw - 1200px) / 2);
+    }
+}
+
+.partner-incentives-subsection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #f7f7f7;
+    gap: 50px;
+}
+
+.partner-incentives-title {
+    flex-basis: 25%; /* Adjust as needed */
+}
+
+.partner-incentives-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-basis: 70%; /* Adjust as needed */
+    gap: 20px;
+}
+
+.partner-incentives-box p {
+    /* H3 styling (if needed) */
+    margin-bottom: auto; /* Pushes everything else down */
+}
+
+.partner-incentives-box h3 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.partner-incentives-box {
+    background-color: #f7f7f7;
+    padding: 10px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Aligns content to top and bottom */
+    border-radius: 15px;
+}
+
+.partner-incentives-image {
+    width: 20px;
+    height: 20px;
+}
+
+@media screen and (min-width: 771px) {
+    .partner-incentives-box h3 span {
+        width: 65%; /* Set width of text to 60% */
+        display: inline-block; /* Treat the span as a block-level element within flex */
+    }
+
+    .partner-incentives-subsection {
+        padding: 20px;
+        padding-bottom: 40px;
+        border-radius: 25px 25px 0 0;
+    }
+
+    .partner-incentives-section {
+        padding-bottom: 0;
+    }
+}
+
+@media (min-width: 771px) and (max-width: 990px) {
+    .partner-incentives-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* This creates two columns of equal width */
+        gap: 20px;
+    }
+
+    .partner-incentives-box h3 {
+        max-width: 55%;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .partner-incentives-section {
+        background-color: #f7f7f7;
+        padding: 40px 40px 0;
+    }
+
+    .partner-incentives-subsection {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .partner-incentives-wrapper {
+        flex-direction: column;
+    }
+
+    .partner-incentives-box {
+        margin-bottom: 0; /* Space between boxes */
+        min-height: 158px;
+        border-bottom: dashed 4px white;
+    }
+
+    .partner-incentives-box:last-child {
+        border: none;
+    }
+
+    .partner-incentives-box h3 {
+        display: inline;
+    }
+
+    .partner-incentives-box p {
+        margin: 0 0 auto 0;
+    }
+
+    .partner-incentives-image {
+        vertical-align: -14%;
+        margin-right: 5px;
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 770px) {
+    .partner-incentives-box {
+        min-height: 138px;
+    }
+}
+
+/* ------------------------------------------------------------------------------ Partners Form Section ------------------------------------------------------------------------------ */
+.contact-section {
+    padding: 0px 80px 80px 80px;
+}
+
+@media screen and (min-width: 1360px) {
+    .contact-section {
+        /* Set the padding to be (screen width - 1200px) / 2 on each side */
+        padding-left: calc((100vw - 1200px) / 2);
+        padding-right: calc((100vw - 1200px) / 2);
+    }
+}
+
+.form-image {
+    max-width: 80%;
+    height: auto;
+}
+
+.contact-subsection {
+    padding: 60px 20px 60px 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    background-color: #E6F1D4;
+    border-radius: 0 0 25px 25px;
+    /* Add more styling */
+}
+
+.contact-text{
+    flex-basis: 35%;
+}
+
+.contact-form-container {
+    width: 50%; /* Adjust as needed */
+}
+
+.contact-form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input[type="text"], input[type="email"], input[type="tel"], select, textarea {
+    /* Input and textarea styling */
+    background-color: #dddddd00;
+    border: none;
+    border-bottom: #33333375 solid 1px;
+    text-align: left;
+    font: inherit;
+    margin-left: auto;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, select:focus, textarea:focus {
+    outline: none;
+}
+
+
+textarea {
+    margin-left: 0;
+}
+
+.checkbox-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    user-select: none;
+}
+
+.label-text {
+    margin-left: 10px; /* Adjust as needed */
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: relative;
+    flex-shrink: 0;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #fff;
+    border: none;
+    border-radius: 4px;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkmark:after {
+    content: "\2713";
+    position: absolute;
+    display: none;
+    color: #81BB27;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+#contactForm .cta-button {
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+    color: #000;
+    align-self: baseline;
+    padding: 6px 40px;
+    cursor: pointer;
+}
+
+.success-message, .error-message {
+    /* Style your messages */
+}
+
+/* Styles for the updated contact form dropdowns */
+.contact-dropdown-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.contact-current-selection {
+    display: inline-block;
+    color: #333333c5;
+    border-bottom: #33333375 solid 1px;
+    cursor: pointer;
+    padding: 5px 30px 5px 10px;
+    font-weight: normal;
+    font-size: 16px;
+    font-family: inherit;
+    user-select: none;
+}
+
+.contact-dropdown-arrow {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #333333c5;
+    cursor: pointer;
+    z-index: 0;
+}
+
+.contact-custom-dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 15px;
+    border: 2px solid #f7f7f7;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.3s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+    z-index: 1;
+    overflow: hidden;
+}
+
+.contact-custom-dropdown-item {
+    padding: 10px;
+    border-bottom: 1px solid #f7f7f7;
+    cursor: pointer;
+}
+
+.contact-custom-dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.contact-custom-dropdown-item:hover {
+    background-color: #f7f7f7;
+}
+
+.contact-dropdown-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Adjust spacing as needed */
+}
+
+@media screen and (max-width: 770px) {
+    .contact-section {
+        background-color: #E6F1D4;
+        padding: 0 40px 80px;
+    }
+
+    .contact-subsection {
+        padding: 60px 0 0;
+        flex-direction: column;
+    }
+
+    .contact-form-container {
+        width: 100%;
+    }
+
+    #contactForm .cta-button {
+        align-self: center;
+    }
+
+    .partner-incentives-box {
+        padding: 10px 0;
+    }
+
+    #contactForm p {
+        line-height: 2;
+    }
+
+    .contact-dropdown-container{
+        display: block;
+        margin: 15px 0;
+    }
+
+    .contact-current-selection {
+        border: none;
+        padding-left: 0;
+    }
+
+    .contact-dropdown-wrapper {
+        width: 100%;
+        border-bottom: #33333375 solid 1px;
+    }
+
+    .checkbox-container {
+        margin: 15px 0 12px;
+    }
 }
 
 /* ------------------------------------------------------------------------------ Learn More ------------------------------------------------------------------------------ */
