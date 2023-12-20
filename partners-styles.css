@@ -874,7 +874,7 @@ nav a:hover {
 
 /* ------------------------------------------------------------------------------ MC-DSK Section ------------------------------------------------------------------------------ */
 .mc-dsk-section {
-    padding: 50px 0;
+    padding: 50px 0 60px;
     display: flex;
     align-items: center;
 }
@@ -1124,6 +1124,10 @@ nav a:hover {
     height: 20px;
 }
 
+.underline-text {
+    text-decoration: underline;
+}
+
 @media screen and (min-width: 771px) {
     .partner-incentives-box h3 span {
         width: 65%; /* Set width of text to 60% */
@@ -1229,7 +1233,7 @@ nav a:hover {
 }
 
 .contact-text{
-    flex-basis: 35%;
+    flex-basis: 40%;
 }
 
 .contact-form-container {
@@ -1391,6 +1395,7 @@ textarea {
     display: flex;
     align-items: center;
     gap: 10px; /* Adjust spacing as needed */
+    margin: 15px 0;
 }
 
 @media screen and (max-width: 770px) {
@@ -1420,7 +1425,7 @@ textarea {
         line-height: 2;
     }
 
-    .contact-dropdown-container{
+    .contact-dropdown-container {
         display: block;
         margin: 15px 0;
     }
