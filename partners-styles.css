@@ -1172,6 +1172,7 @@ nav a:hover {
         margin-bottom: 0; /* Space between boxes */
         min-height: 158px;
         border-bottom: dashed 4px white;
+        border-radius: 0;
     }
 
     .partner-incentives-box:last-child {
