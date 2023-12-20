@@ -203,3 +203,24 @@ document.querySelectorAll('.contact-custom-dropdown-item').forEach(item => {
         toggleContactDropdown(this.parentElement.id);
     });
 });
+
+// ----------------------------------------------------------------Special CTA Button Mid: Scroll Behavious----------------------------------------------------------------
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelector('.cta-button-mid').addEventListener('click', function (e) {
+        e.preventDefault(); // Prevent the default anchor behavior
+
+        var targetSection = document.getElementById('mc-dsk-section');
+        var headerOffset = document.querySelector('.sticky-header').offsetHeight; // Replace '.sticky-header' with your header's class or ID
+
+        if (targetSection) {
+            var elementPosition = targetSection.getBoundingClientRect().top;
+            var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth"
+            });
+        }
+    });
+});
+
