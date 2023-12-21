@@ -332,14 +332,22 @@
 <script>
     window.addEventListener('load', function() {
         var overlay = document.getElementById('loadingOverlay');
-        overlay.classList.add('hidden');
-        
-        // Optional: Remove the overlay from the DOM after the transition ends
-        overlay.addEventListener('transitionend', function() {
-            overlay.style.display = 'none';
-        });
+        var opacity = 1; // initial opacity
+
+        var fadeOut = function() {
+            opacity -= 0.02; // adjust for speed
+            if (opacity <= 0) {
+                overlay.style.display = 'none';
+            } else {
+                overlay.style.opacity = opacity;
+                requestAnimationFrame(fadeOut);
+            }
+        };
+
+        requestAnimationFrame(fadeOut);
     });
 </script>
+
 
 <script src="partners-script.js"></script>
 
