@@ -13,6 +13,7 @@
 </head>
 
 <body>
+    <div id="loadingOverlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: white; z-index: 1010;"></div>
     <div id="loader" class="loader"></div>
 <header class="sticky-header">
 <a href="index.html" class="logo-link">
@@ -327,6 +328,18 @@
 <div><a href="help.html" class="sticky-circle">
     <img src="Images/more-icon.svg" alt="Help" class="more-icon">
 </a></div>
+
+<script>
+    window.addEventListener('load', function() {
+        var overlay = document.getElementById('loadingOverlay');
+        overlay.classList.add('hidden');
+        
+        // Optional: Remove the overlay from the DOM after the transition ends
+        overlay.addEventListener('transitionend', function() {
+            overlay.style.display = 'none';
+        });
+    });
+</script>
 
 <script src="partners-script.js"></script>
 

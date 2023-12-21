@@ -2148,3 +2148,13 @@ footer {
     background-color: rgba(255, 255, 255, 0.9);
     z-index: 1006; /* Below the loader, but above other content */
 }
+
+#loadingOverlay {
+    transition: opacity 0.5s ease-out;
+    opacity: 1;
+}
+
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+}

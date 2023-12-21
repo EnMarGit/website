@@ -8,7 +8,7 @@ console.log("Script is running");
 document.addEventListener("DOMContentLoaded", function() {
     // Select the sticky ellipse and footer elements
     const stickyEllipse = document.querySelector('.sticky-ellipse');
-    const footer = document.querySelector('footer');
+    const footer = document.querySelector('.mc-dsk-section');
 
     // Add a scroll event listener to the window object
     window.addEventListener('scroll', function() {
