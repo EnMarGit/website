@@ -13,6 +13,7 @@
 </head>
 
 <body>
+    <div id="loadingOverlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: white; z-index: 1010;"></div>
     <div id="loader" class="loader"></div>
 <header>
 <a href="index.html" class="logo-link">
@@ -245,6 +246,25 @@
 <div><a href="help.html" class="sticky-circle">
     <img src="Images/more-icon.svg" alt="Help" class="more-icon">
 </a></div>
+
+<script>
+    window.addEventListener('load', function() {
+        var overlay = document.getElementById('loadingOverlay');
+        var opacity = 1; // initial opacity
+
+        var fadeOut = function() {
+            opacity -= 0.02; // adjust for speed
+            if (opacity <= 0) {
+                overlay.style.display = 'none';
+            } else {
+                overlay.style.opacity = opacity;
+                requestAnimationFrame(fadeOut);
+            }
+        };
+
+        requestAnimationFrame(fadeOut);
+    });
+</script>
 
 <script src="sustainability-script.js"></script>
 

@@ -1895,3 +1895,25 @@ footer {
     background-color: rgba(255, 255, 255, 0.9);
     z-index: 1006; /* Below the loader, but above other content */
 }
+
+/* ------------------------------------------------------------------------------ White Screen Loader Overlay ------------------------------------------------------------------------------ */
+
+
+/* Optional: Fullscreen overlay */
+.loader-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 1006; /* Below the loader, but above other content */
+    opacity: 1;
+}
+
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+}

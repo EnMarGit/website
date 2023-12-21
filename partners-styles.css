@@ -2136,6 +2136,10 @@ footer {
     display: none;
 }
 
+
+/* ------------------------------------------------------------------------------ White Screen Loader Overlay ------------------------------------------------------------------------------ */
+
+
 /* Optional: Fullscreen overlay */
 .loader-overlay {
     display: flex;
