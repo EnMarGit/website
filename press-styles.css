@@ -1,0 +1,1644 @@
+
+@font-face {
+    font-family: 'Noah Head Black';
+    src: url('fonts/NoahHead-Black.woff2');
+}
+
+@font-face {
+    font-family: 'Noah Regular';
+    src: url('fonts/Noah-Regular.woff2');
+}
+
+@font-face {
+    font-family: 'Noah Text Medium';
+    src: url('fonts/NoahText-Medium.woff2');
+}
+
+@font-face {
+    font-family: 'Noah Bold';
+    src: url('fonts/Noah-Bold.woff2');
+}
+
+body {
+    font-family: "Noah Text Medium", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: "Noah Head Black", sans-serif;
+    font-size: 68px;
+}
+
+h2 {
+    font-family: "Noah Head Black", sans-serif;
+    font-size: 48px;
+}
+
+h3, .subheadline {
+    font-family: "Noah Regular", sans-serif;
+    font-size: 1.4rem;  /* Base size as identified for .subheadline */
+}
+
+body, p {
+    font-family: "Noah Text Medium", sans-serif;
+    font-size: 16px;
+}
+
+.cta-button-mid {
+    font-size: 18px;  /* Base size as identified for .cta-button-mid */
+}
+
+a {
+    color: inherit;        /* Inherits text color from the parent */
+    font-size: inherit;    /* Inherits font size from the parent */
+    font-weight: inherit;  /* Inherits font weight from the parent */
+    text-decoration: none; /* Optional: removes underline from links */
+}
+
+@media screen and (max-width: 1200px) {
+    h1 { font-size: 48px; }
+    h2 { font-size: 36px; }  /* 75% of the base size */
+    h3, .subheadline { font-size: 1.4rem; }
+    p { font-size: 16px; }  /* same as the base size */
+    .cta-button-mid { font-size: 16px; }  /* ~89% of the base size */
+}
+
+@media screen and (max-width: 770px) {
+    h1 { font-size: 48px; }
+    h2 { font-size: 28px; }  /* ~67% of the base size */
+    h3, .subheadline { font-size: 1.2rem; }
+    p { font-size: 15px; }  /* ~94% of the base size */
+    .cta-button-mid { font-size: 15px; }  /* ~83% of the base size */
+}
+
+@media screen and (max-width: 480px) {
+    h1 { font-size: 42px; }
+    h2 { font-size: 20px; }  /* 50% of the base size */
+    h3, .subheadline { font-size: 1.2rem; }
+    p { font-size: 15px; }  /* ~88% of the base size */
+    .cta-button-mid { font-size: 15px; }  /* ~78% of the base size */
+}
+
+
+/* ------------------------------------------------------------------------------ Header and Hero Section ------------------------------------------------------------------------------ */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-image: linear-gradient(135deg, #F4602C, #81BB27); /* Gradient from left to right */
+    z-index: 1000;
+    position: sticky;
+    top: 0;
+}
+
+header nav a, .cta-button {
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #000000;
+    padding: 8px 12px;
+    transition: background 0.3s;
+    font-family: "Noah Text Medium";
+    font-weight: bold;
+}
+
+nav a:hover {
+    background-color: #f4612c00;
+    border-radius: 5px;
+    color: #ffffff;
+    transition: all 0.3s;
+}
+
+.logo-link {
+    display: inline-block; /* Makes the anchor the size of its content */
+    line-height: 0;       /* Removes extra line-height space */
+}
+
+#cyrcl-logo {
+    height: 50px;
+    margin-right: 20px;
+    margin-left: -20px;
+    cursor: pointer;
+    z-index: 1005;
+}
+
+.cta-button {
+    background-color: #ffffff;
+    font-weight: bold;
+    color: #000000;
+    padding: 6px 20px;
+    border-radius: 15px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    border: 2px solid transparent;
+    font-family: "Noah Text Medium";
+    font-weight: bold;
+}
+
+.cta-button:hover {
+    background-color: #f4612c00;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    transition: all 0.3s;
+}
+.cta-button-mid {
+    background-image: linear-gradient(135deg, #F4602C, #81BB27); /* Diagonal gradient */
+    color: #000000;
+    padding: 28px 78px 28px 78px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Noah Text Medium";
+    font-weight: bold;
+}
+
+.cta-button-mid:hover {
+    background-image: linear-gradient(135deg, #913b1cd2, #5b851bc9);
+    color: #ffffff;
+    transition: all 0.3s;
+}
+
+.hero {
+    height: 500px;
+    background-color: #ddd; /* Placeholder till you get an image */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url('path-to-fallback-image.jpg'); /* Replace with your fallback image */
+    position: relative;  /* Ensures z-index and other positioning works inside this element */
+    overflow: hidden;  /* To prevent video from spilling out if it's larger than the container */
+    margin-top: 0px;
+}
+
+.hero h1 {
+    color: #ffffff; /* Placeholder till you get an image */
+    font-size: 3em;
+    margin-bottom: 0.5rem;
+    font-size: 68px;
+    font-family: "Noah Head Black", sans-serif;
+    font-feature-settings: "ss03";
+    max-width: 1200px;
+}
+
+.hero h1, .hero .cta-button-mid {
+    position: relative;  /* Keeps the content above the video */
+    z-index: 1;
+}
+
+/* Style for the wrapper */
+.dropdown-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+/* Remove default appearance for the dropdown */
+#country-select {
+    -webkit-appearance: none; /* Safari and Chrome */
+    -moz-appearance: none;    /* Firefox */
+    appearance: none;         /* Standard */
+    background-color: #ffffff00;
+    border: 2px solid white;
+    padding: 12.5px 30px 12.5px 10px;  /* Added more padding on the right for the arrow icon */
+    color: #ffffff;
+    cursor: pointer;
+    width: auto;
+    z-index: 1001;
+    position: relative;
+    border-radius: 15px;  /* Add a rounded border */
+    font-weight: normal;
+    font-size: 16px;
+    font-family: "Noah Regular";
+    display: none;
+}
+
+/* Style for the custom arrow */
+.dropdown-arrow {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #ffffff;
+    z-index: 1002;
+}
+
+.current-selection {
+    display: inline-block;
+    color: #ffffff;
+    cursor: pointer;
+    border: 2px solid white;
+    border-radius: 15px;  /* Add a rounded border */
+    padding: 12.5px 30px 12.5px 10px;
+    font-weight: normal;
+    font-size: 16px;
+    font-family: "Noah Regular";
+    user-select: none; /* Prevent text selection */
+}
+
+.current-selection.active {
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+    border-radius: 15px;
+    transition: all 1s;
+}
+
+.dropdown-arrow.active {
+    color: #000000; /* Set arrow color to black when active */
+    transition: all 1s;
+}
+
+
+/* Style for custom dropdown content */
+.custom-dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 15px;
+    border: 2px solid #f7f7f7;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.3s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+    z-index: 10;
+    overflow: hidden;
+}
+
+/* Style for custom dropdown items */
+.custom-dropdown-item {
+    padding: 10px;
+    border-bottom: 1px solid #f7f7f7;
+    cursor: pointer;
+}
+
+.custom-dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.custom-dropdown-item:hover {
+    background-color: #f7f7f7;
+}
+
+/* Style for the dropdown arrow */
+.dropdown-arrow {
+    cursor: pointer;
+    /* Other existing styles */
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.250); /* This adds a black overlay with 25% opacity */
+    pointer-events: none; /* Ensures the overlay doesn't interfere with video controls or interactions */
+}
+
+/* Media queries for responsive design */
+
+/* Tablets (Portrait) */
+@media screen and (max-width: 770px) {
+    header {
+        flex-direction: column;
+        padding: 15px;
+    }
+    
+    nav {
+        margin-top: 10px;
+    }
+
+    nav a {
+        margin: 0 5px;
+    }
+
+    #cyrcl-logo {
+        height: 40px;
+    }
+
+    .cta-button {
+        padding: 8px 16px;
+        font-size: 16px;
+    }
+
+    .cta-button-mid {
+        width: 276px;
+        height: 30px;
+        text-align: center;
+        padding: 8px 12px;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* Smartphones (Portrait) */
+@media screen and (max-width: 480px) {
+    header {
+        flex-direction: column;
+        padding: 10px;
+        height: 40px;
+    }
+    
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        margin: 5px 0;
+    }
+
+    #cyrcl-logo {
+        height: 35px;
+    }
+
+    .cta-button {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    .cta-button-mid {
+        width: 306px;
+        height: 36px;
+        text-align: center;
+        padding: 8px 12px;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .dropdown-wrapper {
+        margin-top: 10px;
+    }
+}
+
+/* Smartphones (Portrait) */
+@media screen and (max-width: 359px) {
+    .cta-button-mid {
+        width: 80%;
+    }
+}
+
+
+/* Hamburger Menu and Responsive Navigation Styles */
+
+#hamburger-menu {
+    display: none; /* Initially hidden */
+    font-size: 28px;
+    cursor: pointer;
+    margin-left: 10px;
+    z-index: 1005;
+}
+
+/* Base styles for the hamburger menu */
+#hamburger-menu.ham {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: transform 400ms;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Styles for when the menu is active (rotated) */
+  .hamRotate.active {
+    transform: rotate(45deg);
+  }
+
+  hamRotate180.active {
+    transform: rotate(180deg);
+  }
+  
+  /* Styles for the lines in the hamburger menu */
+  .line {
+    fill: none;
+    transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+    stroke: #ffffff;
+    stroke-width: 5.5;
+    stroke-linecap: round;
+  }
+  
+  /* Specific styles for each line */
+  .ham7 .top {
+    stroke-dasharray: 40 82;
+  }
+  
+  .ham7 .middle {
+    stroke-dasharray: 40 111;
+  }
+  
+  .ham7 .bottom {
+    stroke-dasharray: 40 161;
+  }
+  
+  /* Styles for when the menu is active (changes in the lines) */
+  .ham7.active .top {
+    stroke-dasharray: 17 82;
+    stroke-dashoffset: -62px;
+  }
+  
+  .ham7.active .middle {
+    stroke-dashoffset: 23px;
+  }
+  
+  .ham7.active .bottom {
+    stroke-dashoffset: -83px;
+  }
+  
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+/* Hide navigation links and show hamburger menu for screens less than 1200px */
+@media screen and (max-width: 1200px) {
+    #hamburger-menu {
+        display: block;
+    }
+    
+    .nav-links {
+        display: none; /* Initially hidden */
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Adjust based on your header height */
+        right: 20px;
+        background-color: #f4612c;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .nav-links a {
+        margin: 10px;
+    }
+}
+
+/* Show the navigation links when the menu is active (this will be toggled with JavaScript) */
+.nav-links.active {
+    display: flex;
+}
+
+
+
+/* Adjustments for the header layout below 1200px */
+@media screen and (max-width: 1200px) {
+    header {
+        justify-content: space-between; /* Make sure the logo and hamburger menu are on opposite ends */
+    }
+    
+    .cta-button, .dropdown-wrapper {
+        margin: 10px 0; /* Add some margin for better spacing in the dropdown */
+    }
+}
+
+
+
+/* Adjustments for logo and hamburger icon positioning below 1200px */
+@media screen and (max-width: 1200px) {
+    header {
+        padding-left: 10px;  /* Small left padding for the logo */
+        padding-right: 10px; /* Small right padding for the hamburger icon */
+    }
+}
+
+
+
+/* Adjustments for correct positioning of logo and hamburger icon below 1200px */
+@media screen and (max-width: 1200px) {
+    header {
+        padding: 10px 5px;  /* Minimal padding for the header */
+        justify-content: space-between; /* Ensures elements are at opposite ends */
+        align-items: center; /* Ensures vertical centering */
+    }
+
+    #cyrcl-logo {
+        margin-left: 5px;  /* Minimal left margin */
+    }
+
+    #hamburger-menu {
+        margin-right: 5px;  /* Minimal right margin */
+    }
+}
+
+
+
+/* Final adjustments for the positioning of the logo and hamburger icon below 1200px */
+@media screen and (max-width: 1200px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+    }
+
+    #cyrcl-logo, #hamburger-menu, nav {
+        flex-shrink: 0;  /* Prevent flex items from shrinking */
+    }
+
+    #cyrcl-logo {
+        margin: 0;  /* Ensure no additional margins */
+        order: 1;  /* Ensure the logo is the first item */
+    }
+
+    #hamburger-menu {
+        margin: 0;  /* Ensure no additional margins */
+        order: 3;  /* Ensure the hamburger menu is the last item */
+        display: flex;
+        align-items: center;
+    }
+
+    nav {
+        order: 2;  /* Ensure nav is in the middle */
+        display: none;  /* Hide it by default */
+    }
+
+    .nav-links.active nav {
+        display: flex;  /* Show nav when active */
+    }
+
+    
+}
+
+
+
+/* Adjustments for the positioning of the logo and hamburger icon below 770px */
+@media screen and (max-width: 770px) {
+    header {
+        flex-direction: row;  /* Ensure the header uses a row layout */
+    }
+}
+
+
+
+/* Center alignment and resizing for the "Cyrcl Your Way" text */
+
+.hero h1 {
+    text-align: center;  /* Center align the text */
+    padding: 0 15px;
+}
+
+/* Adjust font size for different screen widths */
+
+@media screen and (max-width: 1200px) {
+    .hero h1 {
+        font-size: 48px;  /* Slightly reduced size for medium screens */
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .hero h1 {
+        font-size: 42px;  /* Reduced size for smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero h1 {
+        font-size: 42px;  /* Further reduced size for very small screens */
+    }
+}
+
+
+
+/* Adjustments for centering the texts for screens larger than 1200px width */
+
+@media screen and (min-width: 1201px) {
+    header {
+        justify-content: space-between; /* Distribute space between the main elements */
+    }
+
+    #cyrcl-logo {
+        order: 1; /* Logo first */
+        flex-grow: 0;
+    }
+
+    nav {
+        order: 2; /* Navigation links in the center */
+        flex-grow: 1; 
+        display: flex;
+        justify-content: center; /* Center align the navigation links */
+    }
+
+    .cta-button {
+        order: 3; /* "Get the app" button next */
+        flex-grow: 0;
+    }
+
+    .dropdown-wrapper {
+        order: 4; /* Country dropdown (e.g., "EN") last */
+        flex-grow: 0;
+    }
+}
+
+
+
+/* Adjustments to keep "Get the app" and "EN" on the right for screens larger than 1200px width */
+
+@media screen and (min-width: 1201px) {
+    header {
+        justify-content: space-between; /* Distribute space between the main elements */
+    }
+
+    #cyrcl-logo {
+        order: 1; /* Logo first */
+        flex-grow: 0;
+    }
+
+    nav {
+        order: 2; /* Navigation links in the center */
+        flex-grow: 1; 
+        display: flex;
+        justify-content: center; /* Center align the navigation links */
+    }
+
+    .cta-button, .dropdown-wrapper {
+        order: 3; /* "Get the app" button and "EN" dropdown after the navigation links */
+        flex-grow: 0;
+    }
+}
+
+
+
+/* Adjustments to keep "Get the app" and "EN" on the right for screens larger than 1200px width */
+
+@media screen and (min-width: 1201px) {
+    header {
+        justify-content: flex-start; /* Start aligning elements from the left */
+    }
+
+    #cyrcl-logo {
+        order: 1; /* Logo first */
+        flex-grow: 0;
+    }
+
+    nav {
+        order: 2; /* Navigation links second */
+        flex-grow: 2; /* Allow nav to take up more space for centering */
+        display: flex;
+        justify-content: center; /* Center align the navigation links */
+    }
+
+    .cta-button, .dropdown-wrapper {
+        order: 3; /* "Get the app" button and "EN" dropdown last */
+        flex-grow: 0;
+    }
+}
+
+
+
+/* Adjustments to ensure "Get the app" and "EN" are on the right with minimal margin for screens larger than 1200px width */
+
+@media screen and (min-width: 1201px) {
+    header {
+        justify-content: space-between; /* Distribute main elements */
+    }
+
+    #cyrcl-logo {
+        margin-right: auto; /* Push the logo to the left */
+    }
+
+    nav {
+        flex-grow: 1; /* Allow nav to take up the available space */
+        display: flex;
+        justify-content: center; /* Center align the navigation links */
+    }
+
+    .cta-and-dropdown {
+        display: flex; /* Group "Get the app" and "EN" together */
+        margin-left: auto; /* Push the container to the right */
+        gap: 20px; /* Adequate space between "Get the app" and "EN" */
+    }
+}
+
+
+
+/* Adjustments for the correct order and visibility of "Get the app" and "EN" */
+
+@media screen and (max-width: 1200px) {
+    .cta-and-dropdown {
+        display: none; /* Hide the container below 1200px width */
+    }
+}
+
+@media screen and (min-width: 1201px) {
+    header {
+        justify-content: flex-start; /* Start aligning elements from the left */
+    }
+
+    #cyrcl-logo {
+        order: 1; /* Logo first */
+    }
+
+    nav {
+        order: 2; /* Navigation links second */
+    }
+
+    .cta-and-dropdown {
+        order: 3; /* "Get the app" and "EN" container last */
+        margin-left: auto; /* Push the container to the right */
+        gap: 20px; /* Adequate space between "Get the app" and "EN" */
+    }
+}
+
+
+
+/* Simplified adjustments for the video scaling */
+
+.hero {
+    width: 100%;
+    overflow: hidden;  /* Hide any overflow */
+}
+
+.hero {
+    height: 95vh; /* Takes up the full viewport height */
+    background-image: url('Images/press-photo.png'); /* Your image */
+    background-size: cover; /* Ensure the background image covers the entire area */
+    background-position: center; /* Center the background image */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;  /* Ensures z-index and other positioning works inside this element */
+    overflow: hidden;  /* To prevent content from spilling out if it's larger than the container */
+}
+
+
+
+
+
+
+
+/* Adjustments for scaling the SVG icon */
+
+.download-icon {
+    height: 30px; /* Adjusting the height to match the button text size */
+    width: auto;  /* Keeping the aspect ratio of the SVG */
+    vertical-align: middle; /* Align the icon with the middle of the adjacent text */
+    margin-right: 10px; /* Adding some margin to the right for spacing */
+}
+
+
+
+/* Adjustments for horizontal alignment */
+
+.dropdown-wrapper {
+    display: flex;
+    align-items: center; /* Vertically center the contents of the dropdown wrapper */
+}
+
+.dropdown-arrow {
+    align-self: center; /* Ensure the arrow is centered with the select box */
+}
+
+
+
+/* Adjustments for SVG hover effect */
+
+.download-icon:hover path {
+    stroke: #ffffff; /* Change the color to white on hover */
+}
+
+
+@media screen and (max-width: 1200px) {
+    nav a[href^='#Rules'], 
+    nav a[href^='#Partners'] {
+        display: none;
+    }
+}
+
+.download-icon:hover .interactive-path {
+    stroke: #ffffff;
+}
+
+.subheadline {
+    font-size: 2.0rem; /* Set an initial relative size */
+    color: #ffffff;   /* Assuming white color for the subheadline, adjust as needed */
+    margin-top: 0.2rem; /* Space between main headline and subheadline */
+    z-index: 1;
+    font-family: 'Noah Regular';
+    font-weight: normal;
+    padding: 15px 80px;
+    max-width: 1500px;
+}
+
+/* Sample media query for smaller screens */
+@media screen and (max-width: 1200px) {
+    .subheadline {
+        font-size: 1.4rem; /* Adjust the size for smaller screens */
+        padding: 15px 30px;
+    }
+}
+
+/* Sample media query for smaller screens */
+@media screen and (max-width: 770px) {
+    .subheadline {
+        font-size: 1.2rem; /* Adjust the size for smaller screens */
+        padding: 15px 30px;
+    }
+}
+
+/* Sample media query for even smaller screens */
+@media screen and (max-width: 480px) {
+    .subheadline {
+        font-size: 1.2rem; /* Adjust the size for smaller screens */
+        padding: 5px 15px;
+    }
+}
+
+@media only screen and (min-width: 770px) and (max-width: 1200px) {
+    .cta-button-mid {
+        margin: 10px 20px;
+        padding: 15px 30px;
+        font-size: 18px;
+    }
+}
+
+
+/* ------------------------------------------------------------------------------ Press Section ------------------------------------------------------------------------------ */
+
+.press-section {
+    background-color: #f7f7f7;
+    padding: 80px 80px;
+}
+
+@media  (min-width: 1360px) {
+    .press-section {
+        padding-left: calc((100vw - 1200px) / 2);
+        padding-right: calc((100vw - 1200px) / 2);
+    }
+}
+
+.press-section p {
+    font-weight: normal;
+}
+
+.press-wrapper {
+    max-width: 1200px;
+    padding: 50px 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.box {
+    flex-basis: 100%; /* Adjust space between boxes */
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row;
+}
+
+.box-image {
+    width: 30%;
+    height: 100%;
+    object-fit: cover; /* Adjusts the image to cover the area */
+    opacity: 90%;
+    transition: opacity 0.3s ease;
+}
+
+.box-content {
+    background-color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 100%;
+    flex-direction: column;
+}
+
+.box-content h3 {
+    margin: 0;
+    color: #000;
+}
+
+.subtitle-text {
+    margin-top: 4px;
+    color: #4e4e4e;
+}
+
+.box-content p {
+    color: #252525;
+}
+
+.underline-text {
+    text-decoration: underline;
+}
+
+.continue-reading {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.learn-more-arrow {
+    color: #000;
+    font-size: 24px; /* Adjust as needed */
+}
+
+.box:hover .box-image {
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.box:hover .box-content {
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.box:hover {
+    cursor: pointer;
+}
+
+/* For screens up to 770px */
+@media (max-width: 770px) {
+    .press-section {
+        background-color: #fff;
+        padding: 40px 40px;
+    }
+
+    .press-wrapper {
+        
+    }
+
+    .box {
+        flex-basis: 100%;
+        border-color: #fff;
+        flex-direction: column;
+    }
+
+    .box-image {
+        width: 100%;
+    }
+
+    .box-content {
+        background-color: #f7f7f7;
+        width: initial;
+        padding: 20px 10px;
+    }
+}
+
+
+/* ------------------------------------------------------------------------------ Sticky Ellipse ------------------------------------------------------------------------------ */
+
+.sticky-ellipse {
+    position: fixed;
+    bottom: 2%;
+    left: 2%;
+    width: 8vw;  /* 8% of the viewport width */
+    height: 4vw;  /* 4% of the viewport width */
+    background-color: #f7f7f7cc; 
+    border-radius: 25px;  /* 25px border radius */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 3.5%;  /* padding to ensure SVGs don't touch the edges */
+    cursor: pointer;
+}
+
+.sticky-ellipse-hidden {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s, visibility 0.5s;
+}
+
+.ellipse-svg {
+    width: 60%;
+    height: auto;
+}
+
+.ellipse-svg-1 {
+    /* Additional styles specific to the first SVG, if needed */
+    width: 100%;
+    height: auto;
+    margin-left: 5%;
+}
+
+.ellipse-svg-2 {
+    /* Additional styles specific to the second SVG, if needed */
+    margin-left: 10%;
+}
+
+.sticky-ellipse:hover {
+    background-color: #dad9d9;
+}
+
+@media (max-width: 1200px) {
+    .sticky-ellipse {
+        width: 10vw;  /* 10% of the viewport width */
+        height: 5vw;  /* 5% of the viewport width */
+    }
+
+    .ellipse-svg {
+        width: 60%;
+        height: auto;
+    }
+
+    .ellipse-svg-1 {
+        /* Additional styles specific to the first SVG, if needed */
+        width: 100%;
+        margin: 0;
+        padding: 0 5% 0 12%;
+    }
+    
+    .ellipse-svg-2 {
+        /* Additional styles specific to the second SVG, if needed */
+        padding: 0 5% 0 5%;
+        margin: 0;
+    }
+}
+
+@media (max-width: 950px) {
+    .sticky-ellipse {
+        width: 12vw;  /* 12% of the viewport width */
+        height: 6vw;  /* 6% of the viewport width */
+    }
+
+    .ellipse-svg {
+        width: 60%;
+        height: auto;
+    }
+
+    .ellipse-svg-1 {
+        /* Additional styles specific to the first SVG, if needed */
+        width: 100%;
+        margin: 0;
+        padding: 0 5% 0 12%;
+    }
+    
+    .ellipse-svg-2 {
+        /* Additional styles specific to the second SVG, if needed */
+        padding: 0 5% 0 5%;
+        margin: 0;
+    }
+}
+
+@media (max-width: 770px) {
+    .sticky-ellipse {
+        width: 13vw;  /* 13% of the viewport width */
+        height: 6.5vw;  /* 6.5% of the viewport width */
+    }
+
+    .ellipse-svg {
+        width: 60%;
+        height: auto;
+    }
+
+    .ellipse-svg-1 {
+        /* Additional styles specific to the first SVG, if needed */
+        width: 100%;
+        margin: 0;
+        padding: 0 5% 0 12%;
+    }
+    
+    .ellipse-svg-2 {
+        /* Additional styles specific to the second SVG, if needed */
+        padding: 0 5% 0 5%;
+        margin: 0;
+    }
+}
+
+@media (max-width: 570px) {
+    .sticky-ellipse {
+        width: 20vw;  /* 20% of the viewport width */
+        height: 9vw;  /* 9% of the viewport width */
+    }
+
+    .ellipse-svg {
+        width: 50%;
+        height: auto;
+    }
+
+    .ellipse-svg-1 {
+        /* Additional styles specific to the first SVG, if needed */
+        width: 100%;
+        margin: 0 5%;
+        padding: 0 5% 0 12%;
+    }
+    
+    .ellipse-svg-2 {
+        /* Additional styles specific to the second SVG, if needed */
+        padding: 0 5% 0 0;
+        margin: 0 5% 0 0;
+    }
+}
+
+@media (max-width: 430px) {
+    .sticky-ellipse {
+        width: 35vw;  /* 35% of the viewport width */
+        height: 12vw;  /* 9% of the viewport width */
+        max-height: 42px;
+    }
+
+    .ellipse-svg {
+        width: 50%;
+        height: auto;
+    }
+
+    .ellipse-svg-1 {
+        /* Additional styles specific to the first SVG, if needed */
+        width: 60%;
+        margin: 0 2% 0 5%;
+        padding: 0 2% 0 2%;
+    }
+    
+    .ellipse-svg-2 {
+        /* Additional styles specific to the second SVG, if needed */
+        width: 40%;
+        padding: 0 2% 0 2%;
+        margin: 0 5% 0 2%;
+    }
+}
+
+/* ------------------------------------------------------------------------------ Sticky Circle ------------------------------------------------------------------------------ */
+
+.sticky-circle {
+    position: fixed;
+    bottom: 2%;
+    right: 2%;
+    width: 4vw;
+    height: 4vw;
+    background-color: #f7f7f7cc;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 1000;
+}
+
+.sticky-circle-menu-open {
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Example shadow */
+}
+
+.more-icon {
+    width: 65%;  /* Adjust based on desired size within the circle */
+    height: auto;
+    opacity: 90%;
+}
+
+.sticky-circle:hover {
+    background-color: #dad9d9;
+}
+
+@media (max-width: 1200px) {
+    .sticky-circle {
+        width: 5vw;
+        height: 5vw;
+    }
+    .more-icon {
+        width: 65%;
+    }
+}
+
+@media (max-width: 950px) {
+    .sticky-circle {
+        width: 6vw;
+        height: 6vw;
+    }
+    .more-icon {
+        width: 70%;
+    }
+}
+
+@media (max-width: 770px) {
+    .sticky-circle {
+        width: 6.5vw;
+        height: 6.5vw;
+    }
+    .more-icon {
+        width: 65%;
+    }
+}
+
+@media (max-width: 570px) {
+    .sticky-circle {
+        width: 9vw;
+        height: 9vw;
+    }
+    .more-icon {
+        width: 60%;
+    }
+}
+
+@media (max-width: 430px) {
+    .sticky-circle {
+        width: 12vw;
+        height: 12vw;
+    }
+    .more-icon {
+        width: 65%;
+    }
+}
+
+/* ------------------------------------------------------------------------------ Footer ------------------------------------------------------------------------------ */
+
+
+footer {
+    background-color: #2b2c2d;
+    color: white;
+    padding: 80px 80px 0;
+}
+
+.footer-container {
+    max-width: 1200px; /* Adjust based on your layout */
+    margin: 0 auto;
+}
+
+.footer-logo {
+    width: 150px; /* Adjust as needed */
+    margin-bottom: 20px;
+}
+
+.footer-division {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.footer-column {
+    margin-bottom: 20px;
+}
+
+.footer-column p:hover {
+    opacity: 0.7; /* 70% opacity on hover */
+    transition: opacity 0.3s ease; /* Smooth transition for the opacity change */
+    cursor: pointer;
+}
+
+.footer-column img:hover {
+    cursor: pointer;
+    background-color: #dddddd27;
+    transition: background-color 0.3s ease; /* Smooth transition for the background change */
+}
+
+.footer-flag {
+    height: 1em;  /* This sets the image height to match the current font size */
+}
+
+.footer-division:last-child p:last-child {
+    display: flex;
+    align-items: center; /* This will vertically align the text and image */
+    justify-content: center; /* This centers the content horizontally */
+    gap: 5px; /* Optional: adds some space between the text and the image */
+}
+
+
+/* Adding space between social icons */
+.social-icons img {
+    width: 24px;
+    margin: 5px 15px; /* Adjust as needed */
+    cursor: pointer;
+}
+
+.social-icons img:hover{
+    transform: scale(1.1);
+}
+
+/* For screens 770px and wider */
+@media (min-width: 771px) {
+    .footer-division {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .footer-column {
+        flex: 1;
+    }
+
+    .footer-division:last-child {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 1200px) {
+    .footer-column img{
+        width: 180px;
+        height: auto;
+    }
+    }
+
+/* For smaller screens */
+@media (max-width: 770px) {
+    footer {
+        padding: 40px 40px 0; /* Reduced padding for smaller screens */
+    }
+
+    .footer-division {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .footer-division:last-child {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .footer-column img{
+        width: 135px;
+        height: auto;
+    }
+
+    .social-icons img {
+        margin: 2.5px 12px; /* Adjust as needed */
+    }
+
+    .footer-division .social-icons img:first-child {
+        margin-left: 0;
+    }
+    
+    .footer-division .social-icons img:last-child {
+        margin-right: 24px;
+    }
+}
+
+@media (max-width: 359px) {
+    .social-icons img {
+        width: 18px;
+        margin: 2.5px 8px; /* Adjust as needed */
+    }
+}
+
+/* ------------------------------------------------------------------------------ Tablet and Mobile Menu ------------------------------------------------------------------------------ */
+
+.fullscreen-menu {
+    display: none;
+    position: fixed;
+    top: -100vh;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:#f7f7f7;
+    z-index: 10; /* Ensure it's above other content */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    transition: top 0.5s ease; /* Smooth transition for the top property */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.menu-content {
+    padding: 50px 20px;
+    text-align: center;
+    max-height: 800px;
+}
+
+.language-selector {
+    margin-top: 10px;
+    top: 50px; 
+    padding-bottom: 20px;
+}
+
+.language {
+    color: #000000;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.language.active {
+    font-weight: bold;
+}
+
+.divider {
+    margin: 0 10px;
+    color: #000000;
+}
+
+.fullscreen-nav {
+    margin-top: 20px;
+    color: #000000;
+    padding-bottom: 20px;
+}
+
+.fullscreen-nav h3 {
+    font-size: 24px;
+}
+
+.fullscreen-menu .social-icons {
+    margin-top: 20px;
+}
+
+.fullscreen-nav h3:last-child {
+    text-decoration: underline;
+}
+
+.fullscreen-nav h3:hover {
+    color: #000000c4;
+}
+
+@media (min-width: 480px) {
+    .language-selector span {
+        font-size: 20px;
+    }
+    
+    .fullscreen-nav h3 {
+        font-size: 30px;
+    }
+}
+
+@media (min-width: 770px) {
+    .language-selector span {
+        font-size: 24px;
+    }
+    
+    .fullscreen-nav h3 {
+        font-size: 36px;
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOutToRight {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+.fullscreen-nav h3 {
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    opacity: 0; /* Start invisible */
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(0); }
+    to { transform: translateY(-100%); }
+}
+
+.fullscreen-menu.active {
+    animation-name: slideDown;
+    animation-duration: 0.5s; /* Adjust duration as needed */
+    animation-fill-mode: forwards;
+}
+
+.fullscreen-menu.closing {
+    animation-name: slideUp;
+    animation-duration: 0.5s; /* Adjust duration as needed */
+    animation-fill-mode: forwards;
+}
+
+.body-no-scroll {
+    overflow: hidden;
+}
+
+/* For screens with width less than 1200px and width greater than height */
+@media screen and (max-width: 1200px) and (orientation: landscape) {
+    .fullscreen-nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .fullscreen-nav h3 {
+        font-size: 24px;
+        width: 50%; /* Each link takes up half the width */
+        box-sizing: border-box; /* Include padding and border in the element's width */
+        padding: 10px; /* Adjust as needed */
+        text-align: center;
+    }
+
+    .menu-content {
+        padding-top: 100px;
+    }
+
+    .language-selector span {
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 950px) and (orientation: landscape) {
+    .fullscreen-nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .fullscreen-nav h3 {
+        font-size: 20px;
+        width: 50%; /* Each link takes up half the width */
+        box-sizing: border-box; /* Include padding and border in the element's width */
+        padding: 10px; /* Adjust as needed */
+        text-align: center;
+    }
+
+    .menu-content {
+        padding-top: 350px;
+    }
+
+    .language-selector span {
+        font-size: 18px;
+    }
+}
+
+/* ------------------------------------------------------------------------------ Loader ------------------------------------------------------------------------------ */
+
+.loader {
+    border: 5px solid #f3f3f3; /* Light grey */
+    border-top: 5px solid #F4602C; /* Orange */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+    position: fixed; /* or absolute */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1006; /* Ensure it's above other content */
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Hide the loader initially */
+#loader {
+    display: none;
+}
+
+/* Optional: Fullscreen overlay */
+.loader-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 1006; /* Below the loader, but above other content */
+}
+
+/* ------------------------------------------------------------------------------ White Screen Loader Overlay ------------------------------------------------------------------------------ */
+
+
+/* Optional: Fullscreen overlay */
+.loader-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 1006; /* Below the loader, but above other content */
+    opacity: 1;
+}
+
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+}

@@ -637,7 +637,7 @@ nav a:hover {
 
 .hero h1 {
     text-align: center;  /* Center align the text */
-    padding: 0 15px;
+    padding: 0;
 }
 
 /* Adjust font size for different screen widths */

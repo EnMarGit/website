@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Press | Cyrcl</title>
+<link rel="apple-touch-icon" sizes="180x180" href="Images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="Images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="Images/favicon-16x16.png">
+<link href="press-styles.css" rel="stylesheet" type="text/css"/> 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <div id="loadingOverlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: white; z-index: 1010;"></div>
+    <div id="loader" class="loader"></div>
+<header>
+<a href="index.html" class="logo-link">
+    <img alt="Cyrcl logo" id="cyrcl-logo" src="Images/Logo_Cyrcl_White_Horizontal.svg"/>
+</a>     
+<div id="hamburger-menu">
+    <svg class="ham hamRotate ham7" viewBox="0 0 100 100" width="50" onclick="this.classList.toggle('active')">
+      <path class="line top" d="m 70,33 h -40 c 0,0 -6,1.368796 -6,8.5 0,7.131204 6,8.5013 6,8.5013 l 20,-0.0013" />
+      <path class="line middle" d="m 70,50 h -40" />
+      <path class="line bottom" d="m 69.575405,67.073826 h -40 c -5.592752,0 -6.873604,-9.348582 1.371031,-9.348582 8.244634,0 19.053564,21.797129 19.053564,12.274756 l 0,-40" />
+    </svg>
+</div>
+<nav>
+<div class="nav-links"><a href="how-it-works.html">How it works</a><a href="pricing.html">Prices</a><a href="locations.html">Locations</a><a href="sustainability.html">Sustainability</a><a href="parking.html">Parking</a><a href="partners.html">Partners</a></nav><div class="cta-and-dropdown"><a class="cta-button" href="https://onelink.to/y9q7mf"><img alt="Download Cyrcl app" class="download-icon" src="Images/Download-Icon-Cyrcl.svg"/>Get the app</a>
+    <div class="dropdown-wrapper">
+        <select id="country-select" name="country">
+            <option value="en">EN</option>
+            <option value="bg">BG</option>
+            <!-- Add other countries as needed -->
+        </select>
+        <span id="currentSelection" class="current-selection">EN</span> <!-- Current selection display -->
+        <span class="dropdown-arrow">▼</span>
+        <div id="customDropdown" class="custom-dropdown-content">
+            <div class="custom-dropdown-item" data-value="en">EN</div>
+            <div class="custom-dropdown-item" data-value="bg">BG</div>
+            <!-- Add other items as needed -->
+        </div>
+    </div>      
+</div>
+</header>
+<main>
+
+<section class="hero">
+    <h1>Press</h1>
+</section>    
+
+<!-- Press Section Starts -->
+<section class="press-section">
+    <h2>Media Inquiries
+        <p>With regards to press and media inquiries, please get in touch with us at <a href="mailto:info@cyrcl.eu">info@cyrcl.eu</a> or <a href="tel:+359896755556">+359 896 755 556</a>.</p>
+    </h2>
+    <div class="press-wrapper">
+        <a href="https://www.capital.bg/biznes/transport/2023/10/31/4546090_cyrcl_dobavia_kum_flotiliiata_si_v_sofiia_100/" class="box" target="_blank">
+            <img src="Images/capital-31-10-2023.jpg" alt="Electric bikes in Sofia" class="box-image">
+            <div class="box-content">
+                <h3>Cyrcl adds 100 electric bicycles to its fleet in Sofia
+                    <p class="subtitle-text">Capital, October 31, 2023</p>
+                    <p>Cyrcl, the only bicycle-sharing mobility company in Sofia, has added 100 electric bikes to its fleet. At the beginning of this summer, the company had 150 bikes , but in the months since, another 100 have been added. With these and the new e-bikes, its fleet in the capital increases to 350. At the start of its activities in April 2022, it consisted of barely 50.</p>
+                </h3>
+                <span class="continue-reading">
+                    <p class="underline-text">Continue reading</p>
+                    <span class="learn-more-arrow">&#10140;</span> <!-- Right arrow symbol -->
+                </span>
+            </div>
+        </a>
+        <a href="https://forbesbulgaria.com/2022/10/20/%D0%BA%D0%BE%D0%BB%D0%B5%D0%BB%D0%BE%D1%82%D0%BE-%D0%BD%D0%B0-%D0%B1%D1%8A%D1%80%D0%B7%D0%BE%D1%82%D0%BE-%D0%BF%D1%80%D0%B8%D0%B4%D0%B2%D0%B8%D0%B6%D0%B2%D0%B0%D0%BD%D0%B5-%D0%B8-%D0%B4%D0%BE%D0%B1/" class="box" target="_blank">
+            <img src="Images/forbes-20-10-2022.webp" alt="Bikes supporting fast commute and healthy lifestyle" class="box-image">
+            <div class="box-content">
+                <h3>The wheel of fast movement and good health
+                    <p class="subtitle-text">Forbes, October 20, 2022</p>
+                    <p>Shortly after midnight on April 16, 2022, orange bicycles appeared on the streets of Sofia, with which Cyrcl's activities were to officially begin in the morning. Only minutes after being left on the street, one of the bikes managed to attract the first customer of the new shared mobility service. He sees the bike, scans its QR code and downloads the mobile app that unlocks the bike.</p>
+                </h3>
+                <span class="continue-reading">
+                    <p class="underline-text">Continue reading</p>
+                    <span class="learn-more-arrow">&#10140;</span> <!-- Right arrow symbol -->
+                </span>
+            </div>
+        </a>
+        <a href="https://www.capital.bg/biznes/predpriemach/2022/09/30/4395042_koleleta_na_poiskvane/" class="box" target="_blank">
+            <img src="Images/capital-30-09-2022.jpg" alt="Bikes on Demand in Sofia" class="box-image">
+            <div class="box-content">
+                <h3>Bikes on demand
+                    <p class="subtitle-text">Capital, September 30, 2022</p>
+                    <p>The work of 425 trees in one year." This is the equivalent of 300,000 minutes of cycling by users of the Cyrcl service, which saved 8.5 tons of carbon emissions according to Enrico Marinov, one of the three co-founders of the first Bulgarian company for shared mechanical bicycles. And only five months after the official launch of the application, whose mission is to make Sofia a greener city, and after the capital to enter other locations in the country.</p>
+                </h3>
+                <span class="continue-reading">
+                    <p class="underline-text">Continue reading</p>
+                    <span class="learn-more-arrow">&#10140;</span> <!-- Right arrow symbol -->
+                </span>
+            </div>
+        </a>
+        <a href="https://www.bloombergtv.bg/a/28-update/106752-balgarski-startap-spodelyane-na-velosipedi" class="box" target="_blank">
+            <img src="Images/bloomberg-23-05-2022.png" alt="Micromobility in Sofia" class="box-image">
+            <div class="box-content">
+                <h3>Bicycles may become the new micromobility hit in Sofia
+                    <p class="subtitle-text">Bloomberg TV, May 23, 2022</p>
+                    <p>At the moment we have 50 bikes and we are doing our best to double them. This is what Asen Yankov, technical director and co-founder of Cyrcl, said in the show "UpDate" on Bloomberg TV Bulgaria with host Elena Kirilova. The start-up company Cyrcl works in the field of micromobility and shared travel, renting out bicycles in Sofia.According to Yankov, the search for investments continues, with the aim of expanding the service.</p>
+                </h3>
+                <span class="continue-reading">
+                    <p class="underline-text">Continue reading</p>
+                    <span class="learn-more-arrow">&#10140;</span> <!-- Right arrow symbol -->
+                </span>
+            </div>
+        </a>
+        <a href="https://therecursive.com/sharing-a-bike-in-sofia-gets-easier-with-new-service-supported-by-angel-investors/" class="box" target="_blank">
+            <img src="Images/the-recursive-19-04-2022.png" alt="First Nike-sharing Service in Sofia" class="box-image">
+            <div class="box-content">
+                <h3>Sharing a bike in Sofia gets easier with new service supported by angel investors
+                    <p class="subtitle-text">The Recursive, April 19, 2022</p>
+                    <p>Over the week-end, Bulgarian mobility startup Cyrcl launched the first free-floating bike sharing app and service available in Bulgaria (Ed.note with no pre-specified pick-up and drop-off locations). Their first stop: Sofia. <br>The startup received an initial investment of €100K from investors Julian Zahariev and Kamen Yonchev, a member of the angel club CEO Angels Club.</p>
+                </h3>
+                <span class="continue-reading">
+                    <p class="underline-text">Continue reading</p>
+                    <span class="learn-more-arrow">&#10140;</span> <!-- Right arrow symbol -->
+                </span>
+            </div>
+        </a>
+    </div>
+</section>
+<!-- Press Section Ends -->
+
+
+</main>
+<script>
+    // Get the hamburger menu and the navigation links
+    var hamburgerMenu = document.getElementById('hamburger-menu');
+    var navLinks = document.querySelector('.nav-links');
+
+    // Add a click event listener to the hamburger menu
+    hamburgerMenu.addEventListener('click', function() {
+        // Toggle the 'active' class on the navigation links
+        navLinks.classList.toggle('active');
+    });
+</script>
+
+<footer>
+    <div class="footer-container">
+        <img src="Images/Logo_Cyrcl_Gradient_Horizontal.svg" alt="Cyrcl Logo" class="footer-logo">
+
+        <div class="footer-division">
+            <div class="footer-column">
+                <h3>Company</h3>
+                <p><a href="how-it-works.html">How it works</a></p>
+                <p><a href="pricing.html">Prices</a></p>
+                <p><a href="locations.html">Locations</a></p>
+                <p><a href="sustainability.html">Sustainability</a></p>
+                <p><a href="parking.html">Parking</a></p>
+                <p><a href="partners.html">Partners</a></p>
+            </div>
+            <div class="footer-column">
+                <h3>Resources</h3>
+                <p><a href="about-us.html">Abous us</a></p>
+                <p><a href="press.html">Press</a></p>
+                <p><a href="careers.html">Careers</a></p>
+            </div>
+            <div class="footer-column">
+                <h3>Support</h3>
+                <p><a href="contact-us.html">Contact us</a></p>
+                <p><a href="faq.html">FAQ</a></p>
+                <p><a href="report-issue.html">Report issue</a></p>
+                <p><a href="t&c.html">Terms & Conditions</a></p>
+                <p><a href="privacy.html">Privacy policy</a></p>
+                <p><a href="cookies.html">Cookies</a></p>
+            </div>
+            <div class="footer-column">
+                <h3>Get the app</h3>
+                <a href="https://play.google.com/store/apps/details?id=eu.cyrcl.app&hl=en" class="logo-link" target="_blank">
+                    <img src="Images/Google-Play-EN-White.svg" alt="Download Cyrcl from Google Play">
+                </a>
+                <a href="https://apps.apple.com/bg/app/cyrcl-your-city-bike-sharing/id1593379210" class="logo-link" target="_blank">
+                    <img src="Images/App-Store-EN-White.svg" alt="Download Cyrcl from App Store">
+                </a>                
+            </div>
+        </div>
+
+        <hr class="footer-divider">
+
+        <div class="footer-division">
+            <p>© Cyrcl 2023</p>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/cyrcl.world/" target="_blank"><img src="Images/Instagram.svg" alt="Cyrcl Instagram"></a>
+                <a href="https://www.facebook.com/cyrcl.world/" target="_blank"><img src="Images/Facebook.svg" alt="Cyrcl Facebook"></a>
+                <a href="https://www.tiktok.com/@cyrcl.world" target="_blank"><img src="Images/TikTok.svg" alt="Cyrcl TikTok"></a>
+                <a href="https://www.youtube.com/@Cyrcl" target="_blank"><img src="Images/YouTube.svg" alt="Cyrcl YouTube"></a>
+                <a href="https://www.linkedin.com/company/cyrcl-mobility" target="_blank"><img src="Images/LinkedIn.svg" alt="Cyrcl LinkedIn"></a>
+            </div>
+            <p>Designed by Cyrcl in Bulgaria <img src="Images/Bulgaria-Flag.svg" alt="Bulgarian Flag" class="footer-flag"></p>
+        </div>
+    </div>
+</footer>
+
+<div id="fullscreen-menu" class="fullscreen-menu">
+    <div class="menu-content">
+        <div class="language-selector">
+            <div class="language-selector">
+                <a href="press.html" class="language active">EN</a>
+                <span class="divider">|</span>
+                <a href="press.html" class="language">BG</a>
+            </div> 
+        </div>
+        <!-- Navigation Links -->
+        <div class="fullscreen-nav">
+            <h3><a href="how-it-works.html">How it works</a></h3>
+            <h3><a href="pricing.html">Prices</a></h3>
+            <h3><a href="locations.html">Locations</a></h3>
+            <h3><a href="sustainability.html">Sustainability</a></h3>
+            <h3><a href="parking.html">Parking</a></h3>
+            <h3><a href="partners.html">Partners</a></h3>
+            <h3><a href="https://onelink.to/y9q7mf">Get the app</a></h3>
+        </div>
+        <!-- Social Icons -->
+        <div class="social-icons">
+            <a href="https://www.instagram.com/cyrcl.world/" target="_blank"><img src="Images/Instagram.svg" alt="Cyrcl Instagram"></a>
+            <a href="https://www.facebook.com/cyrcl.world/" target="_blank"><img src="Images/Facebook.svg" alt="Cyrcl Facebook"></a>
+            <a href="https://www.tiktok.com/@cyrcl.world" target="_blank"><img src="Images/TikTok.svg" alt="Cyrcl TikTok"></a>
+            <a href="https://www.youtube.com/@Cyrcl" target="_blank"><img src="Images/YouTube.svg" alt="Cyrcl YouTube"></a>
+            <a href="https://www.linkedin.com/company/cyrcl-mobility" target="_blank"><img src="Images/LinkedIn.svg" alt="Cyrcl LinkedIn"></a>
+        </div>
+    </div>
+</div>
+
+<div><a href="partners.html" class="sticky-ellipse">
+    <img src="Images/DSK_Bank_logo_horizontal_CM.svg" alt="Sponsored by DSK Bank" class="ellipse-svg ellipse-svg-1">
+    <img src="Images/mc_symbol.svg" alt="Sponsored by Mastercard" class="ellipse-svg ellipse-svg-2">
+</a></div>
+
+<div><a href="help.html" class="sticky-circle">
+    <img src="Images/more-icon.svg" alt="Help" class="more-icon">
+</a></div>
+
+<script>
+    window.addEventListener('load', function() {
+        var overlay = document.getElementById('loadingOverlay');
+        var opacity = 1; // initial opacity
+
+        var fadeOut = function() {
+            opacity -= 0.02; // adjust for speed
+            if (opacity <= 0) {
+                overlay.style.display = 'none';
+            } else {
+                overlay.style.opacity = opacity;
+                requestAnimationFrame(fadeOut);
+            }
+        };
+
+        requestAnimationFrame(fadeOut);
+    });
+</script>
+
+<script src="press-script.js"></script>
+
+</body>
+</html>
