@@ -290,3 +290,212 @@ document.querySelectorAll('.custom-dropdown-item').forEach(item => {
         }
     });
 });
+
+// ----------------------------------------------------------------Chatbox----------------------------------------------------------------
+// Flag to track if the chatbox is open or minimized
+let isChatBoxMinimized = true;
+// Flag to track if the initial messages have been loaded
+let isInitialMessagesLoaded = false;
+
+// Toggling and minimizing the chat box on sticky circle click
+document.querySelector(".sticky-circle").addEventListener("click", function() {
+    var chatBox = document.querySelector(".chat-box");
+    var chatLogs = document.querySelector(".chat-logs");
+    var chatCloseConfirmation = document.querySelector(".chat-close-confirmation");
+
+    isChatBoxMinimized = !isChatBoxMinimized;
+    
+    if (isChatBoxMinimized) {
+        // When minimizing the chatbox, remove the 'active' class
+        chatBox.classList.remove('active');
+    } else {
+        // When opening the chatbox, add the 'active' class and load messages
+        chatBox.classList.add('active');
+
+        var savedChatLogs = localStorage.getItem('chatLogs');
+        if (!savedChatLogs && !isInitialMessagesLoaded) {
+            loadInitialMessages();
+            isInitialMessagesLoaded = true;
+        } else {
+            loadChatLogs(); // Load saved chat logs if available
+        }
+
+        chatLogs.scrollTop = chatLogs.scrollHeight;
+        chatCloseConfirmation.style.display = 'none';
+    }
+});
+
+// Minimizing the chat box (now just triggers the sticky-circle click event)
+document.querySelector(".chat-box-minimize").addEventListener("click", function() {
+    document.querySelector(".sticky-circle").click();
+});
+
+// Modify the existing event listener for the close button
+document.querySelector(".chat-box-toggle").addEventListener("click", function() {
+    document.querySelector(".chat-close-confirmation").style.display = 'block';
+});
+
+// Close Chat Confirmation
+document.querySelector(".chat-close-confirm").addEventListener("click", function() {
+    var chatBox = document.querySelector(".chat-box");
+    var chatCloseConfirmation = document.querySelector(".chat-close-confirmation");
+
+    // Start the closing transition
+    chatBox.classList.remove('active');
+    localStorage.removeItem('threadData'); // Clear thread data
+
+    // Wait for the transition to finish before completely hiding the chatbox
+    setTimeout(() => {
+        chatCloseConfirmation.style.display = 'none';
+        document.querySelector(".chat-logs").innerHTML = '';  // Clear chat logs
+        isInitialMessagesLoaded = false;
+        isChatBoxMinimized = true;
+        localStorage.removeItem('chatLogs');
+    }, 500); // The timeout should match the transition duration in your CSS
+});
+
+// Return to Chat
+document.querySelector(".chat-return-chat").addEventListener("click", function() {
+    document.querySelector(".chat-close-confirmation").style.display = 'none';
+});
+
+// Sending the message and receiving the response
+document.getElementById("send-btn").addEventListener("click", function() {
+    var userInput = document.getElementById("chat-input").value;
+    if (userInput.trim() === '') {
+        alert("Please enter a message.");
+        return;
+    }
+
+    // Clear input box and handle message
+    document.getElementById("chat-input").value = "";
+    addMessageToChatLogs("You", userInput);
+    sendMessageToServer(userInput);
+});
+
+// Function to load initial messages
+function loadInitialMessages() {
+    fetch('http://127.0.0.1:5000/get_initial_messages')
+        .then(response => response.json())
+        .then(messages => {
+            const chatLogs = document.querySelector(".chat-logs");
+            chatLogs.innerHTML = '';  // Clear existing messages
+
+            messages.forEach(msg => {
+                var messageDiv = document.createElement("div");
+
+                if (typeof msg === 'object' && msg.clickable) {
+                    // Make the entire div clickable
+                    messageDiv.classList.add("clickable-message");  // Entire div is a clickable message
+                    messageDiv.textContent = msg.text;
+                    messageDiv.onclick = function() { sendClickableMessage(msg.text); };
+                } else {
+                    // Display regular message
+                    messageDiv.classList.add("bot-message");  // Regular bot message
+                    messageDiv.textContent = msg;
+                }
+
+                chatLogs.appendChild(messageDiv);
+            });
+
+            // Delay the scroll to allow the browser to render the new content
+            setTimeout(() => {
+                chatLogs.scrollTop = chatLogs.scrollHeight;
+            }, 100); // Delay of 100 milliseconds
+        });
+}
+
+// Function to handle sending clickable messages
+function sendClickableMessage(message) {
+    addMessageToChatLogs("You", message);
+    sendMessageToServer(message);
+}
+
+// Function to save the thread ID with the current timestamp
+function saveThreadId(threadId) {
+    const data = {
+        threadId: threadId,
+        timestamp: new Date().getTime()
+    };
+    localStorage.setItem('threadData', JSON.stringify(data));
+}
+
+// Function to get a valid thread ID or null if it's expired or not found
+function getValidThreadId() {
+    const data = JSON.parse(localStorage.getItem('threadData'));
+    if (data && data.threadId) {
+        const timeElapsed = (new Date().getTime() - data.timestamp) / (1000 * 60 * 60); // Time elapsed in hours
+        if (timeElapsed < 24) { // Check if less than 24 hours have passed
+            return data.threadId;
+        }
+    }
+    return null;
+}
+
+// Function to send message to the server
+function sendMessageToServer(message) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "http://127.0.0.1:5000/message", true);
+    xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            var response = JSON.parse(xhr.responseText);
+            addMessageToChatLogs("Cyrcl Assitant", response.response);
+            // Save the thread ID to localStorage
+            saveThreadId(response.thread_id);
+        }
+    };
+
+    var threadId = getValidThreadId();  // Get the thread ID from localStorage
+    xhr.send(JSON.stringify({ message: message, thread_id: threadId }));
+}
+
+function scrollToBottom() {
+    var chatBoxBody = document.querySelector(".chat-box-body"); // Adjust the selector as needed
+    requestAnimationFrame(() => {
+        setTimeout(() => {
+            chatBoxBody.scrollTop = chatBoxBody.scrollHeight;
+        }, 0);
+    });
+}
+
+// Function to add message to chat logs
+function addMessageToChatLogs(sender, message) {
+    var chatLogs = document.querySelector(".chat-logs");
+    var messageDiv = document.createElement("div");
+
+    if (sender === "You") {
+        messageDiv.classList.add("user-message");
+    } else {
+        messageDiv.classList.add("bot-message");
+    }
+
+    messageDiv.textContent = message;
+    chatLogs.appendChild(messageDiv);
+    localStorage.setItem('chatLogs', chatLogs.innerHTML);
+    scrollToBottom();
+}
+
+// Function to load chat logs from localStorage
+function loadChatLogs() {
+    var savedChatLogs = localStorage.getItem('chatLogs');
+    if (savedChatLogs) {
+        const chatLogs = document.querySelector(".chat-logs");
+        chatLogs.innerHTML = savedChatLogs;
+        scrollToBottom();
+    }
+}
+
+// Get the input field
+var input = document.getElementById("chat-input");
+
+// Execute a function when the user releases a key on the keyboard
+input.addEventListener("keypress", function(event) {
+    // Number 13 is the "Enter" key on the keyboard
+    if (event.key === "Enter") {
+        // Cancel the default action, if needed
+        event.preventDefault();
+        // Trigger the button element with a click
+        document.getElementById("send-btn").click();
+    }
+});

@@ -1523,6 +1523,240 @@ nav a:hover {
     }
 }
 
+/* ------------------------------------------------------------------------------ Chatbox ------------------------------------------------------------------------------ */
+.chat-box {
+    position: fixed;
+    bottom: 12%;  /* Adjust based on sticky-circle position */
+    right: 2%;    /* Adjust as needed */
+    width: 400px; /* Adjust as needed */
+    height: 70%;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1001; /* Ensure it's above other elements */
+    transform-origin: bottom right; /* Set the origin of transformation to the bottom */
+    transform: scale(0.9) translateY(100%); /* Start translated downwards */
+    opacity: 0; /* Start fully transparent */
+    transition: transform 0.5s ease, opacity 0.5s ease, visibility 0s 0.5s; /* Transition for transform and opacity */
+    visibility: hidden; /* Hidden initially */
+}
+
+.chat-box.active {
+    visibility: visible; /* Make the chatbox visible */
+    transform: scale(1) translateY(0%); /* Scale to full size and move to original position */
+    opacity: 1; /* Fully opaque */
+    transition: transform 0.5s ease, opacity 0.5s ease; /* Transition for showing */
+}
+
+.chat-box-header {
+    background: #f7f7f7;
+    display: flex;
+    justify-content: space-between;
+    color: black;
+    padding: 20px;
+    border-radius: 15px 15px 0 0;
+    text-align: center;
+    box-shadow: 0 3px 4px -1px rgba(0,0,0,0.15);
+    align-items: center;
+    z-index: 1003;
+    margin-bottom: 1px;
+    position:relative;
+}
+
+.logo-chatbot {
+    height: 25px;
+    width: 25px;
+}
+
+.chat-box-header-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.button-icons-chatbot {
+    width: 20px;
+    height: auto;
+}
+
+.chat-box-toggle {
+    cursor: pointer;
+}
+
+.chat-box-body {
+    margin: 20px 10px;
+    max-height: 78%; /* 0.78 x Chatbox height */
+    overflow-y: auto;
+    position: absolute;
+    bottom: 8%;
+    z-index: 1001;
+    scroll-behavior: smooth;
+}
+
+.chat-logs {
+    margin: 10px 0;
+}
+
+/* Custom Scrollbar Styles */
+.chat-box-body::-webkit-scrollbar {
+    width: 12px; /* Adjust the width of the scrollbar */
+}
+
+.chat-box-body::-webkit-scrollbar-track {
+    background: #f1f1f1; /* The track (progress bar) of the scrollbar */
+    border-radius: 10px;
+}
+
+.chat-box-body::-webkit-scrollbar-thumb {
+    background: #888; /* Handle color */
+    border-radius: 10px;
+}
+
+.chat-box-body::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Handle color on hover */
+}
+
+.chat-input {
+    display: flex;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 95%;
+    margin-left: auto;
+}
+
+.chat-input input {
+    flex-grow: 1;
+    padding: 10px 15px;
+    margin-left: 10px;
+    border-radius: 15px;
+    border:none;
+    background-color: #00000015;
+    line-height: 1.2;
+    outline: none;
+}
+
+.chat-input button {
+    margin-left: 5px;
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.send-button-img {
+    width: 20px;
+    height: 20px;
+}
+
+.chat-logs {
+    overflow-y: auto;
+}
+
+.user-message {
+    background-color: #81BB27; /* User messages in green */
+    color: white;
+    padding: 8px 15px;
+    border-radius: 25px 0 25px 25px;
+    margin: 5px 10px 5px auto; /* Align to the right */
+    max-width: 70%;
+    word-wrap: break-word;
+}
+
+.bot-message {
+    background-color: #00000021; /* Bot messages in gray */
+    color: rgba(0, 0, 0, 0.85);
+    padding: 8px 15px;
+    border-radius: 0 25px 25px 25px;
+    margin: 5px auto 5px 10px; /* Align to the left */
+    max-width: 70%;
+    word-wrap: break-word;
+}
+
+.clickable-message {
+    background-color: #f4602c; /* Entire div has green background */
+    color: white;
+    padding: 8px 15px;
+    margin: 10px auto 10px 10px; /* Align to the left */
+    border-radius: 6px;
+    max-width: 70%;
+    word-wrap: break-word;
+    cursor: pointer;
+    text-align: center;
+}
+
+.clickable-message:hover {
+    background-color: #f4612cb2; /* Darker green on hover */
+}
+
+.chat-box-minimize {
+    /* Style as needed */
+    cursor: pointer;
+}
+
+.chat-close-confirmation {
+    position: absolute;
+    top: 65px; /* Adjust this value to be the height of your chat box header and shadows */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(255, 255, 255); /* White overlay */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    z-index: 1002; /* Ensure it's above other elements */
+    border-radius: 0 0 15px 15px;
+}
+
+.chat-close-confirmation-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 0;
+}
+
+.chat-close-confirmation-wrapper h3 {
+    margin-top: 100px;
+}
+
+.chat-close-confirm {
+    background-color: #F4602C;
+    color: white;
+    border: none;
+    width: 200px;
+    padding: 10px 15px;
+    border-radius: 12px;
+    margin: 100px 50px 5px;
+    cursor: pointer;
+}
+
+.chat-return-chat {
+    background-color: #f7f7f7;
+    color: black;
+    border: none;
+    width: 200px;
+    padding: 10px 15px;
+    border-radius: 12px;
+    margin: 5px 50px;
+    cursor: pointer;
+}
+
+.chat-box.minimized {
+    height: 40px; /* Height of the header */
+    overflow: hidden;
+}
+
+.chat-box.minimized .chat-logs,
+.chat-box.minimized .chat-input,
+.chat-box.minimized .chat-close-confirmation {
+    display: none;
+}
+
 /* ------------------------------------------------------------------------------ Footer ------------------------------------------------------------------------------ */
 
 

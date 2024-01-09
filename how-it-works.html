@@ -255,9 +255,38 @@
     <img src="Images/mc_symbol.svg" alt="Sponsored by Mastercard" class="ellipse-svg ellipse-svg-2">
 </a></div>
 
-<div><a href="help.html" class="sticky-circle">
+<div><a class="sticky-circle">
     <img src="Images/more-icon.svg" alt="Help" class="more-icon">
 </a></div>
+
+<div class="chat-box">
+    <div class="chat-box-header">
+        <img src="Images/Logo_Cyrcl_Gradient_Stroke_NoText.svg" class="logo-chatbot">
+        Cyrcl Assistant
+        <div class="chat-box-header-buttons">
+            <span class="chat-box-minimize"><img src="Images/minimize-button-chatbot.png" class="button-icons-chatbot"></span>
+            <span class="chat-box-toggle"><img src="Images/close-button-chatbot.png" class="button-icons-chatbot"></span>
+        </div>
+    </div>
+    <div class="chat-box-body">
+        <div class="chat-logs">
+          <!-- Chat logs will appear here -->
+        </div>
+    </div>
+    <div class="chat-input">      
+        <input type="text" id="chat-input" placeholder="Ask us anything...">
+        <button type="button" id="send-btn">
+            <img src="Images/send-button-chatbot.png" class="send-button-img">
+        </button>
+    </div>
+    <div class="chat-close-confirmation" style="display: none;">
+        <div class="chat-close-confirmation-wrapper">
+            <h3>Would you like to end the chat?</h3>
+            <button class="chat-close-confirm">Close Chat</button>
+            <button class="chat-return-chat">Return to Chat</button>
+        </div>
+    </div>
+</div>
 
 <script>
     window.addEventListener('load', function() {
