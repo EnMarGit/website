@@ -412,6 +412,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Function to load initial messages
     function loadInitialMessages() {
+        // Ensure that the spinner element is available
+        const spinner = document.getElementById('loading-spinner');
+        if (spinner) {
+            spinner.style.display = 'block';
+        }
+
         fetch('https://single-cistern-378521.ey.r.appspot.com/get_initial_messages')
             .then(response => response.json())
             .then(messages => {
@@ -438,7 +444,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Delay the scroll to allow the browser to render the new content
                 setTimeout(() => {
                     chatLogs.scrollTop = chatLogs.scrollHeight;
-                }, 100); // Delay of 100 milliseconds
+                    if (spinner) {
+                        spinner.style.display = 'none'; // Hide the spinner after loading messages
+                    }
+                }, 100);  // Delay of 100 milliseconds
             });
     }
 
