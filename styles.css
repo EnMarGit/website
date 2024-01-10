@@ -2046,13 +2046,13 @@ nav a:hover {
 
     .chat-box-body {
         bottom: 5%;
-        max-height: 84%;
+        max-height: 82%;
     }
 }
 
 @media (max-width: 380px) {
     .chat-box-body {
-        max-height: 80%;
+        max-height: 78%;
     }
 }
 
@@ -2164,7 +2164,8 @@ nav a:hover {
     }
 
     .chat-box-body {
-        max-height: 65%;
+        max-height: 63%;
+        width: 100%;
     }
 
     .chat-box-header {
@@ -2185,46 +2186,49 @@ nav a:hover {
 }
 
 .spinner {
-    margin: 100px auto 0;
-    width: 70px;
+    width: 35px;
     text-align: center;
-  }
+    background-color: #00000021; /* Bot messages in gray */
+    padding: 8px 15px;
+    border-radius: 0 25px 25px 25px;
+    margin: 5px auto 5px 10px; /* Align to the left */
+}
   
-  .spinner > div {
-    width: 18px;
-    height: 18px;
+.spinner > div {
+    width: 6px;
+    height: 6px;
     background-color: #333;
-  
+
     border-radius: 100%;
     display: inline-block;
     -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
     animation: sk-bouncedelay 1.4s infinite ease-in-out both;
-  }
-  
-  .spinner .bounce1 {
+}
+
+.spinner .bounce1 {
     -webkit-animation-delay: -0.32s;
     animation-delay: -0.32s;
-  }
-  
-  .spinner .bounce2 {
+}
+
+.spinner .bounce2 {
     -webkit-animation-delay: -0.16s;
     animation-delay: -0.16s;
-  }
-  
-  @-webkit-keyframes sk-bouncedelay {
+}
+
+@-webkit-keyframes sk-bouncedelay {
     0%, 80%, 100% { -webkit-transform: scale(0) }
     40% { -webkit-transform: scale(1.0) }
-  }
-  
-  @keyframes sk-bouncedelay {
+}
+
+@keyframes sk-bouncedelay {
     0%, 80%, 100% { 
-      -webkit-transform: scale(0);
-      transform: scale(0);
+        -webkit-transform: scale(0);
+        transform: scale(0);
     } 40% { 
-      -webkit-transform: scale(1.0);
-      transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+        transform: scale(1.0);
     }
-  }
+}
 
 
 /* ------------------------------------------------------------------------------ Footer ------------------------------------------------------------------------------ */

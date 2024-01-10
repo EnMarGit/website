@@ -412,11 +412,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Function to load initial messages
     function loadInitialMessages() {
-        // Ensure that the spinner element is available
-        const spinner = document.getElementById('loading-spinner');
-        if (spinner) {
-            spinner.style.display = 'block';
-        }
 
         fetch('https://single-cistern-378521.ey.r.appspot.com/get_initial_messages')
             .then(response => response.json())
@@ -444,9 +439,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Delay the scroll to allow the browser to render the new content
                 setTimeout(() => {
                     chatLogs.scrollTop = chatLogs.scrollHeight;
-                    if (spinner) {
-                        spinner.style.display = 'none'; // Hide the spinner after loading messages
-                    }
                 }, 100);  // Delay of 100 milliseconds
             });
     }
@@ -506,9 +498,15 @@ document.addEventListener('DOMContentLoaded', function() {
         var xhr = new XMLHttpRequest();
         xhr.open("POST", "https://single-cistern-378521.ey.r.appspot.com/message", true);
         xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        
+        // Show loader
+        document.querySelector('.spinner').style.display = 'block';
 
         xhr.onreadystatechange = function() {
             if (xhr.readyState === 4 && xhr.status === 200) {
+                // Hide loader
+                document.querySelector('.spinner').style.display = 'none';
+                
                 // Check and set first message timestamp inside the callback
                 if (userHistory.length === 0) {
                     saveFirstMessageTimestamp();
