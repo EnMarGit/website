@@ -24,28 +24,15 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     document.querySelector('#how-it-works .content-wrapper').addEventListener('touchend', function() {
-        contentSlide.style.transition = 'transform 0.5s ease-in-out'; // Re-enable transition
-        if (distanceX > swipeThreshold) {
-            // Swipe to the right
-            if (currentIndex > 0) {
-                currentIndex--;
-                updateContent('slide-right-exit', 'slide-left-enter');
-            } else {
-                // Reset if no more slides to the right
-                contentSlide.style.transform = 'translateX(0)';
-            }
-        } else if (distanceX < -swipeThreshold) {
-            // Swipe to the left
-            if (currentIndex < howItWorksContent.length - 1) {
-                currentIndex++;
-                updateContent('slide-left-exit', 'slide-right-enter');
-            } else {
-                // Reset if no more slides to the left
-                contentSlide.style.transform = 'translateX(0)';
-            }
-        } else {
-            // Reset if swipe distance is not enough
-            contentSlide.style.transform = 'translateX(0)';
+        let isSwipeToRight = distanceX > swipeThreshold;
+        let isSwipeToLeft = distanceX < -swipeThreshold;
+    
+        if (isSwipeToRight) {
+            currentIndex = currentIndex > 0 ? currentIndex - 1 : howItWorksContent.length - 1;
+            updateContent('left', distanceX); // Swipe to right brings previous slide from left
+        } else if (isSwipeToLeft) {
+            currentIndex = currentIndex < howItWorksContent.length - 1 ? currentIndex + 1 : 0;
+            updateContent('right', distanceX); // Swipe to left brings next slide from right
         }
     });
 });
@@ -134,50 +121,42 @@ function setContent() {
 }
 
 // Modified updateContent function
-function updateContent(exitDirection, enterDirection) {
+function updateContent(enterDirection, finalSwipePosition) {
     const contentSlide = document.querySelector("#how-it-works .content-slide");
 
-    // Start the exit animation
-    contentSlide.classList.add(exitDirection);
+    // Use the final swipe position as the starting point for the exit animation
+    contentSlide.style.transform = `translateX(${finalSwipePosition}px)`;
 
-    // Wait for a portion of the exit animation to complete, then start the entrance animation
     setTimeout(() => {
-        // Update the content just before the current slide finishes exiting
+        // Exit animations
+        contentSlide.classList.add(enterDirection === 'left' ? 'slide-right-exit' : 'slide-left-exit');
+
+        // Update the content immediately for the entrance of the next slide
         setContent();
 
-        // Start the entrance animation
-        contentSlide.classList.add(enterDirection);
-    }, 250); // Adjust this time to control the overlap duration
+        // Entrance animations
+        contentSlide.style.transform = 'translateX(0)';
+        contentSlide.classList.add(enterDirection === 'left' ? 'slide-left-enter' : 'slide-right-enter');
 
-    // Wait for the exit animation to fully complete
-    setTimeout(() => {
-        // Remove the exit class to reset the state
-        contentSlide.classList.remove(exitDirection);
-
-        // Wait for the entrance animation to complete, then reset
         setTimeout(() => {
-            contentSlide.classList.remove(enterDirection);
-        }, 500); // This should match the CSS transition time for the entrance
-    }, 500); // This should match the CSS transition time for the exit
+            contentSlide.classList.remove('slide-right-exit', 'slide-left-exit', 'slide-right-enter', 'slide-left-enter');
+        }, 500);
+    }, 20);
 
-    // Update the navigation dots' active state
     updateNavigationDots();
 }
 
 
-// Modify event listeners for arrows
+// Left arrow
 document.querySelector("#how-it-works .left-arrow").addEventListener("click", function() {
-    if (currentIndex > 0) {
-        currentIndex--;
-        updateContent('slide-right-exit', 'slide-left-enter');
-    }
+    currentIndex = currentIndex > 0 ? currentIndex - 1 : howItWorksContent.length - 1;
+    updateContent('left', 0);
 });
 
+// Right arrow
 document.querySelector("#how-it-works .right-arrow").addEventListener("click", function() {
-    if (currentIndex < howItWorksContent.length - 1) {
-        currentIndex++;
-        updateContent('slide-left-exit', 'slide-right-enter');
-    }
+    currentIndex = currentIndex < howItWorksContent.length - 1 ? currentIndex + 1 : 0;
+    updateContent('right', 0);
 });
 
 

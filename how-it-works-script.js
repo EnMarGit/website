@@ -12,22 +12,27 @@ document.addEventListener('DOMContentLoaded', function() {
     let distanceX = 0;  // Distance moved in X direction
     const swipeThreshold = 50;  // Minimum distance in X direction to detect a swipe
 
-    // Adding event listeners for swipe detection on content slides
     document.querySelector('#how-it-works .content-wrapper').addEventListener('touchstart', function(e) {
         startX = e.touches[0].clientX;
+        contentSlide.style.transition = 'none'; // Disable transition to allow smooth drag
     });
-
+    
     document.querySelector('#how-it-works .content-wrapper').addEventListener('touchmove', function(e) {
         distanceX = e.touches[0].clientX - startX;
+        // Translate the slide as the touch moves
+        contentSlide.style.transform = `translateX(${distanceX}px)`;
     });
-
+    
     document.querySelector('#how-it-works .content-wrapper').addEventListener('touchend', function() {
-        if (distanceX > swipeThreshold) {
-            // Detected a swipe to the right
-            leftArrow.click();
-        } else if (distanceX < -swipeThreshold) {
-            // Detected a swipe to the left
-            rightArrow.click();
+        let isSwipeToRight = distanceX > swipeThreshold;
+        let isSwipeToLeft = distanceX < -swipeThreshold;
+    
+        if (isSwipeToRight) {
+            currentIndex = currentIndex > 0 ? currentIndex - 1 : howItWorksContent.length - 1;
+            updateContent('left', distanceX); // Swipe to right brings previous slide from left
+        } else if (isSwipeToLeft) {
+            currentIndex = currentIndex < howItWorksContent.length - 1 ? currentIndex + 1 : 0;
+            updateContent('right', distanceX); // Swipe to left brings next slide from right
         }
     });
 });
@@ -103,40 +108,57 @@ function updateNavigationDots() {
     });
 }
 
-// Modified updateContent function to also update the navigation dots
-function updateContent() {
+// Define the setContent function outside of updateContent
+function setContent() {
     const contentSlide = document.querySelector("#how-it-works .content-slide");
     const textContent = contentSlide.querySelector(".text-content");
     const imageContent = contentSlide.querySelector(".image-content img");
-
     textContent.innerHTML = `
         <h3>${howItWorksContent[currentIndex].text.heading}</h3>
         ${howItWorksContent[currentIndex].text.body.map(text => `<p>${text}</p>`).join('')}
     `;
     imageContent.src = howItWorksContent[currentIndex].image;
+}
 
-    contentSlide.style.display = 'flex';
-    contentSlide.style.opacity = 0;
-    setTimeout(() => contentSlide.style.opacity = 1, 50);
-    
-    // Update the navigation dots' active state
+// Modified updateContent function
+function updateContent(enterDirection, finalSwipePosition) {
+    const contentSlide = document.querySelector("#how-it-works .content-slide");
+
+    // Use the final swipe position as the starting point for the exit animation
+    contentSlide.style.transform = `translateX(${finalSwipePosition}px)`;
+
+    setTimeout(() => {
+        // Exit animations
+        contentSlide.classList.add(enterDirection === 'left' ? 'slide-right-exit' : 'slide-left-exit');
+
+        // Update the content immediately for the entrance of the next slide
+        setContent();
+
+        // Entrance animations
+        contentSlide.style.transform = 'translateX(0)';
+        contentSlide.classList.add(enterDirection === 'left' ? 'slide-left-enter' : 'slide-right-enter');
+
+        setTimeout(() => {
+            contentSlide.classList.remove('slide-right-exit', 'slide-left-exit', 'slide-right-enter', 'slide-left-enter');
+        }, 500);
+    }, 20);
+
     updateNavigationDots();
 }
 
-// Attach event listeners to the arrows
+
+// Left arrow
 document.querySelector("#how-it-works .left-arrow").addEventListener("click", function() {
-    if (currentIndex > 0) {
-        currentIndex--;
-        updateContent();
-    }
+    currentIndex = currentIndex > 0 ? currentIndex - 1 : howItWorksContent.length - 1;
+    updateContent('left', 0);
 });
 
+// Right arrow
 document.querySelector("#how-it-works .right-arrow").addEventListener("click", function() {
-    if (currentIndex < howItWorksContent.length - 1) {
-        currentIndex++;
-        updateContent();
-    }
+    currentIndex = currentIndex < howItWorksContent.length - 1 ? currentIndex + 1 : 0;
+    updateContent('right', 0);
 });
+
 
 // Show the first content by default
 updateContent();
@@ -149,7 +171,9 @@ howItWorksContent.forEach((_, index) => {
     dot.className = index === currentIndex ? 'dot active' : 'dot';
     navigationContainer.appendChild(dot);
 });
-contentSlide.appendChild(navigationContainer);
+
+// Append navigationContainer to content-wrapper instead of content-slide
+document.querySelector("#how-it-works .content-wrapper").appendChild(navigationContainer);
 
 // ----------------------------------------------------------------Hide sticky ellipse when it reaches the footer----------------------------------------------------------------
 
