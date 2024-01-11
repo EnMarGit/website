@@ -870,7 +870,13 @@ nav a:hover {
 .media-features {
     background-color: #f7f7f7;
     text-align: center;
-    padding: 40px 0;
+    padding: 30px 0 40px;
+}
+
+.media-features p {
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: #333;
 }
 
 .media-logos {
@@ -1266,6 +1272,7 @@ nav a:hover {
     align-items: center;
     justify-content: center;
     position: relative;
+    overflow: hidden;
 }
 
 @media screen and (min-width: 1360px) {
@@ -1318,10 +1325,47 @@ nav a:hover {
     align-items: center;
     justify-content: space-between;
     width: 80%;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+    transition: transform 0.5s ease-in-out;
+    transform: translateX(0%); /* Initialize position */
     background-color: #f7f7f7;
     border-radius: 20px;
+}
+
+.slide-left-exit {
+    animation: slideLeftExit 0.5s forwards;
+}
+
+.slide-right-exit {
+    animation: slideRightExit 0.5s forwards;
+}
+
+.slide-left-enter {
+    animation: slideLeftEnter 0.5s forwards;
+}
+
+.slide-right-enter {
+    animation: slideRightEnter 0.5s forwards;
+}
+
+@keyframes slideLeftExit {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+}
+
+@keyframes slideRightExit {
+    from { transform: translateX(0); }
+    to { transform: translateX(100%); }
+}
+
+@keyframes slideLeftEnter {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+@keyframes slideRightEnter {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
 }
 
 .text-content, .image-content {
@@ -1413,6 +1457,7 @@ nav a:hover {
 @media (max-width: 770px) {
     #how-it-works .content-wrapper {
         background-color: #f7f7f7;
+        flex-direction: column;
     }
 }
 

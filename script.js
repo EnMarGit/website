@@ -12,22 +12,40 @@ document.addEventListener('DOMContentLoaded', function() {
     let distanceX = 0;  // Distance moved in X direction
     const swipeThreshold = 50;  // Minimum distance in X direction to detect a swipe
 
-    // Adding event listeners for swipe detection on content slides
     document.querySelector('#how-it-works .content-wrapper').addEventListener('touchstart', function(e) {
         startX = e.touches[0].clientX;
+        contentSlide.style.transition = 'none'; // Disable transition to allow smooth drag
     });
-
+    
     document.querySelector('#how-it-works .content-wrapper').addEventListener('touchmove', function(e) {
         distanceX = e.touches[0].clientX - startX;
+        // Translate the slide as the touch moves
+        contentSlide.style.transform = `translateX(${distanceX}px)`;
     });
-
+    
     document.querySelector('#how-it-works .content-wrapper').addEventListener('touchend', function() {
+        contentSlide.style.transition = 'transform 0.5s ease-in-out'; // Re-enable transition
         if (distanceX > swipeThreshold) {
-            // Detected a swipe to the right
-            leftArrow.click();
+            // Swipe to the right
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateContent('slide-right-exit', 'slide-left-enter');
+            } else {
+                // Reset if no more slides to the right
+                contentSlide.style.transform = 'translateX(0)';
+            }
         } else if (distanceX < -swipeThreshold) {
-            // Detected a swipe to the left
-            rightArrow.click();
+            // Swipe to the left
+            if (currentIndex < howItWorksContent.length - 1) {
+                currentIndex++;
+                updateContent('slide-left-exit', 'slide-right-enter');
+            } else {
+                // Reset if no more slides to the left
+                contentSlide.style.transform = 'translateX(0)';
+            }
+        } else {
+            // Reset if swipe distance is not enough
+            contentSlide.style.transform = 'translateX(0)';
         }
     });
 });
@@ -103,40 +121,65 @@ function updateNavigationDots() {
     });
 }
 
-// Modified updateContent function to also update the navigation dots
-function updateContent() {
+// Define the setContent function outside of updateContent
+function setContent() {
     const contentSlide = document.querySelector("#how-it-works .content-slide");
     const textContent = contentSlide.querySelector(".text-content");
     const imageContent = contentSlide.querySelector(".image-content img");
-
     textContent.innerHTML = `
         <h3>${howItWorksContent[currentIndex].text.heading}</h3>
         ${howItWorksContent[currentIndex].text.body.map(text => `<p>${text}</p>`).join('')}
     `;
     imageContent.src = howItWorksContent[currentIndex].image;
+}
 
-    contentSlide.style.display = 'flex';
-    contentSlide.style.opacity = 0;
-    setTimeout(() => contentSlide.style.opacity = 1, 50);
-    
+// Modified updateContent function
+function updateContent(exitDirection, enterDirection) {
+    const contentSlide = document.querySelector("#how-it-works .content-slide");
+
+    // Start the exit animation
+    contentSlide.classList.add(exitDirection);
+
+    // Wait for a portion of the exit animation to complete, then start the entrance animation
+    setTimeout(() => {
+        // Update the content just before the current slide finishes exiting
+        setContent();
+
+        // Start the entrance animation
+        contentSlide.classList.add(enterDirection);
+    }, 250); // Adjust this time to control the overlap duration
+
+    // Wait for the exit animation to fully complete
+    setTimeout(() => {
+        // Remove the exit class to reset the state
+        contentSlide.classList.remove(exitDirection);
+
+        // Wait for the entrance animation to complete, then reset
+        setTimeout(() => {
+            contentSlide.classList.remove(enterDirection);
+        }, 500); // This should match the CSS transition time for the entrance
+    }, 500); // This should match the CSS transition time for the exit
+
     // Update the navigation dots' active state
     updateNavigationDots();
 }
 
-// Attach event listeners to the arrows
+
+// Modify event listeners for arrows
 document.querySelector("#how-it-works .left-arrow").addEventListener("click", function() {
     if (currentIndex > 0) {
         currentIndex--;
-        updateContent();
+        updateContent('slide-right-exit', 'slide-left-enter');
     }
 });
 
 document.querySelector("#how-it-works .right-arrow").addEventListener("click", function() {
     if (currentIndex < howItWorksContent.length - 1) {
         currentIndex++;
-        updateContent();
+        updateContent('slide-left-exit', 'slide-right-enter');
     }
 });
+
 
 // Show the first content by default
 updateContent();
@@ -149,7 +192,9 @@ howItWorksContent.forEach((_, index) => {
     dot.className = index === currentIndex ? 'dot active' : 'dot';
     navigationContainer.appendChild(dot);
 });
-contentSlide.appendChild(navigationContainer);
+
+// Append navigationContainer to content-wrapper instead of content-slide
+document.querySelector("#how-it-works .content-wrapper").appendChild(navigationContainer);
 
 // ----------------------------------------------------------------Hide sticky ellipse when it reaches the footer----------------------------------------------------------------
 
@@ -412,6 +457,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Function to load initial messages
     function loadInitialMessages() {
+        // Show loader
+        document.querySelector('.spinner').style.display = 'block';
 
         fetch('https://single-cistern-378521.ey.r.appspot.com/get_initial_messages')
             .then(response => response.json())
@@ -435,6 +482,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     chatLogs.appendChild(messageDiv);
                 });
+
+                // Hide loader
+                document.querySelector('.spinner').style.display = 'none';
 
                 // Delay the scroll to allow the browser to render the new content
                 setTimeout(() => {
