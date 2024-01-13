@@ -23,30 +23,36 @@ body {
     font-family: "Noah Text Medium", sans-serif;
     margin: 0;
     padding: 0;
+    font-feature-settings: "ss03";
 }
 
 h1 {
     font-family: "Noah Head Black", sans-serif;
     font-size: 68px;
+    font-feature-settings: "ss03";
 }
 
 h2 {
     font-family: "Noah Head Black", sans-serif;
     font-size: 48px;
+    font-feature-settings: "ss03";
 }
 
 h3, .subheadline {
     font-family: "Noah Regular", sans-serif;
     font-size: 1.4rem;  /* Base size as identified for .subheadline */
+    font-feature-settings: "ss03";
 }
 
 body, p {
     font-family: "Noah Text Medium", sans-serif;
     font-size: 16px;
+    font-feature-settings: "ss03";
 }
 
 .cta-button-mid {
     font-size: 18px;  /* Base size as identified for .cta-button-mid */
+    font-feature-settings: "ss03";
 }
 
 a {
@@ -54,6 +60,7 @@ a {
     font-size: inherit;    /* Inherits font size from the parent */
     font-weight: inherit;  /* Inherits font weight from the parent */
     text-decoration: none; /* Optional: removes underline from links */
+    font-feature-settings: "ss03";
 }
 
 @media screen and (max-width: 1200px) {

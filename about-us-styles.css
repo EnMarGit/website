@@ -87,6 +87,7 @@ a {
     .cta-button-mid { font-size: 15px; }  /* ~78% of the base size */
 }
 
+
 /* ------------------------------------------------------------------------------ Header and Hero Section ------------------------------------------------------------------------------ */
 
 header {
@@ -195,8 +196,6 @@ nav a:hover {
     color: #ffffff; /* Placeholder till you get an image */
     font-size: 3em;
     margin-bottom: 0.5rem;
-    margin-left: 5%;
-    margin-right: 5%;
     font-size: 68px;
     font-family: "Noah Head Black", sans-serif;
     font-feature-settings: "ss03";
@@ -206,16 +205,6 @@ nav a:hover {
 .hero h1, .hero .cta-button-mid {
     position: relative;  /* Keeps the content above the video */
     z-index: 1;
-}
-
-.hero video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 650px;
-    object-fit: cover;
-    z-index: 0;
 }
 
 /* Style for the wrapper */
@@ -417,7 +406,6 @@ nav a:hover {
 }
 
 
-
 /* Hamburger Menu and Responsive Navigation Styles */
 
 #hamburger-menu {
@@ -594,6 +582,8 @@ nav a:hover {
     .nav-links.active nav {
         display: flex;  /* Show nav when active */
     }
+
+    
 }
 
 
@@ -611,6 +601,9 @@ nav a:hover {
 
 .hero h1 {
     text-align: center;  /* Center align the text */
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 20px;
 }
 
 /* Adjust font size for different screen widths */
@@ -785,12 +778,22 @@ nav a:hover {
     overflow: hidden;  /* Hide any overflow */
 }
 
-.hero video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;  /* Ensure the video covers its container fully */
-    object-position: center; /* Center the video content */
+.hero {
+    height: 95vh; /* Takes up the full viewport height */
+    background-image: url('Images/about-us-photo.png'); /* Your image */
+    background-size: cover; /* Ensure the background image covers the entire area */
+    background-position: center; /* Center the background image */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;  /* Ensures z-index and other positioning works inside this element */
+    overflow: hidden;  /* To prevent content from spilling out if it's larger than the container */
 }
+
+
+
+
 
 
 
@@ -843,12 +846,15 @@ nav a:hover {
     z-index: 1;
     font-family: 'Noah Regular';
     font-weight: normal;
+    padding: 15px 80px;
+    max-width: 1500px;
 }
 
 /* Sample media query for smaller screens */
 @media screen and (max-width: 1200px) {
     .subheadline {
         font-size: 1.4rem; /* Adjust the size for smaller screens */
+        padding: 15px 30px;
     }
 }
 
@@ -856,6 +862,7 @@ nav a:hover {
 @media screen and (max-width: 770px) {
     .subheadline {
         font-size: 1.2rem; /* Adjust the size for smaller screens */
+        padding: 15px 30px;
     }
 }
 
@@ -863,6 +870,7 @@ nav a:hover {
 @media screen and (max-width: 480px) {
     .subheadline {
         font-size: 1.2rem; /* Adjust the size for smaller screens */
+        padding: 15px;
     }
 }
 
@@ -874,722 +882,119 @@ nav a:hover {
     }
 }
 
-
-/* ------------------------------------------------------------------------------- Media section ------------------------------------------------------------------------------ */
-.media-features {
-    background-color: #f7f7f7;
-    text-align: center;
-    padding: 30px 0 40px;
+/* ------------------------------------------------------------------------------ About Us Section ------------------------------------------------------------------------------ */
+.about-us-section {
+    padding: 50px 0;
 }
 
-.media-features h3 {
+.about-us-wrapper {
+    padding: 10px 80px;
+}
+
+.about-us-wrapper h2 {
     margin-top: 0;
-    margin-bottom: 25px;
-    color: #333;
-}
-
-.media-logos {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    gap: 40px; /* Adjust the space between logos as needed */
-    margin: 0 20px;
-}
-
-.media-logo-link {
-    display: flex; /* Use flexbox for vertical centering */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-}
-
-.media-logo {
-    max-width: 80%; /* Adjust the size as needed */
-    height: 50px;
-}
-
-@media screen and (max-width: 770px) {
-    .media-features {
-        background-color: #ffffff;
-    }
-
-    .media-logo {
-        max-width: 80%; /* Adjust the size as needed */
-        height: 30px;
-    }
-
-    .media-logos {
-        gap: 8px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .media-features {
-        overflow-x: hidden;
-    }
-
-    .media-logos {
-        overflow: hidden;
-        white-space: nowrap;
-        display: flex;
-        animation: scroll-logos 60s linear infinite;
-        width: calc(11*100%); /* Adjusted for clones */
-        gap: 5px;
-    }
-
-    .media-logo-link {
-        white-space: normal;
-        max-width: auto; /* Apply width as needed */
-        flex: 0 0 auto; /* Flex item styling for consistent sizing */
-        margin: 0 8px; /* Consistent margin for all items */
-        display: flex; /* Use flex for vertical centering */
-        justify-content: center; /* Center content horizontally */
-        align-items: center; /* Center content vertically */
-    }
-
-    .media-logo {
-        height: 30px;
-    }
-
-    @keyframes scroll-logos {
-        from { transform: translateX(0); }
-        to { transform: translateX(-100%); }
-    }
-}
-
-
-
-/* ------------------------------------------------------------------------------ Feature section ------------------------------------------------------------------------------ */
-
-.feature-section {
-    background-color: white;
     text-align: center;
-    padding: 2rem 0;
 }
 
-@media (min-width: 771px) {
-    .feature-section {
-        padding: 6rem 80px;
-    }
-}
-
-@media screen and (min-width: 1360px) {
-    .feature-section {
+@media screen and (min-width: 770px) {
+    .about-us-wrapper {
         /* Set the padding to be (screen width - 1200px) / 2 on each side */
-        padding-left: calc((100vw - 1200px) / 2);
-        padding-right: calc((100vw - 1200px) / 2);
-    }
-}
-
-.feature-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 2rem;
-}
-
-.feature-column {
-    flex: 1;
-    max-width: calc(33.33% - 1rem);
-    box-sizing: border-box;
-    padding: 1rem 0 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.feature-image {
-    max-width: 80%;
-    height: auto;
-}
-
-@media (max-width: 768px) {
-    .feature-column {
-        max-width: 100%;
-        display: block;
-    }
-}
-
-@media (min-width: 1200px) {
-    .feature-section h2 {
-        margin: 0 20%;
-    }
-}
-
-@media (min-width: 1200px) {
-    .feature-container {
-        margin: 0;
+        padding-left: calc((100vw - 750px) / 2);
+        padding-right: calc((100vw - 750px) / 2);
     }
 }
 
 @media (max-width: 770px) {
-    .feature-column {
-        max-width: 100%;
-        flex: 100%;
+    .about-us-wrapper {
+        padding-left: 40px;
+        padding-right: 40px;
     }
 }
 
-@media (max-width: 770px) {
-    .feature-section {
-        text-align: center;
+/* Keyframe animation for the moving background */
+@keyframes styles_steam__0gxRX {
+    0% {
+        background-position: 0% 50%;
     }
-    .feature-container {
-        justify-content: center;
+    50% {
+        background-position: 100% 50%;
     }
-}
-
-@media (min-width: 771px) {
-    .feature-column h3, .feature-column p {
-        margin-bottom: 1rem;
-    }
-    .feature-column h3 {
-        height: 3rem;
-    }
-    .feature-column p {
-        height: 5rem;
+    100% {
+        background-position: 0% 50%;
     }
 }
 
-@media (min-width: 771px) and (max-width: 1200px) {
-    .feature-container {
-        margin: 0;
-    }
-    .feature-image {
-        max-width: 95%;
-    }
-}
-
-@media (min-width: 771px) and (max-width: 1090px) {
-    .spacer-770-1200 {
-        height: 50px;
-        background-color: white;
-    }
-}
-
-@media (min-width: 1091px) and (max-width: 1200px) {
-    .spacer-770-1200 {
-        height: 40px;
-        background-color: white;
-    }
-}
-
-@media (min-width: 1201px) and (max-width: 1215px) {
-    .spacer-770-1200 {
-        height: 25px;
-        background-color: white;
-    }
-}
-
-/* ------------------------------------------------------------------------------ Banner: Where else would you like Cyrcl ------------------------------------------------------------------------------ */
-
-
-.banner-section {
-    background: linear-gradient(135deg, #F4602C, #81BB27);
-    padding: 2rem 80px; /* Adjust this value if you need more height */
-    margin: 0 auto;
-    max-width: 100%;
-}
-
-@media screen and (min-width: 1360px) {
-    .banner-section {
-        /* Set the padding to be (screen width - 1200px) / 2 on each side */
-        padding-left: calc((100vw - 1200px) / 2);
-        padding-right: calc((100vw - 1200px) / 2);
-    }
-}
-
-@media screen and (min-width: 780px) {
-    .banner-section {
-        display: flex;
-        justify-content: space-between;
-    }
-}
-
-.banner-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: left;
+.about-us-text-style {
+    color: #000;
+    padding: 40px 20px;
+    border-radius: 30px;
+    position: relative;
+    background: linear-gradient(0deg, #f7f7f7, #f7f7f7);
     margin: 0;
 }
 
-.banner-column {
-    flex: 1;
-    padding: 0 2rem;
+.about-us-text-style:before {
+    border-radius: 30px;
+    display: block;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: linear-gradient(45deg, #f4602c, #B98F2A, #81bb27, #fff, #f4602c, #B98F2A, #81bb27, #B98F2A);
+    background-size: 400%;
+    width: calc(100%);
+    height: calc(100%);
+    z-index: -1;
+    -webkit-animation: styles_steam__0gxRX 20s linear infinite;
+    animation: styles_steam__0gxRX 20s linear infinite;
 }
 
-.banner-column:first-child {
-    padding-left: 0;
+.about-us-text-style:after {
+    filter: blur(50px);
+    transform: translateZ(0);
+    border-radius: 30px;
+    display: block;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: linear-gradient(45deg, #f4602c, #B98F2A, #81bb27, #fff, #f4602c, #B98F2A, #81bb27, #B98F2A);
+    background-size: 400%;
+    width: calc(100%);
+    height: calc(100%);
+    z-index: -1;
+    -webkit-animation: styles_steam__0gxRX 20s linear infinite;
+    animation: styles_steam__0gxRX 20s linear infinite;
 }
 
-.banner-column:last-child {
-    padding-right: 0;
+@media (min-width: 771px) {
+    .about-us-text-style {
+        margin-top: 20px;
+    }
 }
 
-.banner-column input {
-    width: 100%;
-    padding: 0.8rem;
-    border: none;
-    border-radius: 15px; /* Gives the ellipse-form to the input fields */
-    margin-bottom: 1rem;
-    background-color: #fff;
-    outline: none;
-    box-sizing: border-box;
-}
-
-.banner-column .checkbox-container {
-    display: flex;
-    align-items: center;
-    text-align: left;
-    color: #333;
-}
-
-.banner-column .checkbox-container input[type="checkbox"] {
-    display: none;
-    flex-shrink: 0;  /* Prevent the checkbox from shrinking */
-}
-
-.banner-column .checkbox-container .checkmark {
-    width: 20px;
-    height: 20px;
-    background-color: #eee;
-    border-radius: 4px;
-    margin-right: 1rem;
-    flex-shrink: 0;  /* Prevent the checkmark from shrinking */
-    position: relative;  /* Set relative positioning for the absolute positioning of the pseudo-element */
-    overflow: visible; /* Ensure that the pseudo-element is not clipped */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.banner-column .checkbox-container input[type="checkbox"]:checked + .checkmark {
-    background-color: #333; /* Change this color if needed */
-}
-
-.banner-column .checkbox-container input[type="checkbox"]:checked + .checkmark::before {
-    content: "\2713"; /* Unicode for checkmark */
-    color: #81bb27;     /* Color of the checkmark */
-    font-size: 16px;  /* Adjust as needed */
-    font-weight: bold;
-}
-
-.banner-column button.cta-button {
-    margin-top: 1rem;
-    cursor: pointer;
-}
-
-.banner-column h3, .banner-column p {
-    text-align: left;
-    margin-top: 0.5rem;
-}
-
-@media screen and (min-width: 1201px) {
-    .banner-column button.cta-button, .banner-column label.checkbox-container {
-        font-size: 16px;
+@media (max-width: 770px) {
+    .about-us-text-style {
+        margin-top: 25px;
         border-radius: 15px;
     }
 }
 
-@media screen and (max-width: 1200px) {
-    .banner-column button.cta-button, .banner-column label.checkbox-container {
-        font-size: 16px;
-    }
+.about-us-text-style img {
+    width: 40px;
+    height: auto;
 }
 
-@media screen and (max-width: 770px) {
-    .banner-column button.cta-button, .banner-column label.checkbox-container {
-        font-size: 15px;
-    }
-}
-
-
-
-
-
-@media screen and (max-width: 770px) {
-    .banner-container {
-        flex-direction: column; /* Change the flex direction to column */
-        margin: 0;
-    }
-    .banner-section {
-        padding: 2rem 40px;
-    }
-    .banner-column h3 {
-        order: 1;
-    }
-    .banner-column p {
-        order: 2;
-    }
-    /* You'll need to add specific classes or IDs to the Email, City, and Checkbox elements to target them. For now, I'll use placeholders. */
-    .input {
-        order: 3;
-    }
-    .checkbox-container {
-        order: 4;
-    }
-    .banner-column button.cta-button {
-        order: 5;
-        width: 100%; /* To make the button stretch the full width */
-        text-align: center; /* To center the text inside the button */
-    }
-    .banner-column {
-        text-align: center; /* Centrally aligns the text of direct children of .banner-column */
-        padding: 0;
-        width: 100%;
-    }
-    /* Additional styles to centrally align the content */
-    .banner-container {
-        justify-content: center;
-        align-items: center;
-    }
-    .banner-column h3, .banner-column p, .input, .checkbox-container {
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .banner-column button.cta-button {
-        max-width: 75px;
-    }
-}
-
-/* ------------------------------------------------------------------------------ How it works ------------------------------------------------------------------------------ */
-
-/* How it Works Section Styles */
-#how-it-works {
-    background-color: white;
-    padding: 100px 0;
-}
-
-@media screen and (min-width: 771px) {
-    #how-it-works {
-        padding-bottom: 100px;
-    }
-}
-
-@media screen and (max-width: 770px) {
-    #how-it-works {
-        background-color: #f7f7f7;
-    }
-}
-
-#how-it-works h2 {
+.dot-separator {
+    display: block;
     text-align: center;
-    margin-bottom: 40px;
+    margin-top: 0px; /* Adjust the margin as needed */
+    margin-bottom: 0px; /* Adjust the margin as needed */
+    font-size: 20px; /* Adjust the size of the dots */
+    line-height: 1; /* Adjust line height as needed */
+    color: #000; /* Adjust the color of the dots */
 }
 
-.content-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-}
-
-@media screen and (min-width: 1360px) {
-    .content-wrapper {
-        /* Set the padding to be (screen width - 1200px) / 2 on each side */
-        padding-left: calc((100vw - 1500px) / 2);
-        padding-right: calc((100vw - 1500px) / 2);
-    }
-}
-
-.arrow {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    padding: 10px;
-    background: linear-gradient(45deg, #FFC107, #FF9800);
-    border-radius: 50%;
-    margin: 0 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-}
-
-.arrow img {
-    width: 24px;  /* Control the size of the SVG icon */
-    height: 24px; /* Control the size of the SVG icon */
-}
-
-.arrow:hover {
-    transform: scale(1.1);
-}
-
-@media screen and (max-width: 1200px) {
-    .arrow img {
-        width: 20px;  /* Control the size of the SVG icon */
-        height: 20px; /* Control the size of the SVG icon */
-    }
-}
-
-@media screen and (max-width: 770px) {
-    .arrow img {
-        width: 15px;  /* Control the size of the SVG icon */
-        height: 15px; /* Control the size of the SVG icon */
-    }
-}
-
-
-.content-slide {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 80%;
-    opacity: 1;
-    transition: transform 0.5s ease-in-out;
-    transform: translateX(0%); /* Initialize position */
-    background-color: #f7f7f7;
-    border-radius: 20px;
-}
-
-.slide-left-exit {
-    animation: slideLeftExit 0.5s forwards;
-}
-
-.slide-right-exit {
-    animation: slideRightExit 0.5s forwards;
-}
-
-.slide-left-enter {
-    animation: slideLeftEnter 0.5s forwards;
-}
-
-.slide-right-enter {
-    animation: slideRightEnter 0.5s forwards;
-}
-
-@keyframes slideLeftExit {
-    from { transform: translateX(0); }
-    to { transform: translateX(-100%); }
-}
-
-@keyframes slideRightExit {
-    from { transform: translateX(0); }
-    to { transform: translateX(100%); }
-}
-
-@keyframes slideLeftEnter {
-    from { transform: translateX(-100%); }
-    to { transform: translateX(0); }
-}
-
-@keyframes slideRightEnter {
-    from { transform: translateX(100%); }
-    to { transform: translateX(0); }
-}
-
-.text-content, .image-content {
-    flex: 1;
-    text-align: left;
-    margin-left: 5%;
-    margin-right: 5%;
-}
-
-.image-content img {
-    width: 100%;
-    max-width: 400px;
-}
-
-@media (max-width: 770px) {
-    .navigation-indicators {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 20px;
-    }
-
-    .navigation-indicators .dot {
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background-color: lightgray;
-        margin: 0 5px;
-        transition: background-color 0.3s;
-    }
-
-    .navigation-indicators .dot.active {
-        background-color: darkgray;
-    }
-}
-
-@media (max-width: 770px) {
-    #how-it-works .content-slide {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    #how-it-works .navigation-indicators {
-        order: 4;  /* Position it below the image and text content */
-        width: 100%;
-        justify-content: center;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-
-    #how-it-works .image-content {
-        order: 2;
-    }
-
-    #how-it-works .text-content {
-        order: 3;
-    }
-}
-
-@media (max-width: 770px) {
-    #how-it-works .text-content, 
-    #how-it-works .text-content h3, 
-    #how-it-works .text-content ul, 
-    #how-it-works .image-content, 
-    #how-it-works .image-content img {
-        text-align: center;
-        margin: 5% 0;
-    }
-
-    #how-it-works .text-content {
-        margin-top: 0;
-    }
-
-    #how-it-works h2 {
-        margin-bottom: 10px;
-    }
-
-    #how-it-works .image-content img {
-        margin: 0;
-    }
-}
-
-@media (max-width: 480px) {
-    #how-it-works .text-content {
-        min-height: 220px;
-    }
-}
-
-@media (max-width: 770px) {
-    #how-it-works .content-wrapper {
-        background-color: #f7f7f7;
-        flex-direction: column;
-    }
-}
-
-@media (max-width: 770px) {
-    #how-it-works .arrow {
-        display: none !important;
-    }
-}
-
-
-/* ------------------------------------------------------------------------------ Download the app banner ------------------------------------------------------------------------------ */
-
-
-.download-banner-section {
-    background: linear-gradient(135deg, #F4602C, #81BB27);
-    padding: 2rem 80px; /* Adjust this value if you need more height */
-    margin: 0 auto;
-    max-width: 100%;
-}
-
-@media screen and (min-width: 1360px) {
-    .download-banner-section {
-        /* Set the padding to be (screen width - 1500px) / 2 on each side */
-        padding-left: calc((100vw - 1200px) / 2);
-        padding-right: calc((100vw - 1200px) / 2);
-    }
-}
-
-.download-banner-container {
-    display: flex;
-    justify-content: space-between;
-    margin: 0;
-}
-
-.download-banner-column-text, .download-banner-column-image {
-    flex: 1;
-    padding: 0 2rem;
-}
-
-@media screen and (min-width: 770px) {
-    .download-banner-column-text {
-        padding-left: 0;
-    }
-}
-
-@media screen and (min-width: 770px) {
-    .download-banner-column-image {
-        padding-right: 0;
-        align-items: end;
-    }
-}
-
-.download-banner-column-text h3, .download-banner-column-text p {
-    text-align: left;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.download-banner-column-image {
-    display: flex;
-    justify-content: center; /* aligns the images to the right */
-    gap: 10px; /* space between the images */
-}
-
-.download-banner-column-image img:hover {
-    background-color: #ffffff31;
-    transition: background-color 0.3s ease; /* Smooth transition for the background change */
-    cursor: pointer;
-}
-
-@media (max-width: 770px) {
-    .download-banner-container {
-        flex-direction: column; /* stack child elements vertically */
-        align-items: center;    /* center the child elements horizontally */
-    }
-
-    .download-banner-column-text,
-    .download-banner-column-image {
-        width: 100%; /* take full width */
-        text-align: center; /* center the text */
-    }
-
-    .download-banner-column-text h3, 
-    .download-banner-column-text p {
-        margin-bottom: 1rem; /* provide some spacing between the elements */
-        text-align: center;
-    }
-
-    .download-banner-column-image {
-        flex-direction: row; /* make images sit next to each other horizontally */
-    }
-
-    .download-banner-column-image img{
-        width: 135px;
-        height: auto;
-    }
-
-    .download-banner-section {
-        padding: 2rem 40px; /* Adjust this value if you need more height */
-    }
-}
-
-@media (min-width: 771px) {
-    .download-banner-column-image {
-        flex-direction: column; /* stack the images vertically */
-    }
-
-    .download-banner-column-image img{
-        width: 150px;
-        height: auto;
-    }
-}
-
-@media (min-width: 1201px) {
-    .download-banner-column-image {
-        flex-direction: row; /* stack the images vertically */
-    }
-
-    .download-banner-column-image img {
-        width: 205px;
-        height: auto;
-    }
-}
 
 /* ------------------------------------------------------------------------------ Sticky Ellipse ------------------------------------------------------------------------------ */
 
@@ -1762,7 +1167,7 @@ nav a:hover {
     }
 }
 
-/* ------------------------------------------------------------------------------ Sticky circle ------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------ Sticky Circle ------------------------------------------------------------------------------ */
 
 .sticky-circle {
     position: fixed;
@@ -1917,9 +1322,6 @@ nav a:hover {
 
 .chat-logs {
     margin: 10px 0;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
 }
 
 /* Custom Scrollbar Styles */
@@ -1944,7 +1346,6 @@ nav a:hover {
 .chat-input {
     display: flex;
     padding: 10px;
-    padding-bottom: 15px;
     position: absolute;
     bottom: 0;
     width: 95%;
@@ -1976,9 +1377,11 @@ nav a:hover {
     height: 20px;
 }
 
+.chat-logs {
+    overflow-y: auto;
+}
+
 .user-message {
-    display: inline-flex;
-    clear: both;
     background-color: #81BB27; /* User messages in green */
     color: white;
     padding: 8px 15px;
@@ -1989,8 +1392,6 @@ nav a:hover {
 }
 
 .bot-message {
-    display: inline-flex;
-    clear: both;
     background-color: #00000021; /* Bot messages in gray */
     color: rgba(0, 0, 0, 0.85);
     padding: 8px 15px;
@@ -2004,9 +1405,9 @@ nav a:hover {
     background-color: #f4602c; /* Entire div has green background */
     color: white;
     padding: 8px 15px;
-    margin: 7.5px auto 7.5px 7.5px; /* Align to the left */
+    margin: 10px auto 10px 10px; /* Align to the left */
     border-radius: 6px;
-    width: 70%;
+    max-width: 70%;
     word-wrap: break-word;
     cursor: pointer;
     text-align: center;
@@ -2043,11 +1444,11 @@ nav a:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 30% 0;
+    padding: 100px 0;
 }
 
 .chat-close-confirmation-wrapper h3 {
-    margin-top: 30%;
+    margin-top: 100px;
 }
 
 .chat-close-confirm {
@@ -2057,7 +1458,7 @@ nav a:hover {
     width: 200px;
     padding: 10px 15px;
     border-radius: 12px;
-    margin: 30% 50px 5px;
+    margin: 100px 50px 5px;
     cursor: pointer;
 }
 
@@ -2083,209 +1484,8 @@ nav a:hover {
     display: none;
 }
 
-@media (max-width: 770px) {
-    .chat-box {
-        bottom: 0%;  /* Adjust based on sticky-circle position */
-        top: 0%;
-        right: 0%;    /* Adjust as needed */
-        left: 0%;
-        width: 100%; /* Adjust as needed */
-        height: 100%;
-        border-radius: 0;
-    }
-
-    .chat-box-header {
-        border-radius: 0;
-    }
-
-    .chat-box-body {
-        bottom: 5%;
-        max-height: 82%;
-    }
-}
-
-@media (max-width: 380px) {
-    .chat-box-body {
-        max-height: 78%;
-    }
-}
-
-@media (max-height: 850px) {
-    .chat-close-confirmation-wrapper {
-        padding: 25% 0;
-    }
-    
-    .chat-close-confirmation-wrapper h3 {
-        margin-top: 25%;
-    }
-    
-    .chat-close-confirm {
-        margin: 25% 50px 5px;
-    }
-}
-
-@media (max-height: 750px) {
-    .chat-close-confirmation-wrapper {
-        padding: 20% 0;
-    }
-    
-    .chat-close-confirmation-wrapper h3 {
-        margin-top: 20%;
-    }
-    
-    .chat-close-confirm {
-        margin: 20% 50px 5px;
-    }
-
-    .chat-box-body {
-        bottom: 6%;
-    }
-}
-
-@media (max-height: 660px) {
-    .chat-close-confirmation-wrapper {
-        padding: 15% 0;
-    }
-    
-    .chat-close-confirmation-wrapper h3 {
-        margin-top: 15%;
-    }
-    
-    .chat-close-confirm {
-        margin: 15% 50px 5px;
-    }
-
-    .chat-box-body {
-        bottom: 8%;
-    }
-}
-
-@media (max-height: 570px) {
-    .chat-close-confirmation-wrapper {
-        padding: 10% 0;
-    }
-    
-    .chat-close-confirmation-wrapper h3 {
-        margin-top: 10%;
-    }
-    
-    .chat-close-confirm {
-        margin: 10% 50px 5px;
-    }
-
-    .chat-box-body {
-        bottom: 9%;
-    }
-}
-
-@media (max-width: 770px) and (max-height: 1000px) {
-    .chat-close-confirmation-wrapper {
-        padding: 80% 0 10%;
-    }
-    
-    .chat-close-confirmation-wrapper h3 {
-        margin-top: 10%;
-    }
-    
-    .chat-close-confirm {
-        margin: 30% 50px 5px;
-    }
-}
-
-@media (max-width: 770px) and (max-height: 670px) {
-    .chat-close-confirmation-wrapper {
-        padding: 60% 0 10%;
-    }
-    
-    .chat-close-confirmation-wrapper h3 {
-        margin-top: 10%;
-    }
-    
-    .chat-close-confirm {
-        margin: 30% 50px 5px;
-    }
-}
-
-@media only screen and (max-height: 480px) and (orientation: landscape) {
-    .chat-box {
-        bottom: 0%;  /* Adjust based on sticky-circle position */
-        top: 0%;
-        right: 0%;    /* Adjust as needed */
-        left: 0%;
-        width: 100%; /* Adjust as needed */
-        height: 100%;
-        border-radius: 0;
-    }
-
-    .chat-box-body {
-        max-height: 63%;
-        width: 100%;
-    }
-
-    .chat-box-header {
-        border-radius: 0;
-    }
-
-    .chat-close-confirmation-wrapper {
-        padding: 10% 0;
-    }
-    
-    .chat-close-confirmation-wrapper h3 {
-        margin-top: 0;
-    }
-    
-    .chat-close-confirm {
-        margin: 0 50px 5px;
-    }
-}
-
-.spinner {
-    width: 35px;
-    text-align: center;
-    background-color: #00000021; /* Bot messages in gray */
-    padding: 8px 15px;
-    border-radius: 0 25px 25px 25px;
-    margin: 5px auto 5px 10px; /* Align to the left */
-}
-  
-.spinner > div {
-    width: 6px;
-    height: 6px;
-    background-color: #333;
-
-    border-radius: 100%;
-    display: inline-block;
-    -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
-    animation: sk-bouncedelay 1.4s infinite ease-in-out both;
-}
-
-.spinner .bounce1 {
-    -webkit-animation-delay: -0.32s;
-    animation-delay: -0.32s;
-}
-
-.spinner .bounce2 {
-    -webkit-animation-delay: -0.16s;
-    animation-delay: -0.16s;
-}
-
-@-webkit-keyframes sk-bouncedelay {
-    0%, 80%, 100% { -webkit-transform: scale(0) }
-    40% { -webkit-transform: scale(1.0) }
-}
-
-@keyframes sk-bouncedelay {
-    0%, 80%, 100% { 
-        -webkit-transform: scale(0);
-        transform: scale(0);
-    } 40% { 
-        -webkit-transform: scale(1.0);
-        transform: scale(1.0);
-    }
-}
-
-
 /* ------------------------------------------------------------------------------ Footer ------------------------------------------------------------------------------ */
+
 
 footer {
     background-color: #2b2c2d;
@@ -2436,8 +1636,6 @@ footer {
     transition: top 0.5s ease; /* Smooth transition for the top property */
     overflow-y: auto; /* Enable vertical scrolling */
 }
-
-
 
 .menu-content {
     padding: 50px 20px;
