@@ -19,6 +19,10 @@
     src: url('fonts/Noah-Bold.woff2');
 }
 
+a, button, input, textarea, img {
+    -webkit-tap-highlight-color: transparent;
+}
+
 body {
     font-family: "Noah Text Medium", sans-serif;
     margin: 0;
