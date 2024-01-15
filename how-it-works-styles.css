@@ -63,6 +63,15 @@ a {
     font-feature-settings: "ss03";
 }
 
+.cta-button {
+    color: inherit;        /* Inherits text color from the parent */
+    font-size: inherit;    /* Inherits font size from the parent */
+    font-weight: inherit;  /* Inherits font weight from the parent */
+    text-decoration: none; /* Optional: removes underline from links */
+    font-feature-settings: "ss03";
+    cursor: pointer;
+}
+
 @media screen and (max-width: 1200px) {
     h1 { font-size: 48px; }
     h2 { font-size: 36px; }  /* 75% of the base size */
@@ -1232,6 +1241,113 @@ nav a:hover {
     font-weight: bold;
 }
 
+/* ------------------------------------------------------------------------------ Download the app banner ------------------------------------------------------------------------------ */
+
+
+.download-banner-section {
+    background: #ffffff;
+    padding: 112px 80px 32px; /* Adjust this value if you need more height */
+    margin: 0;
+    max-width: 100%;
+}
+
+@media  (min-width: 1360px) {
+    .download-banner-section {
+        padding-left: calc((100vw - 1200px) / 2);
+        padding-right: calc((100vw - 1200px) / 2);
+    }
+}
+
+.download-banner-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.download-banner-column-text, .download-banner-column-image {
+    flex: 1;
+}
+
+.download-banner-column-text h3, .download-banner-column-text p {
+    text-align: left;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.download-banner-column-image {
+    display: flex;
+    justify-content: right; /* aligns the images to the right */
+    gap: 10px; /* space between the images */
+}
+
+.download-banner-column-image img:hover {
+    background-color: #0000000e;
+    transition: background-color 0.3s ease; /* Smooth transition for the background change */
+    cursor: pointer;
+}
+
+@media (max-width: 770px) {
+    .download-banner-container {
+        flex-direction: column; /* stack child elements vertically */
+        align-items: center;    /* center the child elements horizontally */
+    }
+
+    .download-banner-column-text,
+    .download-banner-column-image {
+        width: 100%; /* take full width */
+        text-align: center; /* center the text */
+    }
+
+    .download-banner-column-text h3, 
+    .download-banner-column-text p {
+        margin-bottom: 1rem; /* provide some spacing between the elements */
+        text-align: center;
+    }
+
+    .download-banner-column-image {
+        flex-direction: row; /* make images sit next to each other horizontally */
+        justify-content: center;
+    }
+
+    .download-banner-column-image img{
+        width: 135px;
+        height: auto;
+    }
+
+    .download-banner-section {
+        background: #ffffff;
+        padding: 72px 40px 32px; /* Adjust this value if you need more height */
+    }
+}
+
+@media (min-width: 771px) {
+    .download-banner-column-image {
+        flex-direction: column; /* stack the images vertically */
+        align-items: center;
+    }
+
+    .download-banner-column-image img{
+        width: 150px;
+        height: auto;
+    }
+
+    .download-banner-section {
+        padding-bottom: 100px;
+    }
+}
+
+@media (min-width: 1201px) {
+    .download-banner-column-image {
+        flex-direction: row; /* stack the images vertically */
+        align-items: center;
+    }
+
+    .download-banner-column-image img {
+        width: 205px;
+        height: auto;
+    }
+}
+
 /* ------------------------------------------------------------------------------ Learn More ------------------------------------------------------------------------------ */
 
 .learn-more-section {
@@ -2131,44 +2247,6 @@ footer {
     }
 }
 
-/* ------------------------------------------------------------------------------ Loader ------------------------------------------------------------------------------ */
-
-.loader {
-    border: 5px solid #f3f3f3; /* Light grey */
-    border-top: 5px solid #F4602C; /* Orange */
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    animation: spin 2s linear infinite;
-    position: fixed; /* or absolute */
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1006; /* Ensure it's above other content */
-}
-
-@keyframes spin {
-    0% { transform: translate(-50%, -50%) rotate(0deg); }
-    100% { transform: translate(-50%, -50%) rotate(360deg); }
-}
-
-/* Hide the loader initially */
-#loader {
-    display: none;
-}
-
-/* Optional: Fullscreen overlay */
-.loader-overlay {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(255, 255, 255, 0.9);
-    z-index: 1006; /* Below the loader, but above other content */
-}
 
 /* ------------------------------------------------------------------------------ White Screen Loader Overlay ------------------------------------------------------------------------------ */
 

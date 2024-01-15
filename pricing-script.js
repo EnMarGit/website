@@ -84,19 +84,6 @@ function adjustFullscreenMenuPosition() {
 adjustFullscreenMenuPosition();
 window.addEventListener('resize', adjustFullscreenMenuPosition);
 
-// ----------------------------------------------------------------Loader----------------------------------------------------------------
-
-document.addEventListener("DOMContentLoaded", function() {
-    var loader = document.getElementById("loader");
-
-    // Show the loader
-    loader.style.display = "block";
-
-    // Hide the loader once the page has fully loaded
-    window.addEventListener("load", function() {
-        loader.style.display = "none";
-    });
-});
 
 // ----------------------------------------------------------------Language select for wider screens----------------------------------------------------------------
 

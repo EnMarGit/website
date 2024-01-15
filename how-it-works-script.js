@@ -9,30 +9,44 @@ document.addEventListener('DOMContentLoaded', function() {
     const rightColumn = document.querySelector('.right-column');
 
     let startX = 0;  // Starting X position when touch starts
+    let startY = 0;  // Starting Y position when touch starts
     let distanceX = 0;  // Distance moved in X direction
+    let distanceY = 0;  // Distance moved in Y direction
     const swipeThreshold = 50;  // Minimum distance in X direction to detect a swipe
 
     document.querySelector('#how-it-works .content-wrapper').addEventListener('touchstart', function(e) {
         startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
         contentSlide.style.transition = 'none'; // Disable transition to allow smooth drag
     });
-    
+
     document.querySelector('#how-it-works .content-wrapper').addEventListener('touchmove', function(e) {
         distanceX = e.touches[0].clientX - startX;
-        // Translate the slide as the touch moves
-        contentSlide.style.transform = `translateX(${distanceX}px)`;
+        distanceY = e.touches[0].clientY - startY;
+
+        // Only translate the slide for horizontal movement
+        if (Math.abs(distanceX) > Math.abs(distanceY)) {
+            contentSlide.style.transform = `translateX(${distanceX}px)`;
+        }
     });
-    
+
     document.querySelector('#how-it-works .content-wrapper').addEventListener('touchend', function() {
-        let isSwipeToRight = distanceX > swipeThreshold;
-        let isSwipeToLeft = distanceX < -swipeThreshold;
-    
-        if (isSwipeToRight) {
-            currentIndex = currentIndex > 0 ? currentIndex - 1 : howItWorksContent.length - 1;
-            updateContent('left', distanceX); // Swipe to right brings previous slide from left
-        } else if (isSwipeToLeft) {
-            currentIndex = currentIndex < howItWorksContent.length - 1 ? currentIndex + 1 : 0;
-            updateContent('right', distanceX); // Swipe to left brings next slide from right
+        // Determine if the gesture is more horizontal than vertical
+        if (Math.abs(distanceX) > Math.abs(distanceY)) {
+            let isSwipeToRight = distanceX > swipeThreshold;
+            let isSwipeToLeft = distanceX < -swipeThreshold;
+
+            if (isSwipeToRight) {
+                currentIndex = currentIndex > 0 ? currentIndex - 1 : howItWorksContent.length - 1;
+                updateContent('left', distanceX); // Swipe to right brings previous slide from left
+            } else if (isSwipeToLeft) {
+                currentIndex = currentIndex < howItWorksContent.length - 1 ? currentIndex + 1 : 0;
+                updateContent('right', distanceX); // Swipe to left brings next slide from right
+            } else {
+                // Reset slide position if not a swipe
+                contentSlide.style.transition = 'transform 0.5s ease-in-out';
+                contentSlide.style.transform = 'translateX(0)';
+            }
         }
     });
 });
@@ -258,19 +272,6 @@ function adjustFullscreenMenuPosition() {
 adjustFullscreenMenuPosition();
 window.addEventListener('resize', adjustFullscreenMenuPosition);
 
-// ----------------------------------------------------------------Loader----------------------------------------------------------------
-
-document.addEventListener("DOMContentLoaded", function() {
-    var loader = document.getElementById("loader");
-
-    // Show the loader
-    loader.style.display = "block";
-
-    // Hide the loader once the page has fully loaded
-    window.addEventListener("load", function() {
-        loader.style.display = "none";
-    });
-});
 
 // ----------------------------------------------------------------Language select for wider screens----------------------------------------------------------------
 

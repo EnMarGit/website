@@ -53,6 +53,8 @@ body, p {
 .cta-button-mid {
     font-size: 18px;  /* Base size as identified for .cta-button-mid */
     font-feature-settings: "ss03";
+    cursor: pointer;
+    border: none;
 }
 
 a {
@@ -61,6 +63,15 @@ a {
     font-weight: inherit;  /* Inherits font weight from the parent */
     text-decoration: none; /* Optional: removes underline from links */
     font-feature-settings: "ss03";
+}
+
+.cta-button {
+    color: inherit;        /* Inherits text color from the parent */
+    font-size: inherit;    /* Inherits font size from the parent */
+    font-weight: inherit;  /* Inherits font weight from the parent */
+    text-decoration: none; /* Optional: removes underline from links */
+    font-feature-settings: "ss03";
+    cursor: pointer;
 }
 
 @media screen and (max-width: 1200px) {
@@ -884,7 +895,7 @@ nav a:hover {
 
 /* ------------------------------------------------------------------------------ About Us Section ------------------------------------------------------------------------------ */
 .about-us-section {
-    padding: 50px 0;
+    padding: 50px 0 100px;
 }
 
 .about-us-wrapper {
@@ -978,6 +989,10 @@ nav a:hover {
         margin-top: 25px;
         border-radius: 15px;
     }
+
+    .about-us-section {
+        padding: 50px 0 80px;
+    }
 }
 
 .about-us-text-style img {
@@ -995,6 +1010,216 @@ nav a:hover {
     color: #000; /* Adjust the color of the dots */
 }
 
+/* ------------------------------------------------------------------------------ Banner: Press ------------------------------------------------------------------------------ */
+.press-banner-section {
+    background: linear-gradient(135deg, #ffffff, #ffffff);
+    padding: 2rem 80px; /* Adjust this value if you need more height */
+    margin: 0 auto;
+    max-width: 100%;
+    padding-bottom: 100px;
+}
+
+.press-banner-button .cta-button {
+    background-color: white;
+    border: solid 2px black;
+}
+
+.press-banner-button .cta-button:hover {
+    background-color: #0000000e;
+    transition: background-color 0.3s ease; /* Smooth transition for the background change */
+    color: black;
+}
+
+@media screen and (min-width: 1360px) {
+    .press-banner-section {
+        /* Set the padding to be (screen width - 1500px) / 2 on each side */
+        padding-left: calc((100vw - 1200px) / 2);
+        padding-right: calc((100vw - 1200px) / 2);
+    }
+}
+
+.press-banner-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.press-banner-column-text, .press-banner-button {
+    flex: 1;
+    padding: 0 2rem;
+}
+
+@media screen and (min-width: 770px) {
+    .press-banner-column-text {
+        padding-left: 0;
+        flex: 0 0 70%; /* 70% width, no grow, no shrink */
+    }
+
+    .press-banner-button {
+        padding-right: 0;
+        align-items: center;
+    }
+
+    .press-banner-button .cta-button {
+        padding: 12px 40px;
+    }
+}
+
+@media (min-width: 770px) and (max-width: 1200px) {
+    .press-banner-column-text {
+        padding-left: 0;
+        flex: 0 0 60%; /* 60% width, no grow, no shrink */
+    }
+}
+
+.press-banner-column-text h3, .press-banner-column-text p {
+    text-align: left;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.press-banner-button {
+    display: flex;
+    justify-content: center; /* aligns the images to the right */
+    gap: 10px; /* space between the images */
+}
+
+@media (max-width: 770px) {
+    .press-banner-container {
+        flex-direction: column; /* stack child elements vertically */
+        align-items: center;    /* center the child elements horizontally */
+    }
+
+    .press-banner-column-text,
+    .press-banner-button {
+        width: 100%; /* take full width */
+        text-align: center; /* center the text */
+    }
+
+    .press-banner-column-text h3, 
+    .press-banner-column-text p {
+        margin-bottom: 1rem; /* provide some spacing between the elements */
+        text-align: center;
+    }
+
+    .press-banner-button {
+        flex-direction: row; /* make images sit next to each other horizontally */
+    }
+
+    .press-banner-button {
+        
+        height: auto;
+    }
+
+    .press-banner-section {
+        padding: 2rem 40px; /* Adjust this value if you need more height */
+    }
+}
+
+@media (min-width: 771px) {
+    .press-banner-button {
+        flex-direction: column; /* stack the images vertically */
+    }
+
+    .press-banner-button {
+        
+        height: auto;
+    }
+}
+
+@media (min-width: 1201px) {
+    .press-banner-button {
+        flex-direction: row; /* stack the images vertically */
+    }
+
+    .press-banner-button {
+        
+        height: auto;
+    }
+}
+
+/* ------------------------------------------------------------------------------ Learn More ------------------------------------------------------------------------------ */
+
+.learn-more-section {
+    background-color: #f7f7f7;
+}
+
+.learn-more-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 80px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.box {
+    flex-basis: calc(33.333% - 20px); /* Adjust space between boxes */
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.box-image {
+    width: 100%;
+    height: 60%;
+    object-fit: cover; /* Adjusts the image to cover the area */
+    opacity: 90%;
+    transition: opacity 0.3s ease;
+}
+
+.box-content {
+    background-color: #fff;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40%;
+}
+
+.box-content h3 {
+    margin: 0;
+    color: #000;
+}
+
+.learn-more-arrow {
+    color: #000;
+    font-size: 24px; /* Adjust as needed */
+}
+
+.box:hover .box-image {
+    opacity: 0.8;
+}
+
+.box:hover .box-content {
+    background-color: transparent;
+}
+
+.box:hover {
+    cursor: pointer;
+}
+
+/* For screens up to 770px */
+@media (max-width: 770px) {
+    .learn-more-section {
+        background-color: #fff;
+    }
+
+    .learn-more-wrapper {
+        padding: 40px 40px;
+    }
+
+    .box {
+        flex-basis: 100%;
+        border-color: #fff;
+    }
+
+    .box-content {
+        background-color: #f7f7f7;
+    }
+}
 
 /* ------------------------------------------------------------------------------ Sticky Ellipse ------------------------------------------------------------------------------ */
 
@@ -1811,44 +2036,6 @@ footer {
     }
 }
 
-/* ------------------------------------------------------------------------------ Loader ------------------------------------------------------------------------------ */
-
-.loader {
-    border: 5px solid #f3f3f3; /* Light grey */
-    border-top: 5px solid #F4602C; /* Orange */
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    animation: spin 2s linear infinite;
-    position: fixed; /* or absolute */
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1006; /* Ensure it's above other content */
-}
-
-@keyframes spin {
-    0% { transform: translate(-50%, -50%) rotate(0deg); }
-    100% { transform: translate(-50%, -50%) rotate(360deg); }
-}
-
-/* Hide the loader initially */
-#loader {
-    display: none;
-}
-
-/* Optional: Fullscreen overlay */
-.loader-overlay {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(255, 255, 255, 0.9);
-    z-index: 1006; /* Below the loader, but above other content */
-}
 
 /* ------------------------------------------------------------------------------ White Screen Loader Overlay ------------------------------------------------------------------------------ */
 

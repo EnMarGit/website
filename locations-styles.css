@@ -63,6 +63,15 @@ a {
     font-feature-settings: "ss03";
 }
 
+.cta-button {
+    color: inherit;        /* Inherits text color from the parent */
+    font-size: inherit;    /* Inherits font size from the parent */
+    font-weight: inherit;  /* Inherits font weight from the parent */
+    text-decoration: none; /* Optional: removes underline from links */
+    font-feature-settings: "ss03";
+    cursor: pointer;
+}
+
 @media screen and (max-width: 1200px) {
     h1 { font-size: 48px; }
     h2 { font-size: 36px; }  /* 75% of the base size */
@@ -1784,44 +1793,6 @@ footer {
     }
 }
 
-/* ------------------------------------------------------------------------------ Loader ------------------------------------------------------------------------------ */
-
-.loader {
-    border: 5px solid #f3f3f3; /* Light grey */
-    border-top: 5px solid #F4602C; /* Orange */
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    animation: spin 2s linear infinite;
-    position: fixed; /* or absolute */
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1006; /* Ensure it's above other content */
-}
-
-@keyframes spin {
-    0% { transform: translate(-50%, -50%) rotate(0deg); }
-    100% { transform: translate(-50%, -50%) rotate(360deg); }
-}
-
-/* Hide the loader initially */
-#loader {
-    display: none;
-}
-
-/* Optional: Fullscreen overlay */
-.loader-overlay {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(255, 255, 255, 0.9);
-    z-index: 1006; /* Below the loader, but above other content */
-}
 
 /* ------------------------------------------------------------------------------ White Screen Loader Overlay ------------------------------------------------------------------------------ */
 
