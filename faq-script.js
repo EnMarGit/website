@@ -89,8 +89,8 @@ window.addEventListener('resize', adjustFullscreenMenuPosition);
 
 // URLs for each language
 const languageUrls = {
-    'en': 'press.html', // Replace with your actual URL for English
-    'bg': 'press.html'  // Replace with your actual URL for Bulgarian
+    'en': 'faq.html', // Replace with your actual URL for English
+    'bg': 'faq.html'  // Replace with your actual URL for Bulgarian
 };
 
 // Function to toggle the custom dropdown
@@ -129,6 +129,62 @@ document.querySelectorAll('.custom-dropdown-item').forEach(item => {
 });
 
 
+// ----------------------------------------------------------------Questions Section----------------------------------------------------------------
+$(document).ready(function() {
+    $('.togglefaq').click(function() {
+        $(this).toggleClass('active').next('.faqanswer').slideToggle(300);
+        $(this).find('.questions-icon').toggleClass('icon-rotated');
+    });
+});
+
+// ----------------------------------------------------------------Navigation Questions Section----------------------------------------------------------------
+document.addEventListener('DOMContentLoaded', function () {
+    var buttons = document.querySelectorAll('.faq-navigation-item');
+    var headerOffset = document.querySelector('.sticky-header').offsetHeight; // Adjust the selector as needed
+
+    buttons.forEach(function(button) {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            var targetId = this.getAttribute('data-target');
+            var targetSection = document.getElementById(targetId);
+
+            if (targetSection) {
+                var elementPosition = targetSection.getBoundingClientRect().top;
+                var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+            }
+        });
+    });
+});
+
+// ----------------------------------------------------------------Back to top button----------------------------------------------------------------
+document.addEventListener('DOMContentLoaded', function () {
+    var backToTopButtons = document.querySelectorAll('.back-to-top');
+    var header = document.querySelector('.sticky-header');
+    var headerOffset = header ? header.offsetHeight : 0; // Check if header exists
+
+    backToTopButtons.forEach(function(button) {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            var targetSection = document.getElementById('faq-navigation-section');
+            if (targetSection) {
+                var elementPosition = targetSection.getBoundingClientRect().top;
+                var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+            }
+        });
+    });
+});
 
 // ----------------------------------------------------------------Cookie Pop-up----------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', function() {
@@ -189,6 +245,7 @@ document.addEventListener('DOMContentLoaded', function() {
         detailedButtons.style.display = 'block';
     });
 });
+
 
 // ----------------------------------------------------------------Chatbox----------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', function() {

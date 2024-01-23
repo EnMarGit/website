@@ -145,7 +145,7 @@
                 <span class="learn-more-arrow">&#10140;</span>
             </div>
         </a>
-        <a href="help.html" class="box">
+        <a href="contact-us.html" class="box">
             <img src="Images/help-center.png" alt="Help Center" class="box-image">
             <div class="box-content">
                 <h3>Help center</h3>
@@ -187,7 +187,7 @@
                 <h3>Resources</h3>
                 <p><a href="about-us.html">About us</a></p>
                 <p><a href="press.html">Press</a></p>
-                <p><a href="careers.html">Careers</a></p>
+                <!-- <p><a href="careers.html">Careers</a></p> -->
             </div>
             <div class="footer-column">
                 <h3>Support</h3>
@@ -260,9 +260,76 @@
     <img src="Images/mc_symbol.svg" alt="Sponsored by Mastercard" class="ellipse-svg ellipse-svg-2">
 </a></div>
 
-<div><a href="help.html" class="sticky-circle">
+<div><a class="sticky-circle">
     <img src="Images/more-icon.svg" alt="Help" class="more-icon">
 </a></div>
+
+<div class="chat-box">
+    <div class="chat-box-header">
+        <img src="Images/Logo_Cyrcl_Gradient_Stroke_NoText.svg" class="logo-chatbot">
+        Cyrcl Assistant
+        <div class="chat-box-header-buttons">
+            <span class="chat-box-minimize"><img src="Images/minimize-button-chatbot.png" class="button-icons-chatbot"></span>
+            <span class="chat-box-toggle"><img src="Images/close-button-chatbot.png" class="button-icons-chatbot"></span>
+        </div>
+    </div>
+    <div class="chat-box-body">
+        <div class="chat-logs">
+          <!-- Chat logs will appear here -->
+        </div>
+        <div class="spinner" style="display: none;">  <!-- Initially hidden -->
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+    </div>
+    <div class="chat-input">      
+        <input type="text" id="chat-input" placeholder="Ask us anything...">
+        <button type="button" id="send-btn">
+            <img src="Images/send-button-chatbot.png" class="send-button-img">
+        </button>
+    </div>
+    <div class="chat-close-confirmation" style="display: none;">
+        <div class="chat-close-confirmation-wrapper">
+            <h3>Would you like to end the chat?</h3>
+            <button class="chat-close-confirm">Close Chat</button>
+            <button class="chat-return-chat">Return to Chat</button>
+        </div>
+    </div>
+</div>
+
+<div id="cookieConsentOverlay" class="cookie-consent-overlay"></div>
+<div id="cookieConsentPopup" class="cookie-consent-popup">
+    <div class="cookie-content">
+        <h2>🍪 Cookies Consent</h2>
+        <p>This website uses cookies to ensure you get the best experience. <a class="underline-text" href="privacy.html">Learn more</a></p>
+        <div class="cookie-options" style="display: none;">
+            <div class="cookie-option">
+                <input type="checkbox" id="essentialCookies" name="essentialCookies" checked disabled>
+                <label for="essentialCookies">Essential Cookies</label>
+            </div>
+            <div class="cookie-option">
+                <input type="checkbox" id="analyticsCookies" name="analyticsCookies">
+                <label for="analyticsCookies">Analytics Cookies</label>
+            </div>
+            <div class="cookie-option">
+                <input type="checkbox" id="advertisingCookies" name="advertisingCookies">
+                <label for="advertisingCookies">Advertising Cookies</label>
+            </div>
+        </div>
+        <div class="initial-buttons">
+            <button id="initialAccept" class="cookie-accept-btn">I Accept</button>
+            <button id="showPurposes" class="cookie-show-purposes">Show Purposes</button>
+        </div>
+
+        <div class="detailed-buttons" style="display: none;">
+            <p>This site uses third-party website tracking technologies to provide and continually improve our services, and to display advertisements according to users' interests. I agree and may revoke or change my consent at any time with effect for the future.</p>
+            <button id="acceptCookies" class="cookie-accept-btn">Save settings</button>
+            <button id="acceptAllCookies" class="cookie-accept-all-btn">Accept All</button>
+            <button id="declineCookies" class="cookie-decline-btn">Decline</button>
+        </div>
+    </div>
+</div>
 
 <!-- AOS Library -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">

@@ -89,8 +89,8 @@ window.addEventListener('resize', adjustFullscreenMenuPosition);
 
 // URLs for each language
 const languageUrls = {
-    'en': 'press.html', // Replace with your actual URL for English
-    'bg': 'press.html'  // Replace with your actual URL for Bulgarian
+    'en': 'cookies.html', // Replace with your actual URL for English
+    'bg': 'cookies.html'  // Replace with your actual URL for Bulgarian
 };
 
 // Function to toggle the custom dropdown

@@ -19,6 +19,10 @@
     src: url('fonts/Noah-Bold.woff2');
 }
 
+a, button, input, textarea, img, div {
+    -webkit-tap-highlight-color: transparent;
+}
+
 body {
     font-family: "Noah Text Medium", sans-serif;
     margin: 0;
@@ -1537,6 +1541,7 @@ nav a:hover {
 
 .chat-box-body {
     margin: 20px 10px;
+    width: 95%;
     max-height: 78%; /* 0.78 x Chatbox height */
     overflow-y: auto;
     position: absolute;
@@ -1547,6 +1552,9 @@ nav a:hover {
 
 .chat-logs {
     margin: 10px 0;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Custom Scrollbar Styles */
@@ -1571,6 +1579,7 @@ nav a:hover {
 .chat-input {
     display: flex;
     padding: 10px;
+    padding-bottom: 15px;
     position: absolute;
     bottom: 0;
     width: 95%;
@@ -1602,11 +1611,10 @@ nav a:hover {
     height: 20px;
 }
 
-.chat-logs {
-    overflow-y: auto;
-}
-
 .user-message {
+    white-space: pre-wrap; /* Allows line breaks and white space */
+    display: inline-flex;
+    clear: both;
     background-color: #81BB27; /* User messages in green */
     color: white;
     padding: 8px 15px;
@@ -1617,6 +1625,8 @@ nav a:hover {
 }
 
 .bot-message {
+    white-space: pre-wrap; /* Allows line breaks and white space */
+    clear: both;
     background-color: #00000021; /* Bot messages in gray */
     color: rgba(0, 0, 0, 0.85);
     padding: 8px 15px;
@@ -1627,12 +1637,13 @@ nav a:hover {
 }
 
 .clickable-message {
+    white-space: pre-wrap; /* Allows line breaks and white space */
     background-color: #f4602c; /* Entire div has green background */
     color: white;
     padding: 8px 15px;
-    margin: 10px auto 10px 10px; /* Align to the left */
+    margin: 7.5px auto 7.5px 7.5px; /* Align to the left */
     border-radius: 6px;
-    max-width: 70%;
+    width: 70%;
     word-wrap: break-word;
     cursor: pointer;
     text-align: center;
@@ -1669,11 +1680,11 @@ nav a:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 100px 0;
+    padding: 30% 0;
 }
 
 .chat-close-confirmation-wrapper h3 {
-    margin-top: 100px;
+    margin-top: 30%;
 }
 
 .chat-close-confirm {
@@ -1683,7 +1694,7 @@ nav a:hover {
     width: 200px;
     padding: 10px 15px;
     border-radius: 12px;
-    margin: 100px 50px 5px;
+    margin: 30% 50px 5px;
     cursor: pointer;
 }
 
@@ -1707,6 +1718,207 @@ nav a:hover {
 .chat-box.minimized .chat-input,
 .chat-box.minimized .chat-close-confirmation {
     display: none;
+}
+
+@media (max-width: 770px) {
+    .chat-box {
+        bottom: 0%;  /* Adjust based on sticky-circle position */
+        top: 0%;
+        right: 0%;    /* Adjust as needed */
+        left: 0%;
+        width: 100%; /* Adjust as needed */
+        height: 100%;
+        border-radius: 0;
+    }
+
+    .chat-box-header {
+        border-radius: 0;
+    }
+
+    .chat-box-body {
+        bottom: 5%;
+        max-height: 82%;
+    }
+}
+
+@media (max-width: 380px) {
+    .chat-box-body {
+        max-height: 78%;
+    }
+}
+
+@media (max-height: 850px) {
+    .chat-close-confirmation-wrapper {
+        padding: 25% 0;
+    }
+    
+    .chat-close-confirmation-wrapper h3 {
+        margin-top: 25%;
+    }
+    
+    .chat-close-confirm {
+        margin: 25% 50px 5px;
+    }
+}
+
+@media (max-height: 750px) {
+    .chat-close-confirmation-wrapper {
+        padding: 20% 0;
+    }
+    
+    .chat-close-confirmation-wrapper h3 {
+        margin-top: 20%;
+    }
+    
+    .chat-close-confirm {
+        margin: 20% 50px 5px;
+    }
+
+    .chat-box-body {
+        bottom: 6%;
+    }
+}
+
+@media (max-height: 660px) {
+    .chat-close-confirmation-wrapper {
+        padding: 15% 0;
+    }
+    
+    .chat-close-confirmation-wrapper h3 {
+        margin-top: 15%;
+    }
+    
+    .chat-close-confirm {
+        margin: 15% 50px 5px;
+    }
+
+    .chat-box-body {
+        bottom: 8%;
+    }
+}
+
+@media (max-height: 570px) {
+    .chat-close-confirmation-wrapper {
+        padding: 10% 0;
+    }
+    
+    .chat-close-confirmation-wrapper h3 {
+        margin-top: 10%;
+    }
+    
+    .chat-close-confirm {
+        margin: 10% 50px 5px;
+    }
+
+    .chat-box-body {
+        bottom: 9%;
+    }
+}
+
+@media (max-width: 770px) and (max-height: 1000px) {
+    .chat-close-confirmation-wrapper {
+        padding: 80% 0 10%;
+    }
+    
+    .chat-close-confirmation-wrapper h3 {
+        margin-top: 10%;
+    }
+    
+    .chat-close-confirm {
+        margin: 30% 50px 5px;
+    }
+}
+
+@media (max-width: 770px) and (max-height: 670px) {
+    .chat-close-confirmation-wrapper {
+        padding: 60% 0 10%;
+    }
+    
+    .chat-close-confirmation-wrapper h3 {
+        margin-top: 10%;
+    }
+    
+    .chat-close-confirm {
+        margin: 30% 50px 5px;
+    }
+}
+
+@media only screen and (max-height: 480px) and (orientation: landscape) {
+    .chat-box {
+        bottom: 0%;  /* Adjust based on sticky-circle position */
+        top: 0%;
+        right: 0%;    /* Adjust as needed */
+        left: 0%;
+        width: 100%; /* Adjust as needed */
+        height: 100%;
+        border-radius: 0;
+    }
+
+    .chat-box-body {
+        max-height: 63%;
+        width: 100%;
+    }
+
+    .chat-box-header {
+        border-radius: 0;
+    }
+
+    .chat-close-confirmation-wrapper {
+        padding: 10% 0;
+    }
+    
+    .chat-close-confirmation-wrapper h3 {
+        margin-top: 0;
+    }
+    
+    .chat-close-confirm {
+        margin: 0 50px 5px;
+    }
+}
+
+.spinner {
+    width: 35px;
+    text-align: center;
+    background-color: #00000021; /* Bot messages in gray */
+    padding: 8px 15px;
+    border-radius: 0 25px 25px 25px;
+    margin: 5px auto 5px 10px; /* Align to the left */
+}
+  
+.spinner > div {
+    width: 6px;
+    height: 6px;
+    background-color: #333;
+
+    border-radius: 100%;
+    display: inline-block;
+    -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+    animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.spinner .bounce1 {
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+    -webkit-animation-delay: -0.16s;
+    animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-bouncedelay {
+    0%, 80%, 100% { -webkit-transform: scale(0) }
+    40% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bouncedelay {
+    0%, 80%, 100% { 
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    } 40% { 
+        -webkit-transform: scale(1.0);
+        transform: scale(1.0);
+    }
 }
 
 /* ------------------------------------------------------------------------------ Footer ------------------------------------------------------------------------------ */
@@ -2057,4 +2269,195 @@ footer {
 .hidden {
     opacity: 0;
     visibility: hidden;
+}
+
+/* ------------------------------------------------------------------------------ Cookie Pop-up ------------------------------------------------------------------------------ */
+
+.cookie-consent-popup {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 -2px 10px rgba(0,0,0,.5);
+    transform: translateY(100%);
+    transition: transform 0.5s ease-in-out;
+    border-radius: 25px 25px 0 0;
+    z-index: 1011;
+}
+
+.cookie-consent-popup .cookie-content {
+    max-width: 600px;
+    margin: auto;
+}
+
+.cookie-consent-popup h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.cookie-consent-popup p {
+    margin-bottom: 20px;
+}
+
+.cookie-consent-popup .cookie-options {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.cookie-option {
+    margin: 10px 0;
+}
+
+.cookie-option label {
+    margin-left: 10px;
+}
+
+.initial-buttons button, .detailed-buttons button {
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 15px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.cookie-accept-btn, .cookie-accept-all-btn {
+    background-color: #81bb27;
+    border: 2px solid #81bb27;
+}
+
+.cookie-accept-btn:hover, .cookie-accept-all-btn:hover {
+    background-color: #6a9a20;
+    border: 2px solid #6a9a20;
+}
+
+.detailed-buttons .cookie-accept-btn, .cookie-show-purposes {
+    background-color: transparent;
+    border: 2px solid white;
+}
+
+.detailed-buttons .cookie-accept-btn:hover, .cookie-show-purposes:hover {
+    background-color: #ffffff13;
+}
+
+.cookie-decline-btn {
+    background-color: transparent;
+    text-decoration: underline;
+    border: none;
+}
+
+.cookie-decline-btn:hover {
+    background-color: #ffffff13;
+}
+
+.underline-text {
+    text-decoration: underline;
+}
+
+/* Hide actual checkbox */
+.cookie-consent-popup .cookie-option input[type="checkbox"] {
+    display: none;
+}
+
+/* Create a custom box for the checkbox */
+.cookie-consent-popup .cookie-option label {
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+/* Box appearance */
+.cookie-consent-popup .cookie-option label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    border: 2px solid #fff;
+    background-color: #333;
+    border-radius: 4px;
+}
+
+/* Checkmark appearance */
+.cookie-consent-popup .cookie-option label:after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 40%;
+    transform: translateY(-50%) rotate(45deg);
+    width: 5px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 0 3px 3px 0;
+    display: none;
+}
+
+/* Show checkmark when checkbox is checked */
+.cookie-consent-popup .cookie-option input[type="checkbox"]:checked + label:after {
+    display: block;
+}
+
+/* Change background color of custom box when checked */
+.cookie-consent-popup .cookie-option input[type="checkbox"]:checked + label:before {
+    background-color: #81bb27;
+    border-color: #81bb27;
+}
+
+.cookie-consent-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    z-index: 1010; /* Ensure it's below the popup */
+    display: none; /* Hidden by default */
+}
+
+/* Responsive design for tablets */
+@media (max-width: 770px) {
+    .cookie-consent-popup {
+        width: auto;
+    }
+
+    .cookie-consent-popup .cookie-content {
+        width: 90%;
+        max-width: none;
+    }
+
+    .initial-buttons button, .detailed-buttons button {
+        padding: 8px 15px;
+    }
+}
+
+/* Responsive design for smartphones */
+@media (max-width: 480px) {
+    .cookie-consent-popup {
+        padding: 15px;
+        width: auto;
+    }
+
+    .cookie-consent-popup .cookie-content {
+        width: 100%;
+    }
+
+    .initial-buttons button:first-child, .detailed-buttons button:nth-child(2) {
+        margin-bottom: 0;
+    }
+
+    .initial-buttons button, .detailed-buttons button {
+        width: 65%;
+        margin: 10px 0;
+    }
+
+    .detailed-buttons p {
+        text-align: left;
+    }
 }

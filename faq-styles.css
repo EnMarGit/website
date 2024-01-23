@@ -73,6 +73,7 @@ a {
     font-weight: inherit;  /* Inherits font weight from the parent */
     text-decoration: none; /* Optional: removes underline from links */
     font-feature-settings: "ss03";
+    cursor: pointer;
 }
 
 @media screen and (max-width: 1200px) {
@@ -163,7 +164,6 @@ nav a:hover {
     border: 2px solid transparent;
     font-family: "Noah Text Medium";
     font-weight: bold;
-    cursor: pointer;
 }
 
 .cta-button:hover {
@@ -183,8 +183,6 @@ nav a:hover {
     font-weight: bold;
     font-family: "Noah Text Medium";
     font-weight: bold;
-    border: none;
-    cursor: pointer;
 }
 
 .cta-button-mid:hover {
@@ -213,56 +211,12 @@ nav a:hover {
     font-size: 68px;
     font-family: "Noah Head Black", sans-serif;
     font-feature-settings: "ss03";
-    display: flex;
-    align-items: center;
-    gap: 22px;
     max-width: 1200px;
 }
 
 .hero h1, .hero .cta-button-mid {
     position: relative;  /* Keeps the content above the video */
     z-index: 1;
-}
-
-.hero p {
-    text-align: center;
-    max-width: 1200px;
-}
-
-.slot-machine {
-    display: inline-block;
-    vertical-align: middle;
-    overflow: hidden;
-    height: 1em; /* Adjust as needed */
-    background-color: #0000002d;
-    border-radius: 20px;
-}
-
-.slot-word {
-    display: block;
-    animation: slotAnimation 8s infinite;
-    text-align: left;
-    line-height: 1em;
-    margin: 0 15px;
-}
-
-@keyframes slotAnimation {
-    0%, 100% { transform: translateY(0); }
-    20% { transform: translateY(-100%); }
-    40% { transform: translateY(-200%); }
-    60% { transform: translateY(-300%); }
-    95% { transform: translateY(0); }
-}
-
-@media (max-width: 770px) {
-    .hero h1 {
-        flex-direction: column;
-        gap: 5px;
-    }
-
-    .slot-word {
-        text-align: center;
-    }
 }
 
 /* Style for the wrapper */
@@ -659,7 +613,7 @@ nav a:hover {
 
 .hero h1 {
     text-align: center;  /* Center align the text */
-    padding: 0;
+    padding: 0 15px;
 }
 
 /* Adjust font size for different screen widths */
@@ -835,7 +789,7 @@ nav a:hover {
 
 .hero {
     height: 95vh; /* Takes up the full viewport height */
-    background-image: url('Images/sustainability-photo.png'); /* Your image */
+    background-image: url('Images/faq-photo.png'); /* Your image */
     background-size: cover; /* Ensure the background image covers the entire area */
     background-position: center; /* Center the background image */
     display: flex;
@@ -937,289 +891,200 @@ nav a:hover {
     }
 }
 
-/* ------------------------------------------------------------------------------ UN Goals Section ------------------------------------------------------------------------------ */
-
-.sustainable-model {
-    background-color: white;
-    text-align: left;
-    max-width: 1200px;
-    margin: 0 auto; /* Center the section */
-    padding: 80px; /* Default padding */
-}
-
-.sustainable-model h2 {
-    text-align: center;
-    margin-bottom: 40px; /* Adjust as needed */
-}
-
-.model-section {
+/* ------------------------------------------------------------------------------ Navigation Questions Section ------------------------------------------------------------------------------ */
+.faq-navigation-section {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px; /* Adjust as needed */
-    gap: 50px;
+    flex-direction: column;
+    padding: 120px 0 40px;
 }
 
-
-
-.model-section img {
-    display: flex;
-    flex: 1;
-    flex-shrink: 0;
-    max-width: 500px;
-    width: 100%; /* Makes the image scalable */
-    margin: 0 20px; /* Adjust as needed */
-}
-
-.model-section .text-content h3 {
-    text-transform: none;
-    margin-bottom: 10px;
-}
-
-.model-section .text-content p {
-    margin-bottom: 10px;
-}
-
-/* Responsive Design for smaller screens */
-@media screen and (max-width: 770px) {
-    .sustainable-model {
-        padding: 40px; /* Reduced padding for smaller screens */
-    }
-
-    .model-section,
-    .model-section.image-left {
-        flex-direction: column;
-        text-align: left;
-        gap: 0;
-        margin-bottom: 50px;
-    }
-
-    .model-section img {
-        width: 80%; /* Adjust as needed */
-        margin: 0 auto 0; /* Centers the image with margin */
-    }
-
-    .model-section.image-left img, .model-section img {
-        order: 1;
-    }
-
-    .model-section.image-left .text-content, .model-section .text-content {
-        order: 2;
-    }
-}
-
-@media screen and (min-width: 770px) {
-    .model-section img, 
-    .model-section .text-content {
-        flex: 1 1 50%; /* Each child takes up half of the space */
-        max-width: 50%; /* Ensuring they do not grow beyond 50% */
-    }
-}
-
-
-/* ------------------------------------------------------------------------------ Banner: UN Goals ------------------------------------------------------------------------------ */
-.un-goals-section {
-    background: linear-gradient(135deg, #F4602C, #81BB27);
-    padding: 2rem 80px; /* Adjust this value if you need more height */
-    margin: 0 auto;
-    max-width: 100%;
+.faq-navigation-wrapper {
+    padding: 0 80px;
 }
 
 @media screen and (min-width: 1360px) {
-    .un-goals-section {
-        /* Set the padding to be (screen width - 1500px) / 2 on each side */
+    .faq-navigation-wrapper {
         padding-left: calc((100vw - 1200px) / 2);
         padding-right: calc((100vw - 1200px) / 2);
     }
 }
 
-.un-goals-container {
-    display: flex;
-    justify-content: space-between;
-    margin: 0;
-}
-
-.un-goals-column-text, .un-goals-button {
-    flex: 1;
-    padding: 0 2rem;
-}
-
-@media screen and (min-width: 770px) {
-    .un-goals-column-text {
-        padding-left: 0;
-        flex: 0 0 70%; /* 70% width, no grow, no shrink */
-    }
-
-    .un-goals-button {
-        padding-right: 0;
-        align-items: center;
-    }
-
-    .un-goals-button .cta-button {
-        padding: 9px 30px;
-    }
-}
-
-@media (min-width: 770px) and (max-width: 1200px) {
-    .un-goals-column-text {
-        padding-left: 0;
-        flex: 0 0 60%; /* 60% width, no grow, no shrink */
-    }
-}
-
-.un-goals-column-text h3, .un-goals-column-text p {
-    text-align: left;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.un-goals-button {
-    display: flex;
-    justify-content: center; /* aligns the images to the right */
-    gap: 10px; /* space between the images */
-}
-
-.un-goals-button .cta-button:hover {
-    background-color: #ffffff00;
-    transition: background-color 0.3s ease; /* Smooth transition for the background change */
-    cursor: pointer;
-}
-
-@media (max-width: 770px) {
-    .un-goals-container {
-        flex-direction: column; /* stack child elements vertically */
-        align-items: center;    /* center the child elements horizontally */
-    }
-
-    .un-goals-column-text,
-    .un-goals-button {
-        width: 100%; /* take full width */
-        text-align: center; /* center the text */
-    }
-
-    .un-goals-column-text h3, 
-    .un-goals-column-text p {
-        margin-bottom: 1rem; /* provide some spacing between the elements */
-        text-align: center;
-    }
-
-    .un-goals-button {
-        flex-direction: row; /* make images sit next to each other horizontally */
-    }
-
-    .un-goals-button {
-        
-        height: auto;
-    }
-
-    .un-goals-section {
-        padding: 2rem 40px; /* Adjust this value if you need more height */
-    }
-}
-
-@media (min-width: 771px) {
-    .un-goals-button {
-        flex-direction: column; /* stack the images vertically */
-    }
-
-    .un-goals-button {
-        
-        height: auto;
-    }
-}
-
-@media (min-width: 1201px) {
-    .un-goals-button {
-        flex-direction: row; /* stack the images vertically */
-    }
-
-    .un-goals-button {
-        
-        height: auto;
-    }
-}
-
-/* ------------------------------------------------------------------------------ Learn More ------------------------------------------------------------------------------ */
-
-.learn-more-section {
-    background-color: #f7f7f7;
-}
-
-.learn-more-wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 80px 80px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+.faq-navigation-holder {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
 }
 
-.box {
-    flex-basis: calc(33.333% - 20px); /* Adjust space between boxes */
-    border-radius: 15px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.box-image {
-    width: 100%;
-    height: 60%;
-    object-fit: cover; /* Adjusts the image to cover the area */
-    opacity: 90%;
-    transition: opacity 0.3s ease;
-}
-
-.box-content {
-    background-color: #fff;
-    padding: 0 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 40%;
-}
-
-.box-content h3 {
-    margin: 0;
-    color: #000;
-}
-
-.learn-more-arrow {
-    color: #000;
-    font-size: 24px; /* Adjust as needed */
-}
-
-.box:hover .box-image {
-    opacity: 0.8;
-}
-
-.box:hover .box-content {
-    background-color: transparent;
-}
-
-.box:hover {
+.faq-navigation-item {
+    background-color: rgba(255, 255, 255, 0);
+    border: solid 2px black;
+    border-radius: 25px;
     cursor: pointer;
 }
 
-/* For screens up to 770px */
+.faq-navigation-item:hover {
+    background-color: #0000000e;
+    transition: background-color 0.3s ease;
+    color: black;
+}
+
+.back-to-top {
+    padding-top: 20px;
+    text-align: right;
+    cursor: pointer;
+}
+
+.back-to-top h3:hover {
+    opacity: 0.8;
+}
+
 @media (max-width: 770px) {
-    .learn-more-section {
-        background-color: #fff;
+    .faq-navigation-section {
+        background-color: #f7f7f7;
+        padding: 100px 0 20px;
     }
 
-    .learn-more-wrapper {
-        padding: 40px 40px;
+    .faq-navigation-wrapper {
+        padding: 0 40px;
     }
 
-    .box {
-        flex-basis: 100%;
-        border-color: #fff;
+    .faq-navigation-holder {
+        display: flex;
+        flex-direction: column;
     }
 
-    .box-content {
+    .back-to-top {
+        padding: 0px 40px;
+    }
+
+    .back-to-top h3 {
+        margin-bottom: 0;
+    }
+}
+
+/* ------------------------------------------------------------------------------ Questions Section ------------------------------------------------------------------------------ */
+.faq-section {
+    display: flex;
+    flex-direction: column;
+    padding: 80px 0;
+}
+
+.faq-wrapper {
+    padding: 0 80px 50px;
+}
+
+@media screen and (min-width: 1360px) {
+    .faq-wrapper {
+        padding-left: calc((100vw - 1200px) / 2);
+        padding-right: calc((100vw - 1200px) / 2);
+    }
+}
+
+.faq-holder {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 20px;
+}
+
+.faqanswer {
+    display: none;
+    background: #f0f0f0;
+    padding: 12px 20px;
+    border-left: 4px solid #f1c2b4;
+    border-radius: 0 0 25px 25px;
+}
+
+.faqanswer p, .faqanswer ol {
+    color: #333;
+}
+
+.togglefaq {
+    padding: 10px 0;
+    cursor: pointer;
+    text-decoration: none;
+    color: #000000;
+    display: block;
+    background: #fff;
+    margin-bottom: -1px;
+    transition: background-color 0.3s ease;
+    border-top: solid #f7f7f7 2px;
+    border-bottom: solid #f7f7f7 2px;
+    border-radius: 25px;
+}
+
+.togglefaq h3 {
+    display: flex;
+    align-items: center;
+}
+
+.togglefaq:hover, .togglefaq.active {
+    background: #e5e5e5;
+}
+
+.questions-icon {
+    color: #f1c2b4;
+    margin-right: 15px;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.togglefaq.active .questions-icon {
+    transform: rotate(90deg);
+    color: #eb8f73;
+}
+
+.togglefaq.active {
+    border-radius: 25px 25px 0 0;
+    transition: all ease 0.3s;
+}
+
+@media (min-width: 770px) {
+    .togglefaq h3 {
+        padding-left: 24px;
+    }
+}
+
+@media (max-width: 770px) {
+    .faq-section {
         background-color: #f7f7f7;
     }
+
+    .faq-section h2 {
+        padding: 0 40px;
+    }
+
+    .faq-wrapper {
+        padding: 0 0 50px;
+    }
+
+    .faq-wrapper:last-child {
+        padding-bottom: 0;
+    }
+
+    .faq-holder {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .togglefaq {
+        background-color: #f7f7f7;
+        padding: 0 40px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .togglefaq h3 {
+        display: flex;
+        align-items: center;
+    }
+
+    .faqanswer {
+        padding: 12px 40px 12px 36px;
+    }
+}
+
+.underline-text {
+    text-decoration: underline;
 }
 
 

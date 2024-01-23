@@ -73,6 +73,7 @@ a {
     font-weight: inherit;  /* Inherits font weight from the parent */
     text-decoration: none; /* Optional: removes underline from links */
     font-feature-settings: "ss03";
+    cursor: pointer;
 }
 
 @media screen and (max-width: 1200px) {
@@ -163,7 +164,6 @@ nav a:hover {
     border: 2px solid transparent;
     font-family: "Noah Text Medium";
     font-weight: bold;
-    cursor: pointer;
 }
 
 .cta-button:hover {
@@ -183,8 +183,6 @@ nav a:hover {
     font-weight: bold;
     font-family: "Noah Text Medium";
     font-weight: bold;
-    border: none;
-    cursor: pointer;
 }
 
 .cta-button-mid:hover {
@@ -194,75 +192,23 @@ nav a:hover {
 }
 
 .hero {
-    height: 500px;
-    background-color: #ddd; /* Placeholder till you get an image */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-image: url('path-to-fallback-image.jpg'); /* Replace with your fallback image */
-    position: relative;  /* Ensures z-index and other positioning works inside this element */
-    overflow: hidden;  /* To prevent video from spilling out if it's larger than the container */
     margin-top: 0px;
 }
 
 .hero h1 {
-    color: #ffffff; /* Placeholder till you get an image */
+    color: #000; /* Placeholder till you get an image */
     font-size: 3em;
     margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
     font-size: 68px;
     font-family: "Noah Head Black", sans-serif;
     font-feature-settings: "ss03";
-    display: flex;
-    align-items: center;
-    gap: 22px;
     max-width: 1200px;
 }
 
 .hero h1, .hero .cta-button-mid {
     position: relative;  /* Keeps the content above the video */
     z-index: 1;
-}
-
-.hero p {
-    text-align: center;
-    max-width: 1200px;
-}
-
-.slot-machine {
-    display: inline-block;
-    vertical-align: middle;
-    overflow: hidden;
-    height: 1em; /* Adjust as needed */
-    background-color: #0000002d;
-    border-radius: 20px;
-}
-
-.slot-word {
-    display: block;
-    animation: slotAnimation 8s infinite;
-    text-align: left;
-    line-height: 1em;
-    margin: 0 15px;
-}
-
-@keyframes slotAnimation {
-    0%, 100% { transform: translateY(0); }
-    20% { transform: translateY(-100%); }
-    40% { transform: translateY(-200%); }
-    60% { transform: translateY(-300%); }
-    95% { transform: translateY(0); }
-}
-
-@media (max-width: 770px) {
-    .hero h1 {
-        flex-direction: column;
-        gap: 5px;
-    }
-
-    .slot-word {
-        text-align: center;
-    }
 }
 
 /* Style for the wrapper */
@@ -363,17 +309,6 @@ nav a:hover {
 .dropdown-arrow {
     cursor: pointer;
     /* Other existing styles */
-}
-
-.hero::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.250); /* This adds a black overlay with 25% opacity */
-    pointer-events: none; /* Ensures the overlay doesn't interfere with video controls or interactions */
 }
 
 /* Media queries for responsive design */
@@ -659,7 +594,7 @@ nav a:hover {
 
 .hero h1 {
     text-align: center;  /* Center align the text */
-    padding: 0;
+    padding: 0 15px;
 }
 
 /* Adjust font size for different screen widths */
@@ -834,8 +769,8 @@ nav a:hover {
 }
 
 .hero {
-    height: 95vh; /* Takes up the full viewport height */
-    background-image: url('Images/sustainability-photo.png'); /* Your image */
+    height: 30vh; /* Takes up the full viewport height */
+    background-color: #fddfd5;
     background-size: cover; /* Ensure the background image covers the entire area */
     background-position: center; /* Center the background image */
     display: flex;
@@ -937,288 +872,51 @@ nav a:hover {
     }
 }
 
-/* ------------------------------------------------------------------------------ UN Goals Section ------------------------------------------------------------------------------ */
 
-.sustainable-model {
-    background-color: white;
-    text-align: left;
-    max-width: 1200px;
-    margin: 0 auto; /* Center the section */
-    padding: 80px; /* Default padding */
+/* ------------------------------------------------------------------------------ Cookies Section ------------------------------------------------------------------------------ */
+
+.cookies-section {
+    padding: 80px;
 }
 
-.sustainable-model h2 {
-    text-align: center;
-    margin-bottom: 40px; /* Adjust as needed */
-}
-
-.model-section {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px; /* Adjust as needed */
-    gap: 50px;
-}
-
-
-
-.model-section img {
-    display: flex;
-    flex: 1;
-    flex-shrink: 0;
-    max-width: 500px;
-    width: 100%; /* Makes the image scalable */
-    margin: 0 20px; /* Adjust as needed */
-}
-
-.model-section .text-content h3 {
-    text-transform: none;
-    margin-bottom: 10px;
-}
-
-.model-section .text-content p {
-    margin-bottom: 10px;
-}
-
-/* Responsive Design for smaller screens */
-@media screen and (max-width: 770px) {
-    .sustainable-model {
-        padding: 40px; /* Reduced padding for smaller screens */
-    }
-
-    .model-section,
-    .model-section.image-left {
-        flex-direction: column;
-        text-align: left;
-        gap: 0;
-        margin-bottom: 50px;
-    }
-
-    .model-section img {
-        width: 80%; /* Adjust as needed */
-        margin: 0 auto 0; /* Centers the image with margin */
-    }
-
-    .model-section.image-left img, .model-section img {
-        order: 1;
-    }
-
-    .model-section.image-left .text-content, .model-section .text-content {
-        order: 2;
+@media screen and (min-width: 960px) {
+    .cookies-section {
+        /* Set the padding to be (screen width - 1200px) / 2 on each side */
+        padding-left: calc((100vw - 800px) / 2);
+        padding-right: calc((100vw - 800px) / 2);
     }
 }
 
-@media screen and (min-width: 770px) {
-    .model-section img, 
-    .model-section .text-content {
-        flex: 1 1 50%; /* Each child takes up half of the space */
-        max-width: 50%; /* Ensuring they do not grow beyond 50% */
-    }
+.cookies-section ol {
+    padding: 25px 0 0 25px;
 }
 
-
-/* ------------------------------------------------------------------------------ Banner: UN Goals ------------------------------------------------------------------------------ */
-.un-goals-section {
-    background: linear-gradient(135deg, #F4602C, #81BB27);
-    padding: 2rem 80px; /* Adjust this value if you need more height */
-    margin: 0 auto;
-    max-width: 100%;
+.cookies-section ul {
+    padding: 0 0 0 25px;
 }
 
-@media screen and (min-width: 1360px) {
-    .un-goals-section {
-        /* Set the padding to be (screen width - 1500px) / 2 on each side */
-        padding-left: calc((100vw - 1200px) / 2);
-        padding-right: calc((100vw - 1200px) / 2);
-    }
+.cookies-section .cookies-container table {
+    border-spacing: 0px;
 }
 
-.un-goals-container {
-    display: flex;
-    justify-content: space-between;
-    margin: 0;
+.cookies-section .cookies-container table tbody tr td {
+    border-bottom: 1px #000 solid; /* Only bottom border for each cell */
+    padding: 10px;
 }
 
-.un-goals-column-text, .un-goals-button {
-    flex: 1;
-    padding: 0 2rem;
+.cookies-section .cookies-container table tbody tr:first-child td {
+    border-top: 1px #000 solid;    /* Top border for the first row cells */
 }
 
-@media screen and (min-width: 770px) {
-    .un-goals-column-text {
-        padding-left: 0;
-        flex: 0 0 70%; /* 70% width, no grow, no shrink */
-    }
-
-    .un-goals-button {
-        padding-right: 0;
-        align-items: center;
-    }
-
-    .un-goals-button .cta-button {
-        padding: 9px 30px;
-    }
-}
-
-@media (min-width: 770px) and (max-width: 1200px) {
-    .un-goals-column-text {
-        padding-left: 0;
-        flex: 0 0 60%; /* 60% width, no grow, no shrink */
-    }
-}
-
-.un-goals-column-text h3, .un-goals-column-text p {
-    text-align: left;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.un-goals-button {
-    display: flex;
-    justify-content: center; /* aligns the images to the right */
-    gap: 10px; /* space between the images */
-}
-
-.un-goals-button .cta-button:hover {
-    background-color: #ffffff00;
-    transition: background-color 0.3s ease; /* Smooth transition for the background change */
-    cursor: pointer;
-}
-
-@media (max-width: 770px) {
-    .un-goals-container {
-        flex-direction: column; /* stack child elements vertically */
-        align-items: center;    /* center the child elements horizontally */
-    }
-
-    .un-goals-column-text,
-    .un-goals-button {
-        width: 100%; /* take full width */
-        text-align: center; /* center the text */
-    }
-
-    .un-goals-column-text h3, 
-    .un-goals-column-text p {
-        margin-bottom: 1rem; /* provide some spacing between the elements */
-        text-align: center;
-    }
-
-    .un-goals-button {
-        flex-direction: row; /* make images sit next to each other horizontally */
-    }
-
-    .un-goals-button {
-        
-        height: auto;
-    }
-
-    .un-goals-section {
-        padding: 2rem 40px; /* Adjust this value if you need more height */
-    }
-}
-
-@media (min-width: 771px) {
-    .un-goals-button {
-        flex-direction: column; /* stack the images vertically */
-    }
-
-    .un-goals-button {
-        
-        height: auto;
-    }
-}
-
-@media (min-width: 1201px) {
-    .un-goals-button {
-        flex-direction: row; /* stack the images vertically */
-    }
-
-    .un-goals-button {
-        
-        height: auto;
-    }
-}
-
-/* ------------------------------------------------------------------------------ Learn More ------------------------------------------------------------------------------ */
-
-.learn-more-section {
-    background-color: #f7f7f7;
-}
-
-.learn-more-wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 80px 80px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.box {
-    flex-basis: calc(33.333% - 20px); /* Adjust space between boxes */
-    border-radius: 15px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.box-image {
-    width: 100%;
-    height: 60%;
-    object-fit: cover; /* Adjusts the image to cover the area */
-    opacity: 90%;
-    transition: opacity 0.3s ease;
-}
-
-.box-content {
-    background-color: #fff;
-    padding: 0 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 40%;
-}
-
-.box-content h3 {
-    margin: 0;
-    color: #000;
-}
-
-.learn-more-arrow {
-    color: #000;
-    font-size: 24px; /* Adjust as needed */
-}
-
-.box:hover .box-image {
-    opacity: 0.8;
-}
-
-.box:hover .box-content {
-    background-color: transparent;
-}
-
-.box:hover {
-    cursor: pointer;
+.scrollable-table {
+    overflow-x: auto;
+    width: 100%; /* Adjust if necessary */
 }
 
 /* For screens up to 770px */
 @media (max-width: 770px) {
-    .learn-more-section {
-        background-color: #fff;
-    }
-
-    .learn-more-wrapper {
-        padding: 40px 40px;
-    }
-
-    .box {
-        flex-basis: 100%;
-        border-color: #fff;
-    }
-
-    .box-content {
-        background-color: #f7f7f7;
+    .cookies-section {
+        padding: 80px 40px;
     }
 }
 

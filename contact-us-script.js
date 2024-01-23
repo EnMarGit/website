@@ -127,6 +127,66 @@ document.querySelectorAll('.custom-dropdown-item').forEach(item => {
     });
 });
 
+// ----------------------------------------------------------------Cookie Pop-up----------------------------------------------------------------
+document.addEventListener('DOMContentLoaded', function() {
+    var cookieConsent = localStorage.getItem('cookieConsent');
+    var cookiePopup = document.getElementById('cookieConsentPopup');
+    var cookieOptions = document.querySelector('.cookie-options');
+    var initialButtons = document.querySelector('.initial-buttons');
+    var detailedButtons = document.querySelector('.detailed-buttons');
+    var cookieOverlay = document.getElementById('cookieConsentOverlay');
+
+    if (!cookieConsent) {
+        cookiePopup.style.transform = "translateY(0)";
+        cookieOverlay.style.display = "block";
+    }
+
+    function hideConsentPopup() {
+        cookiePopup.style.transform = "translateY(100%)";
+        cookieOverlay.style.display = "none";
+    }
+
+    // Function to set consent
+    function setConsent(essential, analytics, advertising) {
+        var consentData = {
+            essential: essential,
+            analytics: analytics,
+            advertising: advertising
+        };
+        localStorage.setItem('cookieConsent', JSON.stringify(consentData));
+        hideConsentPopup();
+    }
+
+    // Event listener for the initial "I Accept" button
+    document.getElementById('initialAccept').addEventListener('click', function() {
+        setConsent(true, true, true);
+    });
+
+    // Event listener for the detailed "I Accept" button
+    document.getElementById('acceptCookies').addEventListener('click', function() {
+        var analyticsConsent = document.getElementById('analyticsCookies').checked;
+        var advertisingConsent = document.getElementById('advertisingCookies').checked;
+        setConsent(true, analyticsConsent, advertisingConsent);
+    });
+
+    // Event listener for the "Accept All" button
+    document.getElementById('acceptAllCookies').addEventListener('click', function() {
+        setConsent(true, true, true);
+    });
+
+    // Event listener for the "Decline" button
+    document.getElementById('declineCookies').addEventListener('click', function() {
+        setConsent(true, false, false);
+    });
+
+    // Event listener for the "Show Purposes" button
+    document.getElementById('showPurposes').addEventListener('click', function() {
+        initialButtons.style.display = 'none';
+        cookieOptions.style.display = 'block';
+        detailedButtons.style.display = 'block';
+    });
+});
+
 // ----------------------------------------------------------------Chatbox----------------------------------------------------------------
 
 // Event listener for the "Start the Chat" button
@@ -138,6 +198,7 @@ document.getElementById("start-chat-button").addEventListener("click", function(
 //-----------------------------------------------------------------
 
 
+// ----------------------------------------------------------------Chatbox----------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', function() {
     // Flag to track if the chatbox is open or minimized
     let isChatBoxMinimized = true;
@@ -315,6 +376,15 @@ document.addEventListener('DOMContentLoaded', function() {
     // Function to send message to the server
     function sendMessageToServer(message, isPredefined) {
         console.log("Sending message to server:", message, "Is predefined:", isPredefined);
+
+        // Reset chat if 'Start new chat' is selected
+        if (message === "Start new chat") {
+            userHistory = []; // Reset user history
+            localStorage.removeItem('userHistory'); // Clear user history from storage
+            loadInitialMessages(); // Reload initial messages
+            return; // Stop further processing
+        }
+
         var threadId = getValidThreadId();
         console.log("Current thread ID:", threadId);
 
@@ -336,6 +406,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
 
                 var response = JSON.parse(xhr.responseText);
+
+                if (response.startNewChat) {
+                    // Clear chat logs and load initial messages
+                    document.querySelector(".chat-logs").innerHTML = '';
+                    loadInitialMessages();
+                    return; // Stop further processing
+                }
         
                 console.log("External link:", response.isExternalLink);
                 if (response.is_predefined) {
@@ -384,13 +461,24 @@ document.addEventListener('DOMContentLoaded', function() {
     }    
 
     function scrollToBottom() {
-        var chatBoxBody = document.querySelector(".chat-box-body"); // Adjust the selector as needed
-        requestAnimationFrame(() => {
-            setTimeout(() => {
-                chatBoxBody.scrollTop = chatBoxBody.scrollHeight;
-            }, 0);
-        });
+        var chatLogs = document.querySelector(".chat-logs");
+        var userMessages = chatLogs.querySelectorAll(".user-message");
+        var lastUserMessage = userMessages[userMessages.length - 1];
+    
+        if (lastUserMessage) {
+            // Scroll to the top of the last user message
+            lastUserMessage.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+            // Scroll to the bottom of the chat log
+            var chatBoxBody = document.querySelector(".chat-box-body");
+            requestAnimationFrame(() => {
+                setTimeout(() => {
+                    chatBoxBody.scrollTop = chatBoxBody.scrollHeight;
+                }, 0);
+            });
+        }
     }
+    
 
     // Function to add message to chat logs
     function addMessageToChatLogs(sender, message) {
@@ -403,7 +491,9 @@ document.addEventListener('DOMContentLoaded', function() {
             messageDiv.classList.add("bot-message");
         }
 
-        messageDiv.textContent = message;
+        // Use innerHTML to render the HTML tags correctly
+        messageDiv.innerHTML = message; 
+
         chatLogs.appendChild(messageDiv);
         localStorage.setItem('chatLogs', chatLogs.innerHTML);
         scrollToBottom();
@@ -415,7 +505,8 @@ document.addEventListener('DOMContentLoaded', function() {
         var chatLogs = document.querySelector(".chat-logs");
         var messageDiv = document.createElement("div");
         messageDiv.classList.add("clickable-message");
-        messageDiv.textContent = message;
+        // Use innerHTML to render the HTML tags correctly
+        messageDiv.innerHTML = message; 
         messageDiv.onclick = function() { sendClickableMessage(message); };
         chatLogs.appendChild(messageDiv);
         scrollToBottom();
@@ -451,3 +542,4 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+

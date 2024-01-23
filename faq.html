@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FAQ | Cyrcl</title>
+<link rel="apple-touch-icon" sizes="180x180" href="Images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="Images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="Images/favicon-16x16.png">
+<link href="faq-styles.css" rel="stylesheet" type="text/css"/> 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <div id="loadingOverlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: white; z-index: 1010;"></div>
+<header class="sticky-header">
+<a href="index.html" class="logo-link">
+    <img alt="Cyrcl logo" id="cyrcl-logo" src="Images/Logo_Cyrcl_White_Horizontal.svg"/>
+</a>     
+<div id="hamburger-menu">
+    <svg class="ham hamRotate ham7" viewBox="0 0 100 100" width="50" onclick="this.classList.toggle('active')">
+      <path class="line top" d="m 70,33 h -40 c 0,0 -6,1.368796 -6,8.5 0,7.131204 6,8.5013 6,8.5013 l 20,-0.0013" />
+      <path class="line middle" d="m 70,50 h -40" />
+      <path class="line bottom" d="m 69.575405,67.073826 h -40 c -5.592752,0 -6.873604,-9.348582 1.371031,-9.348582 8.244634,0 19.053564,21.797129 19.053564,12.274756 l 0,-40" />
+    </svg>
+</div>
+<nav>
+<div class="nav-links"><a href="how-it-works.html">How it works</a><a href="pricing.html">Prices</a><a href="locations.html">Locations</a><a href="sustainability.html">Sustainability</a><a href="parking.html">Parking</a><a href="partners.html">Partners</a></nav><div class="cta-and-dropdown"><a class="cta-button" href="https://onelink.to/y9q7mf"><img alt="Download Cyrcl app" class="download-icon" src="Images/Download-Icon-Cyrcl.svg"/>Get the app</a>
+    <div class="dropdown-wrapper">
+        <select id="country-select" name="country">
+            <option value="en">EN</option>
+            <option value="bg">BG</option>
+            <!-- Add other countries as needed -->
+        </select>
+        <span id="currentSelection" class="current-selection">EN</span> <!-- Current selection display -->
+        <span class="dropdown-arrow">▼</span>
+        <div id="customDropdown" class="custom-dropdown-content">
+            <div class="custom-dropdown-item" data-value="en">EN</div>
+            <div class="custom-dropdown-item" data-value="bg">BG</div>
+            <!-- Add other items as needed -->
+        </div>
+    </div>      
+</div>
+</header>
+<main>
+
+<section class="hero">
+    <h1>You have a question?
+        <p class="subheadline">Check out the answers to the most frequent questions we get below.</p>
+    </h1>
+    <a class="cta-button-mid" href="https://onelink.to/y9q7mf">Get the Cyrcl app</a>
+</section>   
+
+<section class="faq-navigation-section" id="faq-navigation-section">
+    <div class="faq-navigation-wrapper">
+        <div class="faq-navigation-holder">
+            <button class="faq-navigation-item" data-target="getting-started">
+                <h3>Getting started</h3>
+            </button>
+            <button class="faq-navigation-item" data-target="accounts-payments">
+                <h3>Accounts and Payments</h3>
+            </button>
+            <button class="faq-navigation-item" data-target="ride-bike">
+                <h3>Help with your ride & bike</h3>
+            </button>
+            <button class="faq-navigation-item" data-target="about-bikes">
+                <h3>More about the bikes</h3>
+            </button>
+            <button class="faq-navigation-item" data-target="parking">
+                <h3>Parking</h3>
+            </button>
+            <button class="faq-navigation-item" data-target="safety">
+                <h3>Safety</h3>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Question Section Starts -->
+<section class="faq-section">
+    <div class="faq-wrapper" id="getting-started">
+        <h2>Getting started</h2>
+        <div class="faq-holder">
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>What is Cyrcl?</h3></div>
+                <div class="faqanswer">
+                    <p>Cyrcl is the first Bulgarian service offering short-term rental of mechanical and electric bicycles, otherwise known as bike-sharing.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>How do I pronounce “Cyrcl” and what does it mean?</h3></div>
+                <div class="faqanswer">
+                    <p>Our name is a blend between two interrelated words and the symbolism behind them. For us the meaning of <strong>circle</strong> (this is how we pronounce our name) is intertwined with that of sustainability, while <strong>cycle</strong> symbolizes progress and continuous motion — notions, which we strongly relate to.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>What are the working hours of the service?</h3></div>
+                <div class="faqanswer">
+                    <p>
+                        Our service is available <strong>24/7</strong> all year round. You can rent the Cyrcl bikes whenever you want to.
+                        <br><br>
+                        Download the mobile app by following this <a href="https://onelink.to/y9q7mf" class="underline-text">link</a> and enjoy your freedom!
+                    </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>How to register?</h3></div>
+                <div class="faqanswer">
+                    <p>You can register for free through our mobile app by following this <a href="https://onelink.to/y9q7mf" class="underline-text">link</a>.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>How does it work?</h3></div>
+                <div class="faqanswer">
+                    <p>
+                        Download the app for free through this <a href="https://onelink.to/y9q7mf" class="underline-text">link</a>.
+                    </p>
+                    <ol>
+                        <li>Find a nearby bike on the map and reserve it for up to 15 minutes free of charge. Make your choice between a mechanical (marked in orange) or an electric (marked in green) bike.</li>
+                        <br>
+                        <li>Scan the QR code to unlock your vehicle, or alternatively type in the 4-digit ID code, visible on the right and left sides of each bike’s frame.</li>
+                        <br>
+                        <li>Enjoy your ride!</li>
+                        <br>
+                        <li>Park within the zone outlined in orange on the map.
+                        <br><br>
+                        For manual bikes, please lock manually using the smart lock above the rear tire, then end your rental from the app by pressing the “Lock”, then “End rental session” buttons on the app.
+                        <br><br>
+                        E-bikes can lock automatically, so no manual locking is required when ending your session or pausing through the app!</li>
+                    </ol>
+                    <p>
+                        *Use the “Pause” function after locking for quick stops along your ride. You can pause anywhere, including outside the pick-up and drop off zone, if needed. For safety reasons, mechanical bikes require manual locking to enter “Pause” mode.
+                    </p>
+                    <p>
+                        Need more information? Have a look <a href="how-it-works.html" class="underline-text">here</a> or give us a call on <a href="tel:+359896755556" class="underline-text">+359 896 755 556</a> or e-mail us at <a href="mailto:info@cyrcl.eu" class="underline-text">info@cyrcl.eu</a>. Our support team is here for you every day between 8:00 and 24:00h.
+                    </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>What documents are required?</h3></div>
+                <div class="faqanswer">
+                    <p>
+                        No ID documentation is required, unless you would like to apply for a specific Pass to get extra benefits. In that case we might request verification, according to the terms of the respective offer.
+                        <br><br>
+                        Please note that the payments for your rides are processed through our online system, so you are required to provide a valid bank card after registering, and before beginning your very first Cyrcl ride. 
+                    </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>Are there any age limits to use the service?</h3></div>
+                <div class="faqanswer">
+                    <p>In the interest of safety, the Cyrcl service is only available to people over the age of 16.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>What operating system is required?</h3></div>
+                <div class="faqanswer">
+                    <p>Our mobile app is available for Android and iOS. You can download it by following this <a href="https://onelink.to/y9q7mf" class="underline-text">link</a>.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>Can my child use a Cyrcl bike?</h3></div>
+                <div class="faqanswer">
+                    <p>
+                        In the interest of safety the Cyrcl service is only available to persons over the age of 16. If you would like to ride together with a family member, please make sure they are also a registered and verified user of the Cyrcl app.
+                        <br><br>
+                        Currently, you can only rent one bike at a time through your user account, however, the same payment method/bank card can be used by more than one account.
+                    </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>Can I rent two or more bikes from the same account?</h3></div>
+                <div class="faqanswer">
+                    <p>
+                        If you would like to ride together with friends or family, please make sure they are also registered and verified users of the Cyrcl app.
+                        <br><br>
+                        Currently, you can only rent one bike at a time through your user account, however, the same payment method/bank card can be used by more than one account.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="back-to-top">
+            <h3 class="underline-text">Back to top ▲</h3>
+        </div>
+    </div>
+    
+    <div class="faq-wrapper" id="accounts-payments">
+        <h2>Account and Payments</h2>
+        <div class="faq-holder">
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>How do I pay?</h3></div>
+                <div class="faqanswer">
+                    <p>
+                        After downloading our mobile app (you can do so <a href="https://onelink.to/y9q7mf" class="underline-text">here</a>) add your bank card details from the “Payment method” section on the menu in the top left corner of the screen.
+                        <br><br>
+                        Our system requires you to enter a valid payment method before beginning your first ride. Once added, your card will remain linked to your account for future rides and payments.
+                    </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>What are the prices?</h3></div>
+                <div class="faqanswer">
+                    <p>
+                        Our current pricing model is composed of three elements.
+                        <br><br>
+                        For mechanical bikes it is 1.5 BGN unlock fee and 0.15 BGN per minute thereafter. The 24-hour rate is 24 BGN and it applies automatically once that amount is reached.
+                        <br><br>
+                        For electric bikes the pricing is composed of 1.9 BGN unlock fee and 0.29 BGN per minute thereafter. The 24-hour rate is 48 BGN and again it is applied automatically.
+                        <br><br>
+                        You can have a look at our current pricing list and monthly subscriptions <a href="pricing.html" class="underline-text">here</a>.
+                    </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>Do I get a discount for a longer rental session?</h3></div>
+                <div class="faqanswer">
+                    <p>
+                        Yes, the highest fee you can pay for 24 hours is 24 BGN for a mechanical bike, and 48 BGN for an e-bike.
+                        <br><br>
+                        Please keep in mind that the full-day rental fee is valid only if you use the same bike for the entire period without ending your session. If you end your rental session and start a new one, regardless of whether you rent the same bike or a new one, the countdown to 24 / 48 BGN will start again.
+                        <br><br>
+                        Additionally, you can take advantage of our Cyrcl subscriptions, designed for avid urban cyclists and sustainable commuters.
+                        <br><br>
+                        More information about our prices can be found on our website <a href="pricing.html" class="underline-text">here</a>.
+                    </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>What subscriptions do you offer?</h3></div>
+                <div class="faqanswer">
+                    <p>
+                        You can have a look at the subscription plans we are currently offering on our website <a href="pricing.html" class="underline-text">here</a>.
+                    </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>How do I cancel my Cyrcl subscription?</h3></div>
+                <div class="faqanswer">
+                    <p>
+                        We are sorry to see you go! 💔
+                        <br><br>
+                        To cancel your subscription, please e-mail us at <a href="mailto:info@cyrcl.eu" class="underline-text">info@cyrcl.eu</a> prior to your subscription’s next renewal date. The subscription will remain active until the current 30 day period you have already paid for expires. 
+                        <br><br>
+                        *Please be advised there are no refunds once your subscription payment has gone through for the current 30 day period.
+                    </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>How do I get an invoice?</h3></div>
+                <div class="faqanswer">
+                    <p>If you want to receive an invoice, open the mobile app, go to the main menu (top left button), then click on 'Payment methods' and add your details in the 'Invoice' section. We will make sure to send it to you immediately after the end of the month. The invoice will contain the payments for all your rental sessions for the respective month.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>I can’t verify my phone number, help!</h3></div>
+                <div class="faqanswer">
+                    <p>
+                        Make sure you have entered your phone number correctly, and in the <strong>+country code format</strong> (example: +359 896 755 556 where +359 is the Bulgaria country code) in your user profile on the app. Please note that the Cyrcl service is available to users of all countries, as long as the country code and phone number are entered correctly, so that the number can be verified.
+                        <br><br>
+                        If the issue persists, please report the issue <a href="https://cyrcl.eu/report" class="underline-text">here</a>, or give us a call on <a href="tel:+359896755556" class="underline-text">+359 896 755 556</a>. Our support team is available every day between 8:00 and 24:00h. 
+                    </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>What payment methods do you accept?</h3></div>
+                <div class="faqanswer">
+                    <p>
+                        Currently the accepted payment methods are debit bank cards, credit cards, or online bank cards. We accept Visa, Mastercard, and Maestro.
+                        <br><br>
+                        After downloading our mobile app (you can do so <a href="https://onelink.to/y9q7mf" class="underline-text">here</a>) add your bank card details from the “Payment method” section on the menu in the top left corner of the screen. Our system requires you to enter a valid payment method before beginning your first ride. Once added, your card will remain linked to your account for future rides and payments.
+                        <br><br>
+                        For further assistance please contact us at <a href="tel:+359896755556" class="underline-text">+359 896 755 556</a> or <a href="mailto:info@cyrcl.eu" class="underline-text">info@cyrcl.eu</a>. Our support team is available every day between 8:00 and 24:00h. 
+                    </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>My payment method is not accepted, what should I do?</h3></div>
+                <div class="faqanswer">
+                    <p>
+                        Make sure your card details are entered correctly, then if prompted, allow the reversible 1 BGN transaction through your online banking app, in order to complete the payment method verification. The amount of 1 BGN will be returned back into your account once the card has been verified.
+                        <br><br>
+                        If the issue persists, please contact us at <a href="tel:+359896755556" class="underline-text">+359 896 755 556</a> or <a href="mailto:info@cyrcl.eu" class="underline-text">info@cyrcl.eu</a>. Our support team is available every day between 8:00 and 24:00h.
+                    </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>I was charged but I didn’t ride Cyrcl recently, why?</h3></div>
+                <div class="faqanswer">
+                    <p>
+                        This charge corresponds to a previous ride where the payment could not go though (due to insufficient funds, failed or declined payment, or other reasons). It means we have tried to recover an outstanding payment for one of your past rides.
+                        <br><br>
+                        Check your ride history in the app to match the amount and identify the ride that the charge is for, or contact us for further assistance at <a href="tel:+359896755556" class="underline-text">+359 896 755 556</a> or <a href="mailto:info@cyrcl.eu" class="underline-text">info@cyrcl.eu</a> (support team working hours: 8:00 — 24:00)
+                    </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>Why has Cyrcl blocked money from my account?</h3></div>
+                <div class="faqanswer">
+                    <p>
+                        When you start a ride with us, our app holds a temporary pre-ride deposit. You’ll notice this as a pending charge on your payment method. The amount we hold temporarily is 5 BGN; after your ride is completed, Cyrcl automatically removes the hold, and charges you only for the ride’s cost.
+                        <br><br>
+                        Sometimes it may take a few days for your bank or payment provider to release the hold from their end. If after 7 days, the pre-ride hold still appears on your account, we recommend reaching out to your bank for more information.
+                        <br><br>
+                        For further assistance please contact us at <a href="tel:+359896755556" class="underline-text">+359 896 755 556</a> or <a href="mailto:info@cyrcl.eu" class="underline-text">info@cyrcl.eu</a>. Our support team is available every day between 8:00 and 24:00h.
+                    </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>Why has my account been suspended?</h3></div>
+                <div class="faqanswer">
+                    <p>
+                        We prioritise the security and privacy of our users. Therefore, we may find it necessary to suspend accounts for various reasons:
+                        <br><br>
+                        <strong>Erratic behavior:</strong> An account might be suspended if it involves unusual user behaviour that raises concerns about the account’s security. This could include indications that the account has been compromised, is using fraudulent information, or is being shared among multiple users.
+                        <br><br>
+                        <strong>Unsafe riding:</strong> Riding in pedestrian only areas, intentionally damaging our vehicles, or riding while under the influence of alcohol or drugs, can result in the suspension of your account. It’s essential to adhere to our T&C, outlined in the User’s Agreement, to guarantee a safe and enjoyable experience for all involved.
+                        <br><br>
+                        If you’re confident that none of these apply to your situation, please reach out to our customer support team for further assistance. We are available at <a href="tel:+359896755556" class="underline-text">+359 896 755 556</a> or <a href="mailto:info@cyrcl.eu" class="underline-text">info@cyrcl.eu</a> every day between 8:00 and 24:00h. 
+                    </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>How do I delete my user account?</h3></div>
+                <div class="faqanswer">
+                    <p>
+                        We are sorry to see you go! 💔
+                        <br><br>
+                        To delete your user account, follow these steps:
+                        <ol>
+                            <li>Open the main menu at the top left corner on the screen in the Cyrcl app.</li>
+                            <br>
+                            <li>Click on your name and e-mail address, then select “Delete my account” at the very bottom of the screen.</li>
+                        </ol>
+                        Please note that you cannot delete your account if you have an outstanding debt related to a previous ride. Your account can be deleted no earlier than 7 days after your last successfully completed ride.
+                        <br<<br>
+                        If you wish to have all your data erased along with your account, make sure to submit a request to our support team before deleting your Cyrcl account.
+                        <br><br>
+                        Reach us at <a href="tel:+359896755556" class="underline-text">+359 896 755 556</a> or <a href="mailto:info@cyrcl.eu" class="underline-text">info@cyrcl.eu</a> for further assistance. Our support team is available every day between 8:00 and 24:00h.
+                    </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>How is my user data handled?</h3></div>
+                <div class="faqanswer">
+                    <p>
+                        We value your privacy, and protecting your personal information is of great importance to us. We respect the trust you place in us to handle your information responsibly.
+                        <br><br>
+                        Have a look at our privacy policy for a detailed overview of how we manage your data in accordance with the General Data Protection Regulation (GDPR) by following this <a href="privacy.html" class="underline-text">link</a>.
+                        <br><br>
+                        If you suspect your data may be at risk, or is being misused, please get in touch with us through our report system, or contact us directly at <a href="tel:+359896755556" class="underline-text">+359 896 755 556</a> or <a href="mailto:info@cyrcl.eu" class="underline-text">info@cyrcl.eu</a> for assistance. Our support team is available every day between 8:00 and 24:00h.
+                     </p>
+                </div>
+            </div>
+        </div>
+        <div class="back-to-top">
+            <h3 class="underline-text">Back to top ▲</h3>
+        </div>
+    </div>
+
+    <div class="faq-wrapper" id="ride-bike">
+        <h2>Help with your ride & bike</h2>
+        <div class="faq-holder">
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>Where can I get the bike from and where to return it?</h3></div>
+                <div class="faqanswer">
+                    <p>
+                        You can pick up and return your Cyrcl shared bike anywhere within the designated zone, outlined and coloured in orange on the map in our mobile app.
+                        <br><br>
+                        We advise that you also check out the parking spaces for 2-wheeled vehicles, provided by Sofia Urban Mobility Centre <a href="https://www.sofiatraffic.bg/media/uploads/Parkomesta_za_dvukolesni_prevozni_sredstva.png" class="underline-text" target="_blank">here</a>.
+                    </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>Where can I ride?</h3></div>
+                <div class="faqanswer">
+                    <p>
+                        You are free to ride Cyrcl anywhere in Sofia.
+                        <br><br>
+                        If you wish to ride outside the city area, please contact our team to give us a heads up. Our support team is available every day 8:00 - 24:00h at <a href="tel:+359896755556" class="underline-text">+359 896 755 556</a> or <a href="mailto:info@cyrcl.eu" class="underline-text">info@cyrcl.eu</a>.
+                    </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span> I can’t end my rental session, help!</h3></div>
+                <div class="faqanswer">
+                    <p>
+                        Make sure that you have parked within the designated zone, marked in orange on the map in our app.
+                        <br><br>
+                        If you are riding one of our mechanical bikes, please lock it manually from the smart lock on top of the rear tyre, before pressing “Lock”, then “End session” through the app.
+                        <br><br>
+                        E-bikes lock automatically after following the steps listed above through the app.
+                        <br><br>
+                        For further assistance, contact us at <a href="tel:+359896755556" class="underline-text">+359 896 755 556</a> or <a href="mailto:info@cyrcl.eu" class="underline-text">info@cyrcl.eu</a>. Our support team is available every day between 8:00 and 24:00h. 
+                    </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span> The bike I rented doesn’t unlock, help!</h3></div>
+                <div class="faqanswer">
+                    <p>
+                        Contact our support at <a href="tel:+359896755556" class="underline-text">+359 896 755 556</a> for urgent technical assistance.
+                        <br><br>
+                        You will not be charged for an unsuccessful session or additional time awaiting assistance - just please make sure to get in touch with us in a timely manner!
+                        <br><br>
+                        Our support team is available every day between 8:00 and 24:00h.
+                    </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>The bike I rented is broken, help!</h3></div>
+                <div class="faqanswer">
+                    <p>
+                        Make sure to inspect the bike before beginning your ride in order to avoid damage charges or technical issues during your session. Your reservation can be cancelled through the app at any time before starting your ride, if the bike you have chosen is not in satisfactory condition, or for any other reason. 
+                        <br><br>
+                        If you notice any damage, missing elements, or malfunctions, please contact us in due time at <a href="tel:+359896755556" class="underline-text">+359 896 755 556</a>, or use the report form <a href="https://www.cyrcl.eu/report" class="underline-text" target="_blank">here</a>.
+                        <br><br>
+                        In case of more severe damage or a missing bicycle, please give us a call as soon as possible. You will not be charged for any downtime while awaiting assistance from our team.
+                    </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>Can I multi-ride?</h3></div>
+                <div class="faqanswer">
+                    <p>
+                        If you would like to ride together with friends or family, please make sure they are also registered and verified users of the Cyrcl app.
+                        <br><br>
+                        Currently, you can only rent one bike at a time through your user account, however, the same payment method/bank card can be used by more than one account.
+                    </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>Where can I find the Cyrcl shared bikes?</h3></div>
+                <div class="faqanswer">
+                    <p>
+                        Currently our service is available only in certain areas of Sofia, Bulgaria. Download our mobile app through this <a href="https://onelink.to/y9q7mf" class="underline-text">link</a> to check the zone outlined in orange on the map.
+                        <br><br>
+                        You will not be charged for an unsuccessful session or additional time awaiting assistance - just please make sure to get in touch with us in a timely manner!
+                        <br><br>
+                        Our support team is available every day between 8:00 and 24:00h.
+                    </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>How long does the bike rental session last?</h3></div>
+                <div class="faqanswer">
+                    <p>
+                        You can rent a bike for as long as you want within the 24h limit.
+                    </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>How does full-day rental work?</h3></div>
+                <div class="faqanswer">
+                    <p>
+                        Full-day rental is activated automatically once the daily rental fee is reached. The highest fee you can pay for 24 hours is 24 BGN for a mechanical bike, and 48 BGN for an e-bike. Yes, you got it right! We won’t charge you for any additional minutes until the 24-hour rental limit is reached!
+                        <br><br>
+                        Please, keep in mind that the full-day rental fee is valid only if you use the same bike for the entire period without ending your session. If you end your rental session and start a new one, regardless of whether you rent the same bike or another, you will be charged for the new session you begin according to our current pricing list. For your convenience, you can use the “Pause” option for breaks between rides, without breaking your 24-hour streak!
+                    </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>How long does the reservation last?</h3></div>
+                <div class="faqanswer">
+                    <p>
+                        When you reserve a bike, the first 15 minutes of your reservation are free. Extending the reservation is also possible, and charged according to our current prices list, which you can find on our website <a href="pricing.html" class="underline-text">here</a>.
+                    </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>Where can I pause my bike rental session?</h3></div>
+                <div class="faqanswer">
+                    <p>
+                        You can pause your bike rental anywhere in Sofia — you don’t need to be in the designated parking area to do so.
+                    </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>How to pause my bike rental session?</h3></div>
+                <div class="faqanswer">
+                    <p>
+                        Pausing your ride is easy! If you are riding a mechanical bike, push the smart lock lever down manually (located on top of the bike’s rear tyre), then press the “Lock” and “Pause” buttons successively. E-bikes lock automatically once you follow the same steps through the app.
+                    </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>Where can I park my bike and end my session?</h3></div>
+                <div class="faqanswer">
+                    <p>
+                        You can park your bike anywhere within the designated area. You will find it outlined and coloured in orange on the map in our mobile app.
+                        <br><br>
+                        Don’t forget to follow the parking rules! Find them <a href="pricing.html" class="underline-text">here</a>.
+                    </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>The battery of my e-bike is low, help!</h3></div>
+                <div class="faqanswer">
+                    <p>
+                        In case the battery indicator on the e-bike’s display begins flashing during your ride, or you suspect the battery range will not be enough to complete your ride - please contact us at <a href="tel:+359896755556" class="underline-text">+359 896 755 556</a> for assistance.
+                        <br><br>
+                        You are able to check the remaining range of each Cyrcl e-bike prior to renting by clicking on its icon on the map in our app. In the top left corner of the “Reserve” window you will see how many kilometers remain before having to recharge.
+                    </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>How do I lock the bike and end my rental session?</h3></div>
+                <div class="faqanswer">
+                    <p>
+                        <ol>
+                            <li>Park within the zone outlined in orange on the map.</li>
+                            <br>
+                            <li>Lock the mechanical bike <strong>manually</strong>, using the smart lock above the rear tire. E-bikes lock automatically through the app, so no manual locking is required.</li>
+                            <br>
+                            <li>End your session through the app by pressing the “Lock” and “End rental session” buttons successively.</li>
+                        </ol>
+                    </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>My phone ran out of battery during my ride, help!</h3></div>
+                <div class="faqanswer">
+                    <p>
+                        If your phone battery dies, just make sure to park and lock the bike (if you are using a mechanical Cyrcl) within the orange zone, then contact us as soon as you can at <a href="mailto:info@cyrcl.eu" class="underline-text">info@cyrcl.eu</a> or <a href="tel:+359896755556" class="underline-text">+359 896 755 556</a>. Our support team is available every day between 8:00 and 24:00h. 
+                        <br><br>
+                        We will end the ride for you, and you will not be charged while awaiting assistance from our support team. 
+                        <br><br>
+                        *Keep in mind that if you leave the bike outside of the zone or leave a mechanical bike unlocked, your ride will not be ended until it has been relocated and properly parked, and extra charges for relocation may apply.
+                    </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>I can’t find the bike I reserved, help!</h3></div>
+                <div class="faqanswer">
+                    <p>
+                        In case you cannot find the bike you have reserved, or it appears to be missing from where it should be, please contact us at <a href="tel:+359896755556" class="underline-text">+359 896 755 556</a> as soon as possible.  
+                        <br><br>
+                        Occasionally our tracking systems might deviate from the displayed location, however, it is always better to be on the safe side!
+                        <br><br>
+                        Additionally, your reservation can be cancelled through the app at any time prior to unlocking and starting your ride - use this option to find another bike nearby if you are in a hurry.
+                    </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>I can’t reserve the bike, help!</h3></div>
+                <div class="faqanswer">
+                    <p>
+                        Check the following if you are experiencing connectivity issues:  
+                        <br><br>
+                        <ol>
+                            <li>Is the vehicle visible on the map in the Cyrcl app?</li>
+                            <br>
+                            <li>Have you activated mobile data on your smart device?</li>
+                            <br>
+                            <li>Are you using the latest versions of the Cyrcl app and smart device software?</li>
+                            <br>
+                            <li>Are there sufficient funds on your payment method?</li>
+                            <br>
+                            <li>Do you have any failed payments from a previous ride?</li>
+                        </ol>
+                        <br><br>
+                        <strong>Try closing and restarting the Cyrcl app.</strong>
+                        <br><br>
+                        If, after completing each of the above steps, you are still unable to connect to a vehicle, please contact us directly at <a href="mailto:info@cyrcl.eu" class="underline-text">info@cyrcl.eu</a> or on <a href="tel:+359896755556" class="underline-text">+359 896 755 556</a>. Our support team is available every day between 8:00 and 24:00h.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="back-to-top">
+            <h3 class="underline-text">Back to top ▲</h3>
+        </div>
+    </div>
+
+    <div class="faq-wrapper" id="about-bikes">
+        <h2>More about the bikes</h2>
+        <div class="faq-holder">
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>What is the maximum speed of the electric bikes?</h3></div>
+                <div class="faqanswer">
+                    <p>The Cyrcl e-bikes can reach a maximum speed of 25 km/h, as determined by EU regulations and local traffic law. Please take extra caution with adverse weather and traffic conditions at all times while riding - stay safe!</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>What is the maximum range of the electric bikes?</h3></div>
+                <div class="faqanswer">
+                    <p>The Cyrcl e-bikes can travel up to 60 km without having to recharge the battery. If you would like to travel further, or need to recharge during your ride, please contact us at <a href="tel:+359896755556" class="underline-text">+359 896 755 556</a> for assistance.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>How do I activate the electric motor on the e-bike?</h3></div>
+                <div class="faqanswer">
+                    <p>
+                        Activation of the electric motor is automatic - all you need to do is push the pedals normally, as you would when riding a mechanical bike, the rest is all done for you!
+                        <br><br>
+                        In case the electric motor assistance does not activate automatically, or if one of the indicators on the bike’s display illuminates in <strong>red</strong> - please contact us immediately at <a href="tel:+359896755556" class="underline-text">+359 896 755 556</a> for assistance. You will not be charged for any downtime while awaiting assistance from our team.
+                    </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>How do I adjust the seat of the bike?</h3></div>
+                <div class="faqanswer">
+                    <p>
+                        <strong>Mechanical bikes</strong>  
+                        <br><br>
+                        <ol>
+                            <li>Adjust the height and direction of the seat of your mechanical Cyrcl bike by using the small metal lever located under the seat.</li>
+                            <br>
+                            <li>Pulling the lever away from the seat allows adjustment.</li>
+                            <br>
+                            <li>To fasten at the desired height / direction, push the lever back and lock it in place.</li>
+                        </ol>
+                        <br><br>
+                        <strong>E-bikes</strong>
+                        <br><br>
+                        <ol>
+                            <li>E-bikes are equipped with a similar (yellow coloured) lever directly under the seat.</li>
+                            <br>
+                            <li>Please push the lever softly and make sure to apply all your weight on the seat itself in order to lower it.</li>
+                            <br>
+                            <li>When released from the lever, the seat of the e-bike automatically climbs up to its standard height.</li>
+                        </ol>
+                        For further assistance or in case of malfunction, please contact us on <a href="tel:+359896755556" class="underline-text">+359 896 755 556</a>. Our support team is available every day between 8:00 and 24:00h. You will not be charged for any downtime while awaiting assistance from our team. 
+                    </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>What is the maximum weight supported by the bikes?</h3></div>
+                <div class="faqanswer">
+                    <p>
+                        The Cyrcl bikes can support weight of up to 120kg.
+                        <br><br>
+                        Please note that the bikes’ baskets are suited to carry items weighing no more than 3kg (for mechanical bikes) and 5kg for e-bikes. Always take caution when carrying items in the basket, and make sure your items are secured before beginning our ride. 
+                    </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>Is using the phone holder on the e-bike safe?</h3></div>
+                <div class="faqanswer">
+                    <p>
+                        You can use your phone for navigation while riding one of our e-bikes by placing it in the holder on the handlebar. Please make sure that your phone can fit in the holder, and is properly secured before you start your ride. Once you unlock the e-bike and begin your ride, the holder will also charge your smartphone, as long as it supports wireless charging and is properly placed.
+                        <br><br>
+                        *Please keep in mind that the phone holder may not be suitable for all phones and should be used at your own risk.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="back-to-top">
+            <h3 class="underline-text">Back to top ▲</h3>
+        </div>
+    </div>
+
+    <div class="faq-wrapper" id="parking">
+        <h2>Parking</h2>
+        <div class="faq-holder">
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>Where can I park?</h3></div>
+                <div class="faqanswer">
+                    <p>
+                        You can park your bike anywhere within the designated area. You will find it outlined and coloured in orange on the map in our mobile app.
+                        <br><br>
+                        Don’t forget to follow the parking rules! Find them <a href="pricing.html" class="underline-text">here</a>.
+                    </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>How do I lock the bike and end my rental session?</h3></div>
+                <div class="faqanswer">
+                    <p>
+                        <ol>
+                            <li>Park within the zone outlined in orange on the map.</li>
+                            <br>
+                            <li>Lock the mechanical bike <strong>manually</strong>, using the smart lock above the rear tire. E-bikes lock automatically through the app, so no manual locking is required.</li>
+                            <br>
+                            <li>End your session through the app by pressing the “Lock” and “End rental session” buttons successively.</li>
+                        </ol>
+                    </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>How can I report a wrongly parked Cyrcl bike?</h3></div>
+                <div class="faqanswer">
+                    <p>
+                        If you come across a wrongly parked bike, or if one of our bikes is in the way of pedestrian or other traffic, please submit a report through our website or app. 
+                        <br><br>
+                        Find the link <a href="https://cyrcl.eu/report" class="underline-text" target="_blank">here</a>.
+                        <br><br>
+                        In a hurry? No worries, contact us directly on +359 896 755 556, (support team working hours: 8:00 — 24:00).
+                    </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>What do I do if the battery of my e-bike dies?</h3></div>
+                <div class="faqanswer">
+                    <p>
+                        In case the battery indicator on the e-bike’s display begins flashing during your ride, or you suspect the battery range will not be enough to complete your ride - please contact us at <a href="tel:+359896755556" class="underline-text">+359 896 755 556</a> for assistance.
+                        <br><br>
+                        You are able to check the remaining range of each Cyrcl e-bike prior to renting by clicking on its icon on the map in our app. In the top left corner of the “Reserve” window you will see how many kilometers remain before having to recharge.
+                    </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>I can’t end my session because my phone died, help!</h3></div>
+                <div class="faqanswer">
+                    <p>
+                        If your phone battery dies, just make sure to park and lock the bike (if you are using a mechanical Cyrcl) within the orange zone, then contact us as soon as you can at <a href="mailto:info@cyrcl.eu" class="underline-text">info@cyrcl.eu</a> or <a href="tel:+359896755556" class="underline-text">+359 896 755 556</a>. Our support team is available every day between 8:00 and 24:00h.
+                        <br><br>
+                        We will end the ride for you, and you will not be charged while awaiting assistance from our support team.
+                        <br><br>
+                        *Keep in mind that if you leave the bike outside of the zone, your ride will not be ended until it has been relocated and properly parked, and extra charges for relocation may apply.
+                    </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>Do I need to look for a bike station to leave the bike?</h3></div>
+                <div class="faqanswer">
+                    <p>
+                        You can park your bike anywhere within the designated area. You will find it outlined and coloured in orange on the map in our mobile app.
+                        <br><br>
+                        Don’t forget to follow the parking rules! Find them <a href="parking.html" class="underline-text">here</a>.
+                        <br><br>
+                        For further assistance or in case of malfunction, please contact us on <a href="tel:+359896755556" class="underline-text">+359 896 755 556</a>. Our support team is available every day between 8:00 and 24:00h. You will not be charged for any downtime while awaiting assistance from our team.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="back-to-top">
+            <h3 class="underline-text">Back to top ▲</h3>
+        </div>
+    </div>
+
+    <div class="faq-wrapper" id="safety">
+        <h2>Safety</h2>
+        <div class="faq-holder">
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>What to do in case of a damaged or missing bicycle?</h3></div>
+                <div class="faqanswer">
+                    <p>
+                        Please contact us in due time at <a href="tel:+359896755556" class="underline-text">+359 896 755 556</a>, email us at <a href="mailto:info@cyrcl.eu" class="underline-text">info@cyrcl.eu</a>, or use the report form here.
+                        <br><br>
+                        In case of more severe damage or a missing bicycle, please give us a call. You will not be charged for any downtime while awaiting assistance from our team. 
+                        <br><br>
+                        Make sure to inspect each bike for damage and malfunctions before beginning your ride with it. Your reservation can be cancelled through the app at any time before starting your ride, if the bike you have chosen is not in satisfactory condition, or for any other reason.
+                    </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>What should I do in case of an accident?</h3></div>
+                <div class="faqanswer">
+                    <p>Contact urgent services at 112 immediately, then let our team know about the incident on <a href="tel:+359896755556" class="underline-text">+359 896 755 556</a>.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>How can I contact Cyrcl?</h3></div>
+                <div class="faqanswer">
+                    <p>You can contact us on <a href="tel:+359896755556" class="underline-text">+359 896 755 556</a> (support team working hours: 8:00 — 24:00) or e-mail us at <a href="mailto:info@cyrcl.eu" class="underline-text">info@cyrcl.eu</a> anytime! Use our report system <a href="https://cyrcl.eu/report" class="underline-text" target="_blank">here</a>.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="togglefaq"><h3><span class="questions-icon">></span>What is the maximum weight supported by the bikes?</h3></div>
+                <div class="faqanswer">
+                    <p>
+                        The Cyrcl bikes can support weight of up to 120kg.
+                        <br><br>
+                        Please note that the bikes’ baskets are suited to carry items weighing no more than 3kg for mechanical bikes and 5kg for e-bikes. Always take caution when carrying items in the basket, and make sure your items are secured before beginning our ride. 
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="back-to-top">
+            <h3 class="underline-text">Back to top ▲</h3>
+        </div>
+    </div>
+</section>
+<!-- Question Section Ends -->
+
+
+</main>
+<script>
+    // Get the hamburger menu and the navigation links
+    var hamburgerMenu = document.getElementById('hamburger-menu');
+    var navLinks = document.querySelector('.nav-links');
+
+    // Add a click event listener to the hamburger menu
+    hamburgerMenu.addEventListener('click', function() {
+        // Toggle the 'active' class on the navigation links
+        navLinks.classList.toggle('active');
+    });
+</script>
+
+<footer>
+    <div class="footer-container">
+        <img src="Images/Logo_Cyrcl_Gradient_Horizontal.svg" alt="Cyrcl Logo" class="footer-logo">
+
+        <div class="footer-division">
+            <div class="footer-column">
+                <h3>Company</h3>
+                <p><a href="how-it-works.html">How it works</a></p>
+                <p><a href="pricing.html">Prices</a></p>
+                <p><a href="locations.html">Locations</a></p>
+                <p><a href="sustainability.html">Sustainability</a></p>
+                <p><a href="parking.html">Parking</a></p>
+                <p><a href="partners.html">Partners</a></p>
+            </div>
+            <div class="footer-column">
+                <h3>Resources</h3>
+                <p><a href="about-us.html">About us</a></p>
+                <p><a href="press.html">Press</a></p>
+                <!-- <p><a href="careers.html">Careers</a></p> -->
+            </div>
+            <div class="footer-column">
+                <h3>Support</h3>
+                <p><a href="contact-us.html">Contact us</a></p>
+                <p><a href="faq.html">FAQ</a></p>
+                <p><a href="report-issue.html">Report issue</a></p>
+                <p><a href="t&c.html">Terms & Conditions</a></p>
+                <p><a href="privacy.html">Privacy policy</a></p>
+                <p><a href="cookies.html">Cookies</a></p>
+            </div>
+            <div class="footer-column">
+                <h3>Get the app</h3>
+                <a href="https://play.google.com/store/apps/details?id=eu.cyrcl.app&hl=en" class="logo-link" target="_blank">
+                    <img src="Images/Google-Play-EN-White.svg" alt="Download Cyrcl from Google Play">
+                </a>
+                <a href="https://apps.apple.com/bg/app/cyrcl-your-city-bike-sharing/id1593379210" class="logo-link" target="_blank">
+                    <img src="Images/App-Store-EN-White.svg" alt="Download Cyrcl from App Store">
+                </a>                
+            </div>
+        </div>
+
+        <hr class="footer-divider">
+
+        <div class="footer-division">
+            <p>© Cyrcl 2024</p>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/cyrcl.world/" target="_blank"><img src="Images/Instagram.svg" alt="Cyrcl Instagram"></a>
+                <a href="https://www.facebook.com/cyrcl.world/" target="_blank"><img src="Images/Facebook.svg" alt="Cyrcl Facebook"></a>
+                <a href="https://www.tiktok.com/@cyrcl.world" target="_blank"><img src="Images/TikTok.svg" alt="Cyrcl TikTok"></a>
+                <a href="https://www.youtube.com/@Cyrcl" target="_blank"><img src="Images/YouTube.svg" alt="Cyrcl YouTube"></a>
+                <a href="https://www.linkedin.com/company/cyrcl-mobility" target="_blank"><img src="Images/LinkedIn.svg" alt="Cyrcl LinkedIn"></a>
+            </div>
+            <p>Designed by Cyrcl in Bulgaria <img src="Images/Bulgaria-Flag.svg" alt="Bulgarian Flag" class="footer-flag"></p>
+        </div>
+    </div>
+</footer>
+
+<div id="fullscreen-menu" class="fullscreen-menu">
+    <div class="menu-content">
+        <div class="language-selector">
+            <div class="language-selector">
+                <a href="faq.html" class="language active">EN</a>
+                <span class="divider">|</span>
+                <a href="faq.html" class="language">BG</a>
+            </div> 
+        </div>
+        <!-- Navigation Links -->
+        <div class="fullscreen-nav">
+            <h3><a href="how-it-works.html">How it works</a></h3>
+            <h3><a href="pricing.html">Prices</a></h3>
+            <h3><a href="locations.html">Locations</a></h3>
+            <h3><a href="sustainability.html">Sustainability</a></h3>
+            <h3><a href="parking.html">Parking</a></h3>
+            <h3><a href="partners.html">Partners</a></h3>
+            <h3><a href="https://onelink.to/y9q7mf">Get the app</a></h3>
+        </div>
+        <!-- Social Icons -->
+        <div class="social-icons">
+            <a href="https://www.instagram.com/cyrcl.world/" target="_blank"><img src="Images/Instagram.svg" alt="Cyrcl Instagram"></a>
+            <a href="https://www.facebook.com/cyrcl.world/" target="_blank"><img src="Images/Facebook.svg" alt="Cyrcl Facebook"></a>
+            <a href="https://www.tiktok.com/@cyrcl.world" target="_blank"><img src="Images/TikTok.svg" alt="Cyrcl TikTok"></a>
+            <a href="https://www.youtube.com/@Cyrcl" target="_blank"><img src="Images/YouTube.svg" alt="Cyrcl YouTube"></a>
+            <a href="https://www.linkedin.com/company/cyrcl-mobility" target="_blank"><img src="Images/LinkedIn.svg" alt="Cyrcl LinkedIn"></a>
+        </div>
+    </div>
+</div>
+
+<div><a href="partners.html" class="sticky-ellipse">
+    <img src="Images/DSK_Bank_logo_horizontal_CM.svg" alt="Sponsored by DSK Bank" class="ellipse-svg ellipse-svg-1">
+    <img src="Images/mc_symbol.svg" alt="Sponsored by Mastercard" class="ellipse-svg ellipse-svg-2">
+</a></div>
+
+<div><a class="sticky-circle">
+    <img src="Images/more-icon.svg" alt="Help" class="more-icon">
+</a></div>
+
+<div class="chat-box">
+    <div class="chat-box-header">
+        <img src="Images/Logo_Cyrcl_Gradient_Stroke_NoText.svg" class="logo-chatbot">
+        Cyrcl Assistant
+        <div class="chat-box-header-buttons">
+            <span class="chat-box-minimize"><img src="Images/minimize-button-chatbot.png" class="button-icons-chatbot"></span>
+            <span class="chat-box-toggle"><img src="Images/close-button-chatbot.png" class="button-icons-chatbot"></span>
+        </div>
+    </div>
+    <div class="chat-box-body">
+        <div class="chat-logs">
+          <!-- Chat logs will appear here -->
+        </div>
+        <div class="spinner" style="display: none;">  <!-- Initially hidden -->
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+    </div>
+    <div class="chat-input">      
+        <input type="text" id="chat-input" placeholder="Ask us anything...">
+        <button type="button" id="send-btn">
+            <img src="Images/send-button-chatbot.png" class="send-button-img">
+        </button>
+    </div>
+    <div class="chat-close-confirmation" style="display: none;">
+        <div class="chat-close-confirmation-wrapper">
+            <h3>Would you like to end the chat?</h3>
+            <button class="chat-close-confirm">Close Chat</button>
+            <button class="chat-return-chat">Return to Chat</button>
+        </div>
+    </div>
+</div>
+
+<div id="cookieConsentOverlay" class="cookie-consent-overlay"></div>
+<div id="cookieConsentPopup" class="cookie-consent-popup">
+    <div class="cookie-content">
+        <h2>🍪 Cookies Consent</h2>
+        <p>This website uses cookies to ensure you get the best experience. <a class="underline-text" href="privacy.html">Learn more</a></p>
+        <div class="cookie-options" style="display: none;">
+            <div class="cookie-option">
+                <input type="checkbox" id="essentialCookies" name="essentialCookies" checked disabled>
+                <label for="essentialCookies">Essential Cookies</label>
+            </div>
+            <div class="cookie-option">
+                <input type="checkbox" id="analyticsCookies" name="analyticsCookies">
+                <label for="analyticsCookies">Analytics Cookies</label>
+            </div>
+            <div class="cookie-option">
+                <input type="checkbox" id="advertisingCookies" name="advertisingCookies">
+                <label for="advertisingCookies">Advertising Cookies</label>
+            </div>
+        </div>
+        <div class="initial-buttons">
+            <button id="initialAccept" class="cookie-accept-btn">I Accept</button>
+            <button id="showPurposes" class="cookie-show-purposes">Show Purposes</button>
+        </div>
+
+        <div class="detailed-buttons" style="display: none;">
+            <p>This site uses third-party website tracking technologies to provide and continually improve our services, and to display advertisements according to users' interests. I agree and may revoke or change my consent at any time with effect for the future.</p>
+            <button id="acceptCookies" class="cookie-accept-btn">Save settings</button>
+            <button id="acceptAllCookies" class="cookie-accept-all-btn">Accept All</button>
+            <button id="declineCookies" class="cookie-decline-btn">Decline</button>
+        </div>
+    </div>
+</div>
+
+<!-- AOS Library -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+<!-- AOS Initialization -->
+<script>
+    AOS.init({
+            duration: 800,  // values from 0 to 3000, with step 50ms
+            easing: 'ease', // default easing for AOS animations
+            once: true,     // whether animation should happen only once - while scrolling down
+            mirror: false,  // whether elements should animate out while scrolling past them
+        });
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var overlay = document.getElementById('loadingOverlay');
+        var opacity = 1; // initial opacity
+
+        var fadeOut = function() {
+            opacity -= 0.02; // adjust for speed
+            if (opacity <= 0) {
+                overlay.style.display = 'none';
+            } else {
+                overlay.style.opacity = opacity;
+                requestAnimationFrame(fadeOut);
+            }
+        };
+
+        requestAnimationFrame(fadeOut);
+    });
+</script>
+
+<script src="faq-script.js"></script>
+
+</body>
+</html>
