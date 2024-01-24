@@ -1174,6 +1174,7 @@ nav a:hover {
     padding-left: 35px; /* Space for the checkbox, adjust as needed */
     display: flex; /* Use flexbox for alignment */
     align-items: center; /* Align items vertically in the center */
+    cursor: pointer;
 }
 
 /* Style for the custom checkmark */
@@ -1204,9 +1205,6 @@ nav a:hover {
 }
 
 
-
-
-
 .banner-column button.cta-button {
     margin-top: 1rem;
     cursor: pointer;
@@ -1216,6 +1214,58 @@ nav a:hover {
     text-align: left;
     margin-top: 0.5rem;
 }
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1009; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border-radius: 25px;
+    border: none;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 600px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+}
+
+/* Add Animation */
+@keyframes animatetop {
+    from {transform: translateY(-50%)}
+    to {transform: translateY(0)}
+}
+
+/* The Close Button */
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
 
 @media screen and (min-width: 1201px) {
     .banner-column button.cta-button, .banner-column label.checkbox-container {

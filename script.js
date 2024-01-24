@@ -407,6 +407,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // ----------------------------------------------------------------Where else... Cyrcl Form----------------------------------------------------------------
+
 document.getElementById("locationForm").addEventListener("submit", function(event) {
     event.preventDefault();
 
@@ -425,13 +426,36 @@ document.getElementById("locationForm").addEventListener("submit", function(even
     })
     .then(response => response.json())
     .then(data => {
-        alert('Form submitted successfully!');
-        // Handle success
+        // Example of using 'data' to display a server response
+        showModal();
     })
     .catch((error) => {
         console.error('Error:', error);
-        // Handle error
+        showModal('An error occurred.');
     });    
+});
+
+function showModal(message) {
+    var modal = document.getElementById("successModal");
+
+    // Show the modal
+    modal.style.display = "flex";
+}
+
+// Add this at the bottom of your script.js
+window.addEventListener('load', function() {
+    var modal = document.getElementById("successModal");
+    var span = document.getElementsByClassName("close-button")[0];
+
+    span.addEventListener('click', function() {
+        modal.style.display = "none";
+    });
+
+    window.addEventListener('click', function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    });
 });
 
 
