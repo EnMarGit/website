@@ -1156,35 +1156,52 @@ nav a:hover {
     color: #333;
 }
 
+/* Style for the actual checkbox input */
 .banner-column .checkbox-container input[type="checkbox"] {
-    display: none;
-    flex-shrink: 0;  /* Prevent the checkbox from shrinking */
+    opacity: 0; /* Make the checkbox invisible */
+    position: absolute; /* Position it absolutely */
+    cursor: pointer; /* To keep the cursor as pointer */
+    height: 20px; /* Same height as the custom checkmark */
+    width: 20px; /* Same width as the custom checkmark */
+    z-index: 1; /* Ensure it's above the custom checkmark */
 }
 
+/* Style for the container of the checkbox and label */
+.banner-column .checkbox-container {
+    position: relative; /* Set the container to relative */
+    padding-left: 25px; /* Space for the checkbox, adjust as needed */
+}
+
+/* Style for the custom checkmark */
 .banner-column .checkbox-container .checkmark {
     width: 20px;
     height: 20px;
     background-color: #eee;
     border-radius: 4px;
-    margin-right: 1rem;
-    flex-shrink: 0;  /* Prevent the checkmark from shrinking */
-    position: relative;  /* Set relative positioning for the absolute positioning of the pseudo-element */
-    overflow: visible; /* Ensure that the pseudo-element is not clipped */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: inline-block;
+    position: absolute; /* Position it absolutely within the container */
+    top: 0; /* Align to the top of the container */
+    left: 0; /* Align to the left of the container */
+    vertical-align: middle; /* Aligns with the text */
 }
 
+/* Style when the checkbox is checked */
 .banner-column .checkbox-container input[type="checkbox"]:checked + .checkmark {
-    background-color: #333; /* Change this color if needed */
+    background-color: #333;
 }
 
 .banner-column .checkbox-container input[type="checkbox"]:checked + .checkmark::before {
     content: "\2713"; /* Unicode for checkmark */
-    color: #81bb27;     /* Color of the checkmark */
-    font-size: 16px;  /* Adjust as needed */
+    color: #81bb27;
+    font-size: 16px;
     font-weight: bold;
+    position: absolute; /* Positioning the check mark */
+    top: -1px; /* Align to the top */
+    left: 4px; /* Center horizontally */
 }
+
+
+
 
 .banner-column button.cta-button {
     margin-top: 1rem;

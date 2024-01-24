@@ -406,6 +406,34 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+// ----------------------------------------------------------------Where else... Cyrcl Form----------------------------------------------------------------
+document.getElementById("locationForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    var formData = {
+        email: document.getElementById("email").value,
+        city: document.getElementById("city").value,
+        consent: document.querySelector('input[name="consent"]').checked
+    };
+
+    fetch('https://where-else-form-dot-single-cistern-378521.ey.r.appspot.com/submit-form', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert('Form submitted successfully!');
+        // Handle success
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+        // Handle error
+    });    
+});
+
 
 // ----------------------------------------------------------------Chatbox----------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', function() {

@@ -141,14 +141,16 @@
             <p>We are already in Sofia, Bulgaria. Tell us your favorite location(s) and we'll try our best to open these new area(s).</p>
         </div>
         <div class="banner-column">
-            <input type="email" id="email" name="email" placeholder="Email" required autocomplete="email">
-            <input type="text" id="city" name="city" placeholder="City" required autocomplete="address_level1">
-            <label class="checkbox-container">
-                <input type="checkbox" required>
-                <span class="checkmark"></span>
-                I agree that my personal data will be processed in accordance with the General Terms and Conditions and the Privacy Policy of the site.
-            </label>
-            <button class="cta-button">Send</button>
+            <form id="locationForm">
+                <input type="email" id="email" name="email" placeholder="Email" required autocomplete="email">
+                <input type="text" id="city" name="city" placeholder="City" required autocomplete="address_level1">
+                <label class="checkbox-container">
+                    <input type="checkbox" name="consent" required>
+                    <span class="checkmark"></span>
+                    I agree that my personal data will be processed in accordance with the General Terms and Conditions and the Privacy Policy of the site.
+                </label>
+                <button type="submit" class="cta-button">Send</button>
+            </form>
         </div>
     </div>
 </section>
