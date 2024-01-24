@@ -1164,12 +1164,16 @@ nav a:hover {
     height: 20px; /* Same height as the custom checkmark */
     width: 20px; /* Same width as the custom checkmark */
     z-index: 1; /* Ensure it's above the custom checkmark */
+    top: 50%; /* Position halfway down the parent */
+    transform: translateY(-50%); /* Offset by half its own height */
 }
 
 /* Style for the container of the checkbox and label */
 .banner-column .checkbox-container {
     position: relative; /* Set the container to relative */
-    padding-left: 25px; /* Space for the checkbox, adjust as needed */
+    padding-left: 35px; /* Space for the checkbox, adjust as needed */
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Align items vertically in the center */
 }
 
 /* Style for the custom checkmark */
@@ -1178,11 +1182,10 @@ nav a:hover {
     height: 20px;
     background-color: #eee;
     border-radius: 4px;
-    display: inline-block;
     position: absolute; /* Position it absolutely within the container */
-    top: 0; /* Align to the top of the container */
+    top: 50%; /* Align to the middle of the container */
     left: 0; /* Align to the left of the container */
-    vertical-align: middle; /* Aligns with the text */
+    transform: translateY(-50%); /* Offset by half its own height */
 }
 
 /* Style when the checkbox is checked */
@@ -1199,6 +1202,7 @@ nav a:hover {
     top: -1px; /* Align to the top */
     left: 4px; /* Center horizontally */
 }
+
 
 
 
