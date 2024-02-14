@@ -130,30 +130,7 @@ document.querySelectorAll('.custom-dropdown-item').forEach(item => {
 });
 
 // ----------------------------------------------------------------Partners Form Section----------------------------------------------------------------
-document.getElementById('contactForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    
-    // TODO: Add AJAX request to send form data to your server
 
-    // Example success/error handling
-    fetch(this.action, {
-        method: this.method,
-        body: new FormData(this),
-        headers: {
-            'Accept': 'application/json'
-        }
-    })
-    .then(response => {
-        if (response.ok) {
-            document.querySelector('.success-message').style.display = 'block';
-        } else {
-            document.querySelector('.error-message').style.display = 'block';
-        }
-    })
-    .catch(() => {
-        document.querySelector('.error-message').style.display = 'block';
-    });
-});
 
 
 // ----------------------------------------------------------------Dropdowns: Partners Form Section----------------------------------------------------------------
@@ -190,6 +167,78 @@ document.querySelectorAll('.contact-custom-dropdown-item').forEach(item => {
         toggleContactDropdown(this.parentElement.id);
     });
 });
+
+// ----------------------------------------------------------------Submission: Partners Form Section----------------------------------------------------------------
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    var sourceSelectedText = document.getElementById("sourceCurrentSelection").textContent;
+    var interestSelectedText = document.getElementById("interestCurrentSelection").textContent;
+
+    // Custom validation for the dropdowns
+    if (sourceSelectedText === "Select an option") {
+        alert("Please select an option from the dropdown list.");
+        return; // Stop the form submission
+    }
+
+    if (interestSelectedText === "Select an option") {
+        alert("Please select an option from the dropdown list.");
+        return; // Stop the form submission
+    }
+
+
+    var formData = {
+        firstName: document.getElementById("firstName").value,
+        companyName: document.getElementById("companyName").value,
+        source: document.getElementById("source-select").value,
+        interest: document.getElementById("interest-select").value,
+        email: document.getElementById("email").value,
+        telephone: document.getElementById("telephone").value,
+        additionalInfo: document.getElementById("additionalInfo").value,
+        agreement: document.querySelector('input[name="agreement"]').checked
+    };
+
+    // Proceed with form submission
+    fetch('https://partners-form-dot-single-cistern-378521.ey.r.appspot.com/submit-contact-form', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+    })
+    .then(response => response.json())
+    .then(data => {
+        showModal();
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+        showModal('An error occurred.');
+    });    
+});
+
+function showModal(message) {
+    var modal = document.getElementById("successModal");
+
+    // Show the modal
+    modal.style.display = "flex";
+}
+
+// Add this at the bottom of your script.js
+window.addEventListener('load', function() {
+    var modal = document.getElementById("successModal");
+    var span = document.getElementsByClassName("close-button")[0];
+
+    span.addEventListener('click', function() {
+        modal.style.display = "none";
+    });
+
+    window.addEventListener('click', function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    });
+});
+
 
 // ----------------------------------------------------------------Special CTA Button Mid: Scroll Behavious----------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', function () {

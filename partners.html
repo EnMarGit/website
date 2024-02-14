@@ -112,8 +112,8 @@
             <img src="Images/form-arrow.png" alt="" class="form-image">
         </div>
         <div class="contact-form-container">
-            <form id="contactForm" action="path_to_your_server_side_script" method="POST">
-                <p>Hello, I am <input type="text" name="firstName" id="firstName" placeholder="name*" autocomplete="given-name" required> from <input type="text" name="companyName" placeholder="company name*" required></p>
+            <form id="contactForm">
+                <p>Hello, I am <input type="text" name="firstName" id="firstName" placeholder="name*" autocomplete="given-name" required> from <input type="text" name="companyName" id="companyName" placeholder="company name*" required></p>
                 
 
                 <!-- Dropdowns -->
@@ -148,16 +148,16 @@
                 <div class="contact-dropdown-container">
                     <span class="contact-text-before-dropdown">And I want to learn more about</span>
                     <div class="contact-dropdown-wrapper">
-                        <select id="interest-select" name="interest" class="original-dropdown" style="display: none;" required>
-                            <option value="partnership">exclusive partnership with brand positioning</option>
-                            <option value="bike-sharing">corporate bike-sharing</option>
+                        <select id="interest-select" name="interest" class="original-dropdown" style="display: none;">
+                            <option value="exclusive partnership with brand positioning">exclusive partnership with brand positioning</option>
+                            <option value="corporate bike-sharing">corporate bike-sharing</option>
                             <option value="other">other*</option>
                         </select>
                         <span id="interestCurrentSelection" class="contact-current-selection">Select an option</span>
                         <span class="contact-dropdown-arrow">▼</span>
                         <div id="interestCustomDropdown" class="contact-custom-dropdown-content">
-                            <div class="contact-custom-dropdown-item" data-value="partnership">exclusive partnership with brand positioning</div>
-                            <div class="contact-custom-dropdown-item" data-value="bike-sharing">corporate bike-sharing</div>
+                            <div class="contact-custom-dropdown-item" data-value="exclusive partnership with brand positioning">exclusive partnership with brand positioning</div>
+                            <div class="contact-custom-dropdown-item" data-value="corporate bike-sharing">corporate bike-sharing</div>
                             <div class="contact-custom-dropdown-item" data-value="other">other</div>
                             <!-- Add other items as needed -->
                         </div>
@@ -169,11 +169,11 @@
                     <input type="email" name="email" id="email" placeholder="email*" autocomplete="email" required>
                 </p>
                 <p>or 
-                    <input type="tel" name="telephone" id="telephone" placeholder="telephone number" autocomplete="telephone">
+                    <input type="tel" name="telephone" id="telephone" placeholder="telephone number" autocomplete="tel">
                 </p>
 
                 <!-- Additional Info -->
-                <textarea name="additionalInfo" placeholder="Anything you would like to add?"></textarea>
+                <textarea name="additionalInfo" id="additionalInfo" placeholder="Anything you would like to add?"></textarea>
 
                 <!-- Checkbox -->
                 <label class="checkbox-container">
@@ -185,14 +185,21 @@
                 <!-- Submit Button -->
                 <button type="submit" class="cta-button">Send</button>
 
-                <!-- Messages -->
-                <p class="success-message" style="display:none;">Your message has been sent successfully!</p>
-                <p class="error-message" style="display:none;">Oops! Something went wrong.</p>
             </form>
         </div>
     </div>
 </section>
 <!-- Partners Form Section Ends -->
+
+<!-- Success Modal -->
+<div id="successModal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>⚡ Success!</h2>
+        <p>Thank you for sharing your interest for partnership with us! Our partners having trust in us helps us get one step closer to making our cities a better place to live. So we truly appreciate it.</p>
+        <p>Our team will look into your request promptly and we will get in touch with you as soon as possible!</p>
+    </div>
+</div>
 
 <!-- Learn More Section Starts -->
 <section class="learn-more-section">

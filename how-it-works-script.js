@@ -65,7 +65,7 @@ const howItWorksContent = [
                 "No rush! You have some time available to get to your new favorite ride."
             ]
         },
-        image: "Images/image4.svg"
+        image: "Images/find.webp"
     },
     {
         text: {
@@ -75,7 +75,7 @@ const howItWorksContent = [
                 "Press the unlock button in the app."
             ]
         },
-        image: "Images/image5.svg"
+        image: "Images/unlock.webp"
     },
     {
         text: {
@@ -85,7 +85,7 @@ const howItWorksContent = [
                 "Don’t forget that you can pause your rental session for example, to enter a store. Meanwhile, no one else would be allowed to rent your bike."
             ]
         },
-        image: "Images/image6.svg"
+        image: "Images/ride.webp"
     },
     {
         text: {
@@ -96,7 +96,7 @@ const howItWorksContent = [
                 "Now end your rental session by pressing the button in the app."
             ]
         },
-        image: "Images/image7.svg"
+        image: "Images/lock.webp"
     }
 ];
 
